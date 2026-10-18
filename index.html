@@ -102,8 +102,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .tool p{color:var(--steel);font-size:15px;margin-top:4px}
 
 /* team */
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-.person{border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;gap:16px;align-items:center}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px;max-width:920px}
+.creds{list-style:none;margin-top:10px;display:grid;gap:4px}
+.creds li{font-size:14.5px;color:var(--ink-2);padding-left:18px;position:relative}
+.creds li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;background:var(--gold)}
+.person{border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;gap:18px;align-items:flex-start}
 .avatar{flex:0 0 64px;height:64px;border-radius:50%;background:var(--blue);color:var(--gold-light);border:2px solid var(--gold);display:grid;place-items:center;font-family:"Barlow Condensed",Arial,sans-serif;font-size:24px;font-weight:700}
 .person p{color:var(--steel);font-size:15px}
 
@@ -179,7 +182,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <li><a href="#services">Services</a></li>
       <li><a href="#process">How It Works</a></li>
       <li><a href="#accreditation">Accreditation</a></li>
-      <li><a href="#team">Team</a></li>
+      <li><a href="#team">Leadership</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -211,7 +214,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   <div class="wrap proof-grid">
     <div><strong>DOLE-OSHC Accredited</strong><span>Valid until August 2029</span></div>
     <div><strong>PME-Led</strong><span>Licensed Professional Mechanical Engineer</span></div>
-    <div><strong>OSHC Authorized Inspector</strong><span>On our team</span></div>
+    <div><strong>NDT Level 2</strong><span>UT · PT · MT practitioners</span></div>
     <div><strong>Nationwide</strong><span>We mobilize to your site</span></div>
   </div>
 </div>
@@ -224,7 +227,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <div class="cards">
       <article class="card"><h3>Heavy Equipment Inspection</h3><p>Cranes, forklifts, excavators, payloaders, graders, and other construction heavy equipment.</p><div class="get"><b>You get:</b> test report and certificate</div></article>
       <article class="card"><h3>Load Testing &amp; Lifting Gear</h3><p>Overhead cranes, hoists, chain blocks, and lifting accessories such as slings, shackles, and hooks.</p><div class="get"><b>You get:</b> load test report and certificate</div></article>
-      <article class="card"><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI).</p><div class="get"><b>You get:</b> NDT report with readings and findings</div></article>
+      <article class="card"><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> NDT report with readings and findings</div></article>
       <article class="card"><h3>Hydrostatic Testing</h3><p>Pressure testing of vessels, piping, hoses, and fire lines to verify integrity and leak-tightness.</p><div class="get"><b>You get:</b> hydrostatic test report</div></article>
       <article class="card"><h3>DOLE PTO / CEI Support</h3><p>Testing and documentation for boilers, pressure vessels, air receivers, gensets, and power piping.</p><div class="get"><b>You get:</b> test results and documents for your DOLE application</div></article>
       <article class="card"><h3>Storage Racking Inspection</h3><p>Checks on warehouse pallet racking for damage, overloading, and safe installation.</p><div class="get"><b>You get:</b> inspection report with recommendations</div></article>
@@ -281,12 +284,12 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 
 <section id="team">
   <div class="wrap">
-    <span class="eyebrow">Our team</span>
-    <h2>The people behind every report</h2>
+    <span class="eyebrow">Leadership</span>
+    <h2>Led by its founders</h2>
+    <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder whose own credentials are on the line.</p>
     <div class="team">
-      <div class="person"><div class="avatar">PR</div><div><h3>Engr. Precioso G. Reyes Jr., PME</h3><p>President &amp; CEO · DOLE-accredited Safety Consultant</p></div></div>
-      <div class="person"><div class="avatar">MC</div><div><h3>Mark B. Clave</h3><p>VP for Operations · OSHC Authorized Inspector</p></div></div>
-      <div class="person"><div class="avatar">RS</div><div><h3>Ronelito San Jose</h3><p>Technical Manager</p></div></div>
+      <div class="person"><div class="avatar">PR</div><div><h3>Engr. Precioso G. Reyes Jr., PME</h3><p>Founder · President &amp; CEO</p><ul class="creds"><li>Licensed Professional Mechanical Engineer</li><li>DOLE-Accredited Safety Consultant (No. 1030-102124-OSHC-0607)</li><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li></ul></div></div>
+      <div class="person"><div class="avatar">MC</div><div><h3>Mark B. Clave</h3><p>Co-Founder · VP for Operations</p><ul class="creds"><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li><li>TESDA NC II Heavy Equipment Operator</li></ul></div></div>
     </div>
   </div>
 </section>
@@ -355,7 +358,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       </div>
       <div>
         <h4>Company</h4>
-        <a href="#services">Services</a><a href="#accreditation">Accreditation</a><a href="#team">Team</a><a href="#faq">FAQ</a>
+        <a href="#services">Services</a><a href="#accreditation">Accreditation</a><a href="#team">Leadership</a><a href="#faq">FAQ</a>
       </div>
       <div>
         <h4>Contact</h4>
