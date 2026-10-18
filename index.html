@@ -108,7 +108,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .creds li{font-size:14.5px;color:var(--ink-2);padding-left:18px;position:relative}
 .creds li:before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;background:var(--gold)}
 .person{border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;gap:18px;align-items:flex-start}
-.avatar{flex:0 0 64px;height:64px;border-radius:50%;background:var(--blue);color:var(--gold-light);border:2px solid var(--gold);display:grid;place-items:center;font-family:"Barlow Condensed",Arial,sans-serif;font-size:24px;font-weight:700}
+.avatar{flex:0 0 108px;width:108px;height:108px;border-radius:50%;object-fit:cover;background:#fff;border:3px solid var(--gold);box-shadow:0 6px 16px rgba(15,42,102,.15)}
 .person p{color:var(--steel);font-size:15px}
 
 /* faq */
@@ -162,6 +162,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   .nav .btn{display:none}
 }
 @media(max-width:600px){
+  .person{flex-direction:column;align-items:flex-start}
   body{font-size:16px}
   section{padding:64px 0}
   .hero{padding:44px 0 56px}
@@ -289,8 +290,8 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <h2>Led by its founders</h2>
     <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder whose own credentials are on the line.</p>
     <div class="team">
-      <div class="person"><div class="avatar">PR</div><div><h3>Engr. Precioso G. Reyes Jr., PME</h3><p>Founder · President &amp; CEO</p><ul class="creds"><li>Licensed Professional Mechanical Engineer</li><li>DOLE-Accredited Safety Consultant (No. 1030-102124-OSHC-0607)</li><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li></ul></div></div>
-      <div class="person"><div class="avatar">MC</div><div><h3>Mark B. Clave</h3><p>Co-Founder · VP for Operations</p><ul class="creds"><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li><li>TESDA NC II Heavy Equipment Operator</li></ul></div></div>
+      <div class="person"><img class="avatar" src="images/janjan.png" alt="Engr. Precioso G. Reyes Jr., PME" loading="lazy"><div><h3>Engr. Precioso G. Reyes Jr., PME</h3><p>Founder · President &amp; CEO</p><ul class="creds"><li>Licensed Professional Mechanical Engineer</li><li>DOLE-Accredited Safety Consultant (No. 1030-102124-OSHC-0607)</li><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li></ul></div></div>
+      <div class="person"><img class="avatar" src="images/mark.png" alt="Mark B. Clave" loading="lazy"><div><h3>Mark B. Clave</h3><p>Co-Founder · VP for Operations</p><ul class="creds"><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li><li>TESDA NC II Heavy Equipment Operator</li></ul></div></div>
     </div>
   </div>
 </section>
