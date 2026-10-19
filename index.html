@@ -285,6 +285,34 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .reveal.in .picon{animation:iconpop .6s ease .3s both}
 @keyframes iconpop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.pillar::before{animation:none}.reveal .pillar{opacity:1;transform:none}}
+
+/* founders flip cards */
+#team .team{grid-template-columns:repeat(2,1fr)!important;gap:22px;max-width:980px}
+.fcard{perspective:1400px;cursor:pointer;outline:none}
+.fc-in{display:grid;transition:transform .8s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.fcard.flipped .fc-in{transform:rotateY(180deg)}
+.fc-front,.fc-back{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px}
+.fc-front{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);padding:28px 24px 22px;text-align:center;box-shadow:0 14px 34px rgba(15,42,102,.10);display:flex;flex-direction:column;align-items:center}
+.fc-photo{width:136px;height:136px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);animation:glow 3s ease-in-out infinite;margin-bottom:14px}
+@keyframes glow{0%,100%{box-shadow:0 0 0 6px rgba(226,192,106,.18),0 10px 24px rgba(15,42,102,.18)}50%{box-shadow:0 0 0 12px rgba(226,192,106,.06),0 10px 24px rgba(15,42,102,.18)}}
+.fc-front h3{font-size:24px;color:var(--blue-dark)}
+.fc-role{color:var(--steel);font-size:15px;margin-top:2px}
+.fc-exp{display:flex;align-items:center;gap:10px;margin:14px 0 4px;background:var(--paper);border-radius:10px;padding:8px 14px;text-align:left}
+.fc-exp b{font-family:"Barlow Condensed",Arial,sans-serif;font-size:34px;line-height:1;color:var(--gold)}
+.fc-exp b .count{font:inherit;color:inherit}
+.fc-exp span{font-size:13.5px;color:var(--ink-2);line-height:1.3}
+.fc-front blockquote{font-style:italic;font-size:16px;color:var(--blue-dark);margin:14px 4px;padding:0 6px;position:relative}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:2px}
+.chip{font-size:12.5px;font-weight:600;line-height:1.3;padding:5px 10px;border-radius:99px;background:#eef3fc;color:var(--blue);border:1px solid #c5cfe4}
+.chip.gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--blue-deep);border-color:var(--gold)}
+.fc-hint{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--gold);animation:nudge 1.8s ease-in-out infinite}
+.fc-back{transform:rotateY(180deg);position:relative;overflow:hidden;background:#0f2a66;min-height:100%}
+.fc-back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fc-cap{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(0deg,rgba(10,29,71,.92),rgba(10,29,71,0));color:#fff;font-size:15px}
+.fc-cap b{display:block;color:var(--gold-light);font-family:"Barlow Condensed",Arial,sans-serif;font-size:20px}
+.fc-cap .fc-hint{color:#fff;margin-top:6px}
+@media(max-width:860px){#team .team{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){.fc-photo,.fc-hint{animation:none}.fc-in{transition:none}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -532,8 +560,34 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <h2>Led by its founders. 25+ years in the field.</h2>
     <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder with years of hands-on inspection experience and credentials on the line.</p>
     <div class="team">
-      <div class="person"><img class="avatar" src="images/janjan.png" alt="Engr. Precioso G. Reyes Jr., PME" loading="lazy"><div><h3>Engr. Precioso G. Reyes Jr., PME</h3><p>Founder · President &amp; CEO</p><span class="exp">15+ years experience</span><p class="bio">Over 15 years in safety inspection, testing, and certification. Leads BNW's engineering direction and works directly with clients on their compliance needs.</p><ul class="creds"><li>Licensed Professional Mechanical Engineer</li><li>DOLE-Accredited Safety Consultant (No. 1030-102124-OSHC-0607)</li><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li></ul></div></div>
-      <div class="person"><img class="avatar" src="images/mark.png" alt="Mark B. Clave" loading="lazy"><div><h3>Mark B. Clave</h3><p>Co-Founder · VP for Operations</p><span class="exp">10+ years experience</span><p class="bio">Over 10 years of field experience across heavy equipment, lifting, and NDT. Leads BNW's site operations and inspection teams.</p><ul class="creds"><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li><li>TESDA NC II Heavy Equipment Operator</li></ul></div></div>
+      <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Engr. Reyes in the field">
+        <div class="fc-in">
+          <div class="fc-front">
+            <img class="fc-photo" src="images/janjan.png" alt="Engr. Precioso G. Reyes Jr., PME" loading="lazy">
+            <h3>Engr. Precioso G. Reyes Jr., PME</h3>
+            <p class="fc-role">Founder · President &amp; CEO</p>
+            <div class="fc-exp"><b><span class="count" data-to="15">15</span>+</b><span>years in safety inspection, testing &amp; certification</span></div>
+            <blockquote>&ldquo;Every report we sign is a promise that your people can work safely.&rdquo;</blockquote>
+            <div class="chips"><span class="chip gold">PME · PRC License No. 0007053</span><span class="chip">DOLE-Accredited Safety Consultant · 1030-102124-OSHC-0607</span><span class="chip">OSHC Authorized Inspector</span><span class="chip">NDT Level 2 · UT · PT · MT</span></div>
+            <span class="fc-hint">&#8635; Tap to see him in the field</span>
+          </div>
+          <div class="fc-back"><img src="images/training-bnw.jpg" alt="Engr. Reyes leading a safety training session" loading="lazy"><div class="fc-cap"><b>In the field</b>Leading a safety training session<span class="fc-hint">&#8635; Tap to flip back</span></div></div>
+        </div>
+      </div>
+      <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Mark Clave in the field">
+        <div class="fc-in">
+          <div class="fc-front">
+            <img class="fc-photo" src="images/mark.png" alt="Mark B. Clave" loading="lazy">
+            <h3>Mark B. Clave</h3>
+            <p class="fc-role">Co-Founder · VP for Operations</p>
+            <div class="fc-exp"><b><span class="count" data-to="10">10</span>+</b><span>years across heavy equipment, lifting &amp; NDT</span></div>
+            <blockquote>&ldquo;I've operated and inspected heavy equipment for over a decade. I know what to look for, and what can't be missed.&rdquo;</blockquote>
+            <div class="chips"><span class="chip gold">OSHC Authorized Inspector</span><span class="chip">NDT Level 2 · UT · PT · MT</span><span class="chip">TESDA NC II Heavy Equipment Operator</span></div>
+            <span class="fc-hint">&#8635; Tap to see him in the field</span>
+          </div>
+          <div class="fc-back"><img src="images/utg-inspection.jpg" alt="Mark Clave performing ultrasonic thickness gauging on a pressure vessel" loading="lazy"><div class="fc-cap"><b>In the field</b>UT thickness gauging on a pressure vessel<span class="fc-hint">&#8635; Tap to flip back</span></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -615,12 +669,10 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 </nav>
 <script>
 
-(function(){var el=document.querySelector('.count');if(!el||!('IntersectionObserver' in window))return;
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-var to=+el.dataset.to;el.textContent='0';
+(function(){if(!('IntersectionObserver' in window))return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+document.querySelectorAll('.count').forEach(function(el){var to=+el.dataset.to;el.textContent='0';
 var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();var t0=null;
-function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
-requestAnimationFrame(step);},{threshold:.5});io.observe(el);})();
+function st(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);},{threshold:.5});io.observe(el);});})();
 
 (function(){var D={"crane": {"n": "Mobile / crawler crane", "d": "Inspection and load testing with calibrated load measurement", "g": "Test report and certificate", "t": "Construction heavy equipment must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "heavy": {"n": "Excavator, payloader, grader & other heavy equipment", "d": "Visual, functional, and safety device inspection", "g": "Test report and certificate", "t": "When used in construction, must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "forklift": {"n": "Forklift", "d": "Inspection and load test at rated capacity", "g": "Load test report and certificate", "t": "Required under DOLE D.O. 13 when used in construction; commonly required by client audits and site safety programs elsewhere."}, "ohc": {"n": "Overhead crane / hoist / chain block", "d": "Inspection and proof load testing", "g": "Load test report and certificate", "t": "Commonly required during DOLE inspections, client audits, and site safety programs."}, "rigging": {"n": "Slings, shackles & lifting accessories", "d": "Inspection and proof load testing", "g": "Test certificate per item", "t": "Commonly required before use on site and by client audits."}, "boiler": {"n": "Boiler", "d": "Inspection, hydrostatic test, and UT thickness gauging", "g": "Test results and documents for your DOLE PTO/CEI application", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1160."}, "vessel": {"n": "Air receiver / pressure vessel", "d": "Hydrostatic test and UT thickness gauging", "g": "Test report and documents for your DOLE PTO/CEI application", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1170."}, "genset": {"n": "Generator set", "d": "Inspection and documentation", "g": "Documents for your DOLE PTO/CEI application", "t": "Typically requires a DOLE Permit to Operate."}, "piping": {"n": "Power piping", "d": "Hydrostatic test and inspection", "g": "Test report and documents for your DOLE PTO/CEI application", "t": "Typically covered by DOLE PTO/CEI together with your steam or boiler system."}, "racking": {"n": "Pallet racking", "d": "Inspection for damage, overloading, and safe installation", "g": "Inspection report with recommendations", "t": "Recommended as part of your warehouse safety program."}};var res=document.getElementById('eqResult');var cur=null;
 document.querySelectorAll('.eq-btn').forEach(function(b){b.addEventListener('click',function(){
@@ -651,6 +703,8 @@ setInterval(function(){if(document.hidden)return;hs[i].classList.remove('on');do
 
 (function(){var p=document.querySelector('.pillars.reveal');if(!p)return;if(!('IntersectionObserver' in window)){p.classList.add('in');return}
 var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){p.classList.add('in');io.disconnect()}},{threshold:.15});io.observe(p)})();
+
+document.querySelectorAll('.fcard').forEach(function(c){function f(){c.classList.toggle('flipped')}c.addEventListener('click',f);c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}})});
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
