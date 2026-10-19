@@ -380,7 +380,7 @@ document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
   var f=new FormData(this);
   var body='Name: '+f.get('name')+'\nCompany: '+f.get('company')+'\nMobile/Viber: '+f.get('phone')+'\nSite location: '+f.get('site')+'\nService: '+f.get('service')+'\n\nEquipment list:\n'+f.get('details');
-  location.href='mailto:info@bnwintegrisafe.ph?subject='+encodeURIComponent('Quote request – '+f.get('company'))+'&body='+encodeURIComponent(body);
+  location.href='mailto:quotes@bnwintegrisafe.ph?subject='+encodeURIComponent('Quote request – '+f.get('company'))+'&body='+encodeURIComponent(body);
 });
 </script>
 </body>
