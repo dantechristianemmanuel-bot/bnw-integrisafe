@@ -133,6 +133,33 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 @media(max-width:600px){.hero-ctas{flex-direction:column}.hero-ctas .btn{width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.btn-gold::after,.cta-pulse,.arr,.btn-viber,.btn-viber .vb,.channel::after{animation:none}}
 
+
+/* hero layout + slideshow */
+.hero-text{display:contents}
+.hero-grid{grid-template-rows:1fr auto auto auto auto auto 1fr;grid-template-areas:". photo" "badge photo" "h1 photo" "p photo" "cta photo" "note photo" ". photo";row-gap:0}
+.hero-text>.badge{grid-area:badge;justify-self:start}
+.hero-text>h1{grid-area:h1}
+.hero-text>p:not(.hero-note){grid-area:p}
+.hero-text>.hero-ctas{grid-area:cta}
+.hero-text>.hero-note{grid-area:note}
+.hero-slides{grid-area:photo;position:relative;aspect-ratio:4/3.4;border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 48px rgba(15,42,102,.18);background:#0f2a66}
+.hero-slides .hs{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
+.hero-slides .hs.on{opacity:1}
+.hero-slides .hs img{width:100%;height:100%;object-fit:cover;box-shadow:none;border-radius:0;aspect-ratio:auto}
+.hero-slides .hs.on img{animation:kb 6s ease-out both}
+@keyframes kb{from{transform:scale(1.0)}to{transform:scale(1.08)}}
+.hero-slides figcaption{position:absolute;left:14px;bottom:14px;background:rgba(15,42,102,.88);color:#fff;font-size:14px;padding:6px 12px;border-radius:6px}
+.hs-dots{position:absolute;right:14px;bottom:18px;display:flex;gap:6px;z-index:2}
+.hs-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);transition:all .3s}
+.hs-dots i.on{width:22px;border-radius:4px;background:var(--gold-light)}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;grid-template-rows:none;grid-template-areas:"badge" "h1" "photo" "p" "cta" "note";row-gap:0}
+  .hero-text>.badge{justify-self:center}
+  .hero-slides{aspect-ratio:16/10;margin:4px 0 22px}
+  .hero-slides figcaption{font-size:12.5px;left:10px;bottom:10px;padding:4px 9px}
+  .hs-dots{right:10px;top:10px;bottom:auto}
+}
+@media(prefers-reduced-motion:reduce){.hero-slides .hs.on img{animation:none}}
 /* stats strip */
 .proof{padding:34px 0}
 .proof-grid{grid-template-columns:repeat(4,1fr);gap:0}
@@ -353,7 +380,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-text">
       <span class="badge"><i></i>DOLE-OSHC Accredited Testing Organization</span>
       <h1><span>Your equipment, <em>certified.</em></span> <span>Your operations, <em>uninterrupted.</em></span></h1>
       <p>Expiring permit? DOLE inspection coming up? Project on hold for certificates? Our DOLE-OSHC authorized inspectors come to your site, test your equipment, and get you certified, fast.</p>
@@ -363,9 +390,11 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       </div>
       <p class="hero-note">From construction sites and factories to power plants and warehouses, if it needs certifying, we come to you, nationwide.</p>
     </div>
-    <figure class="hero-photo">
-      <img src="images/forklift-inspection.jpg" alt="BNW IntegriSafe team on site with a crane during inspection">
-      <figcaption>BNW team on site — crane inspection</figcaption>
+    <figure class="hero-photo hero-slides" aria-roledescription="carousel">
+      <div class="hs on"><img src="images/forklift-inspection.jpg" alt="BNW IntegriSafe team on site with a crane during inspection"><figcaption>BNW team on site — crane inspection</figcaption></div>
+      <div class="hs"><img src="images/utg-inspection.jpg" alt="BNW inspector performing ultrasonic thickness gauging on a pressure vessel" loading="lazy"><figcaption>UT thickness gauging on a pressure vessel</figcaption></div>
+      <div class="hs"><img src="images/hydrotest.jpg" alt="BNW hydrostatic test with a hand test pump at a boiler plant" loading="lazy"><figcaption>Hydrostatic testing at a boiler plant</figcaption></div>
+      <div class="hs-dots"><i class="on"></i><i></i><i></i></div>
     </figure>
   </div>
 </section>
@@ -595,6 +624,9 @@ setInterval(function(){if(paused||document.hidden)return;var r=t.getBoundingClie
 if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:step(),behavior:'smooth'})}},3200);});
 
 (function(){var g=document.getElementById('guide');if(!g||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){g.classList.add('seen');io.disconnect()}},{threshold:.3});io.observe(g)})();
+
+(function(){var hs=document.querySelectorAll('.hero-slides .hs'),dots=document.querySelectorAll('.hs-dots i');if(hs.length<2)return;var i=0;
+setInterval(function(){if(document.hidden)return;hs[i].classList.remove('on');dots[i].classList.remove('on');i=(i+1)%hs.length;hs[i].classList.add('on');dots[i].classList.add('on');},4500);})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
