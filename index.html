@@ -216,6 +216,28 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .car-dots i{width:7px;height:7px;border-radius:50%;background:#c5cfe4;transition:all .25s}
 .car-dots i.on{width:20px;border-radius:4px;background:var(--gold)}
 @media(max-width:600px){.tool{flex-basis:68vw}}
+
+/* clickable polish: sticky bar + guide chips */
+@media(max-width:860px){
+  .mbar a{background:#eef3fc;border:1px solid #b9c7e6;box-shadow:0 2px 0 #b9c7e6;transition:transform .1s,box-shadow .1s}
+  .mbar a:active{transform:translateY(2px);box-shadow:0 0 0 #b9c7e6}
+  .mbar a.mq{position:relative;overflow:hidden;box-shadow:0 2px 0 #a8862f;animation:pulseGold 2.4s ease-out infinite}
+  .mbar a.mq:active{box-shadow:0 0 0 #a8862f}
+  .mbar a.mq::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite}
+  .mbar a.mq b{display:inline-block;animation:nudge 1.6s ease-in-out infinite;font-weight:700}
+}
+.eq-btn{position:relative;padding-right:28px!important;box-shadow:0 3px 0 #c5cfe4;transition:transform .1s,box-shadow .1s,background .15s,color .15s}
+.eq-btn::after{content:"\203A";position:absolute;right:11px;top:50%;margin-top:-12px;font-size:22px;line-height:1;color:var(--gold)}
+.eq-btn:active{transform:translateY(3px);box-shadow:0 0 0 #c5cfe4}
+.eq-btn.on{box-shadow:0 3px 0 var(--blue-deep)}
+.eq-btn.on::after{color:var(--gold-light);content:"\2713";font-size:16px;margin-top:-9px}
+.eq-tap{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--blue);background:#eef3fc;border-radius:99px;padding:5px 12px;margin-top:14px}
+.eq-tap span{display:inline-block;animation:tap 1.4s ease-in-out infinite}
+@keyframes tap{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.guide.seen .eq-btn{animation:pop .45s ease both}
+.guide.seen .eq-btn:nth-child(2){animation-delay:.05s}.guide.seen .eq-btn:nth-child(3){animation-delay:.1s}.guide.seen .eq-btn:nth-child(4){animation-delay:.15s}.guide.seen .eq-btn:nth-child(5){animation-delay:.2s}.guide.seen .eq-btn:nth-child(6){animation-delay:.25s}.guide.seen .eq-btn:nth-child(7){animation-delay:.3s}.guide.seen .eq-btn:nth-child(8){animation-delay:.35s}.guide.seen .eq-btn:nth-child(9){animation-delay:.4s}.guide.seen .eq-btn:nth-child(10){animation-delay:.45s}
+@keyframes pop{0%{transform:scale(.92);opacity:.4}60%{transform:scale(1.04);opacity:1}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.mbar a.mq,.mbar a.mq::after,.mbar a.mq b,.eq-tap span,.guide.seen .eq-btn{animation:none}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -381,6 +403,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <span class="eyebrow">Quick guide</span>
     <h2>Not sure what your equipment needs?</h2>
     <p class="lead">Tap your equipment to see what we typically do and what you'll receive.</p>
+    <div class="eq-tap"><span>&#128070;</span> Tap any equipment below</div>
     <div class="eq-grid"><button type="button" class="eq-btn" data-k="crane">Mobile / crawler crane</button><button type="button" class="eq-btn" data-k="heavy">Heavy equipment</button><button type="button" class="eq-btn" data-k="forklift">Forklift</button><button type="button" class="eq-btn" data-k="ohc">Overhead crane / hoist</button><button type="button" class="eq-btn" data-k="rigging">Lifting accessories</button><button type="button" class="eq-btn" data-k="boiler">Boiler</button><button type="button" class="eq-btn" data-k="vessel">Air receiver / pressure vessel</button><button type="button" class="eq-btn" data-k="genset">Generator set</button><button type="button" class="eq-btn" data-k="piping">Power piping</button><button type="button" class="eq-btn" data-k="racking">Pallet racking</button></div>
     <div class="eq-result" id="eqResult" hidden>
       <h3 id="eqName"></h3>
@@ -538,7 +561,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 <nav class="mbar" aria-label="Quick contact">
   <a href="viber://chat?number=%2B639994229120&amp;draft=Hi%20BNW%20IntegriSafe%21%20I%20found%20you%20through%20your%20website%20and%20I%27d%20like%20to%20inquire%20about%20your%20services."><span>&#128172;</span>Viber</a>
   <a href="tel:+639994229120"><span>&#9742;</span>Call</a>
-  <a href="#contact" class="mq">Get a Quote</a>
+  <a href="#contact" class="mq">Get a Quote <b>&rarr;</b></a>
 </nav>
 <script>
 
@@ -570,6 +593,8 @@ var paused=false,tm;function pause(){paused=true;clearTimeout(tm);tm=setTimeout(
 ['pointerdown','touchstart','wheel','mouseenter'].forEach(function(e){t.addEventListener(e,pause,{passive:true})});
 setInterval(function(){if(paused||document.hidden)return;var r=t.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
 if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:step(),behavior:'smooth'})}},3200);});
+
+(function(){var g=document.getElementById('guide');if(!g||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){g.classList.add('seen');io.disconnect()}},{threshold:.3});io.observe(g)})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
