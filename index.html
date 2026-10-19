@@ -132,6 +132,23 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .channel:hover,.channel:active{transform:translateY(-2px);background:#183d8f}
 @media(max-width:600px){.hero-ctas{flex-direction:column}.hero-ctas .btn{width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.btn-gold::after,.cta-pulse,.arr,.btn-viber,.btn-viber .vb,.channel::after{animation:none}}
+
+/* stats strip */
+.proof{padding:34px 0}
+.proof-grid{grid-template-columns:repeat(4,1fr);gap:0}
+.stat{text-align:center;padding:6px 14px;border-left:1px solid rgba(226,192,106,.35)}
+.stat:first-child{border-left:0}
+.stat .sico{color:var(--gold-light);display:block;margin:0 auto 6px}
+.proof .stat strong{font-size:40px;line-height:1.05;color:var(--gold-light);display:block}
+.proof .stat span{font-size:14px;color:#d3dcf0;display:block;margin-top:4px}
+.proof .stat strong .count{display:inline;font-size:inherit;color:inherit;margin:0}
+@media(max-width:980px){
+  .proof-grid{grid-template-columns:1fr 1fr;gap:0}
+  .stat{padding:18px 10px}
+  .stat:nth-child(odd){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid rgba(226,192,106,.35)}
+}
+@media(max-width:600px){.proof .stat strong{font-size:34px}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -266,10 +283,10 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 
 <div class="proof">
   <div class="wrap proof-grid">
-    <div><strong>DOLE-OSHC Accredited</strong><span>Valid until August 2029</span></div>
-    <div><strong>PME-Led</strong><span>Licensed Professional Mechanical Engineer</span></div>
-    <div><strong>NDT Level 2</strong><span>UT · PT · MT practitioners</span></div>
-    <div><strong>25+ Years</strong><span>Combined field experience of our founders</span></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17h6"/></svg><strong><span class="count" data-to="25">25</span>+</strong><span>Years of combined field experience</span></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>24 hrs</strong><span>Quotation turnaround</span></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M2 16h20v2.5H2z"/><path d="M12 8v5M9 9.5v3.5M15 9.5v3.5"/></svg><strong>PME</strong><span>Licensed engineer&#8209;led</span></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><strong>2029</strong><span>DOLE-OSHC accredited until</span></div>
   </div>
 </div>
 
@@ -389,7 +406,6 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
         <a class="channel" href="mailto:info@bnwintegrisafe.ph"><span class="ico">@</span><span><small>Email</small><b>info@bnwintegrisafe.ph</b></span></a>
         <a class="channel" href="https://www.facebook.com/profile.php?id=61588464467287" target="_blank" rel="noopener"><span class="ico">f</span><span><small>Facebook</small><b>BNW IntegriSafe Inc.</b></span></a>
         <a class="channel" href="https://www.google.com/maps/search/?api=1&amp;query=BNW+Integrisafe%2C+Inc.&amp;query_place_id=ChIJl8nc97a3lzMRihh59bBBxgY" target="_blank" rel="noopener"><span class="ico">⌖</span><span><small>Office · Open in Google Maps</small><b>Unit 3F-V109, Symphony Tower 2, Sgt. Esguerra Ave., Brgy. South Triangle, Quezon City</b></span></a>
-        <a class="channel" href="https://waze.com/ul?ll=14.6342212,121.0414831&amp;navigate=yes" target="_blank" rel="noopener"><span class="ico">W</span><span><small>Waze</small><b>Navigate to BNW IntegriSafe</b></span></a>
       </div>
       <form id="quote">
         <h3>Request a quote</h3>
@@ -440,6 +456,13 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 </footer>
 
 <script>
+
+(function(){var el=document.querySelector('.count');if(!el||!('IntersectionObserver' in window))return;
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var to=+el.dataset.to;el.textContent='0';
+var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();var t0=null;
+function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
+requestAnimationFrame(step);},{threshold:.5});io.observe(el);})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
