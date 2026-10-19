@@ -196,6 +196,20 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
   .step h3{font-size:18px;line-height:1.2}
   .step p{font-size:15px!important}
 }
+
+/* toolkit carousel */
+.tools{display:flex!important;gap:14px;margin-top:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tools::-webkit-scrollbar{display:none}
+.tool{flex:0 0 240px;scroll-snap-align:start}
+.tool img{aspect-ratio:4/3}
+.tool div{padding:12px 14px!important}
+.tool h3{font-size:18px}
+.tool p{font-size:14px!important}
+.tools-hint{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--steel);margin-top:6px}
+.tools-dots{display:flex;gap:6px;justify-content:center;margin-top:6px}
+.tools-dots i{width:7px;height:7px;border-radius:50%;background:#c5cfe4;transition:all .25s}
+.tools-dots i.on{width:20px;border-radius:4px;background:var(--gold)}
+@media(max-width:600px){.tool{flex-basis:68vw}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -428,6 +442,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <div class="tool"><img src="images/equipment/vernier-caliper.jpg" alt="Vernier caliper" loading="lazy"><div><h3>Vernier Caliper</h3><p>Measures wear on hooks, pins, sheaves, and lifting components.</p></div></div>
       <div class="tool"><img src="images/equipment/digital-clamp-meter.jpg" alt="Digital clamp meter" loading="lazy"><div><h3>Digital Clamp Meter</h3><p>Checks electrical readings on hoists, cranes, and equipment controls.</p></div></div>
     </div>
+    <div class="tools-dots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -534,6 +549,18 @@ var d=D[b.dataset.k];cur=b.dataset.k;document.getElementById('eqName').textConte
 document.getElementById('eqDo').textContent=d.d;document.getElementById('eqGet').textContent=d.g;document.getElementById('eqWhy').textContent=d.t;
 res.hidden=false;res.style.animation='none';res.offsetHeight;res.style.animation='';var rb=res.getBoundingClientRect();if(rb.bottom>window.innerHeight-90||rb.top<80){res.scrollIntoView({behavior:'smooth',block:'nearest'});}});});
 document.getElementById('eqCta').addEventListener('click',function(){if(!cur)return;var c=document.querySelector('.chk input[data-k="'+cur+'"]');if(c)c.checked=true;});
+})();
+
+(function(){var t=document.querySelector('.tools');if(!t)return;var cards=t.querySelectorAll('.tool');var dots=document.querySelector('.tools-dots');
+cards.forEach(function(){dots.appendChild(document.createElement('i'))});var ds=dots.querySelectorAll('i');
+function cur(){var w=cards[0].offsetWidth+14;return Math.round(t.scrollLeft/w)}
+function mark(){var c=Math.min(cur(),ds.length-1);if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4)c=ds.length-1;ds.forEach(function(d,i){d.classList.toggle('on',i===c)})}
+t.addEventListener('scroll',function(){window.requestAnimationFrame(mark)});mark();
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var paused=false,timer;function pause(){paused=true;clearTimeout(timer);timer=setTimeout(function(){paused=false},6000)}
+['pointerdown','touchstart','wheel','mouseenter'].forEach(function(e){t.addEventListener(e,pause,{passive:true})});
+setInterval(function(){if(paused||document.hidden)return;var r=t.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight)return;
+var w=cards[0].offsetWidth+14;if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:w,behavior:'smooth'})}},2800);
 })();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
