@@ -322,6 +322,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .fc-cap .fc-hint{color:#fff;margin-top:6px}
 @media(max-width:860px){#team .team{grid-template-columns:1fr!important}}
 @media(prefers-reduced-motion:reduce){.fc-photo,.fc-hint{animation:none}.fc-in{transition:none}}
+
+/* flip back: full photo + caption panel */
+.fc-back{display:flex;flex-direction:column;background:var(--blue-dark)!important}
+.fc-back img{position:static!important;width:100%;height:auto!important;aspect-ratio:4/5;max-height:72%;object-fit:cover;object-position:center top;flex:0 1 auto;border-radius:14px 14px 0 0}
+.fc-cap{position:static!important;flex:1;background:var(--blue-dark)!important;padding:16px 20px 18px!important;display:flex;flex-direction:column;justify-content:center;text-align:left}
+.fc-cap p{color:#d3dcf0;font-size:14px;margin-top:6px;line-height:1.45}
+@media(max-width:860px){.fc-back img{max-height:none}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -580,7 +587,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
             <div class="chips"><span class="chip gold">PME · PRC License No. 0007053</span><span class="chip">DOLE-Accredited Safety Consultant · 1030-102124-OSHC-0607</span><span class="chip">OSHC Authorized Inspector</span><span class="chip">NDT Level 2 · UT · PT · MT</span></div>
             <span class="fc-hint">&#8635; Tap to see him in the field</span>
           </div>
-          <div class="fc-back"><img src="images/training-bnw.jpg" alt="Engr. Reyes leading a safety training session" loading="lazy"><div class="fc-cap"><b>In the field</b>Leading a safety training session<span class="fc-hint">&#8635; Tap to flip back</span></div></div>
+          <div class="fc-back"><img src="images/field-janjan.jpg" alt="Engr. Reyes leading a safety training session" loading="lazy"><div class="fc-cap"><b>In the field</b>Leading a safety training session for workers<p>From the classroom to the job site, Engr. Reyes makes sure every team understands the hazards before work begins.</p><span class="fc-hint">&#8635; Tap to flip back</span></div></div>
         </div>
       </div>
       <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Mark Clave in the field">
@@ -590,11 +597,11 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
             <h3>Mark B. Clave</h3>
             <p class="fc-role">Co-Founder · VP for Operations</p>
             <div class="fc-exp"><b><span class="count" data-to="10">10</span>+</b><span>years across heavy equipment, lifting &amp; NDT</span></div>
-            <blockquote>&ldquo;I've operated and inspected heavy equipment for over a decade. I know what to look for, and what can't be missed.&rdquo;</blockquote>
+            <blockquote>&ldquo;I've inspected heavy equipment for over a decade. I know what to look for, and what can't be missed.&rdquo;</blockquote>
             <div class="chips"><span class="chip gold">OSHC Authorized Inspector</span><span class="chip">NDT Level 2 · UT · PT · MT</span><span class="chip">TESDA NC II Heavy Equipment Operator</span></div>
             <span class="fc-hint">&#8635; Tap to see him in the field</span>
           </div>
-          <div class="fc-back"><img src="images/utg-inspection.jpg" alt="Mark Clave performing ultrasonic thickness gauging on a pressure vessel" loading="lazy"><div class="fc-cap"><b>In the field</b>UT thickness gauging on a pressure vessel<span class="fc-hint">&#8635; Tap to flip back</span></div></div>
+          <div class="fc-back"><img src="images/field-mark.jpg" alt="Mark Clave performing ultrasonic thickness gauging on a pressure vessel" loading="lazy"><div class="fc-cap"><b>In the field</b>UT thickness gauging on a pressure vessel<p>Mark takes readings point by point to confirm the shell is still safe to operate.</p><span class="fc-hint">&#8635; Tap to flip back</span></div></div>
         </div>
       </div>
     </div>
