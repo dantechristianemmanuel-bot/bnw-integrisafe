@@ -197,6 +197,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
   .step p{font-size:15px!important}
 }
 
+
+/* services carousel */
+.cards.carousel{display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 14px;margin-top:32px;scrollbar-width:none}
+.cards.carousel::-webkit-scrollbar{display:none}
+.cards.carousel .card{flex:0 0 280px;scroll-snap-align:start}
+@media(max-width:600px){.cards.carousel .card{flex-basis:76vw}}
 /* toolkit carousel */
 .tools{display:flex!important;gap:14px;margin-top:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tools::-webkit-scrollbar{display:none}
@@ -206,9 +212,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .tool h3{font-size:18px}
 .tool p{font-size:14px!important}
 .tools-hint{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--steel);margin-top:6px}
-.tools-dots{display:flex;gap:6px;justify-content:center;margin-top:6px}
-.tools-dots i{width:7px;height:7px;border-radius:50%;background:#c5cfe4;transition:all .25s}
-.tools-dots i.on{width:20px;border-radius:4px;background:var(--gold)}
+.car-dots{display:flex;gap:6px;justify-content:center;margin-top:6px}
+.car-dots i{width:7px;height:7px;border-radius:50%;background:#c5cfe4;transition:all .25s}
+.car-dots i.on{width:20px;border-radius:4px;background:var(--gold)}
 @media(max-width:600px){.tool{flex-basis:68vw}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
@@ -356,7 +362,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <span class="eyebrow">Services</span>
     <h2>What we inspect, test, and certify</h2>
     <p class="lead">One provider for your equipment compliance — from construction heavy equipment to boilers and warehouse racking.</p>
-    <div class="cards">
+    <div class="cards carousel">
       <article class="card"><div class="art"><img src="images/crane-inspection.jpg" alt="BNW inspector measuring a crane hook block on site" loading="lazy" width="720" height="420"></div><h3>Heavy Equipment Inspection</h3><p>Cranes, forklifts, excavators, payloaders, graders, and other construction heavy equipment.</p><div class="get"><b>You get:</b> test report and certificate</div></article>
       <article class="card"><div class="art"><img src="images/lift.jpg" alt="Overhead crane hook block" loading="lazy" width="720" height="420"></div><h3>Load Testing &amp; Lifting Gear</h3><p>Overhead cranes, hoists, chain blocks, and lifting accessories such as slings, shackles, and hooks.</p><div class="get"><b>You get:</b> load test report and certificate</div></article>
       <article class="card"><div class="art"><img src="images/utg-inspection.jpg" alt="BNW inspector performing ultrasonic thickness gauging on a pressure vessel" loading="lazy" width="720" height="420"></div><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> NDT report with readings and findings</div></article>
@@ -366,6 +372,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <article class="card"><div class="art"><img src="images/training-bnw.jpg?v=2" alt="BNW safety training session with workers" loading="lazy" width="720" height="420"></div><h3>Safety Training</h3><p>Practical courses for workers and supervisors, onsite or online — including confined space and hydrostatic testing.</p><div class="get"><b>You get:</b> certificate of completion</div></article>
       <article class="card"><div class="art"><img src="images/consult.jpg" alt="Inspectors reviewing a checklist on site" loading="lazy" width="720" height="420"></div><h3>Engineering Consultancy</h3><p>Guidance on equipment safety, compliance gaps, and documentation from a licensed PME.</p><div class="get"><b>You get:</b> written findings and recommendations</div></article>
     </div>
+    <div class="car-dots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -434,7 +441,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <span class="eyebrow">Our toolkit</span>
     <h2>Calibrated instruments, brought to your site</h2>
     <p class="lead">We use calibrated testing equipment and tools to ensure the accuracy and reliability of every result we report.</p>
-    <div class="tools">
+    <div class="tools carousel">
       <div class="tool"><img src="images/equipment/digital-crane-scale.jpg" alt="Digital crane scale" loading="lazy"><div><h3>Digital Crane Scale</h3><p>Verifies applied test loads during crane and hoist load testing.</p></div></div>
       <div class="tool"><img src="images/equipment/hydraulic-toe-jack.jpg" alt="Hydrostatic test pump" loading="lazy"><div><h3>Hydrostatic Test Pump</h3><p>Pressurizes vessels, piping, and hoses for hydrostatic tests.</p></div></div>
       <div class="tool"><img src="images/equipment/pressure-gauge.jpg" alt="Test pressure gauges" loading="lazy"><div><h3>Test Pressure Gauges</h3><p>Reads and records pressure during hydrostatic and pneumatic testing.</p></div></div>
@@ -442,7 +449,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <div class="tool"><img src="images/equipment/vernier-caliper.jpg" alt="Vernier caliper" loading="lazy"><div><h3>Vernier Caliper</h3><p>Measures wear on hooks, pins, sheaves, and lifting components.</p></div></div>
       <div class="tool"><img src="images/equipment/digital-clamp-meter.jpg" alt="Digital clamp meter" loading="lazy"><div><h3>Digital Clamp Meter</h3><p>Checks electrical readings on hoists, cranes, and equipment controls.</p></div></div>
     </div>
-    <div class="tools-dots" aria-hidden="true"></div>
+    <div class="car-dots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -551,17 +558,18 @@ res.hidden=false;res.style.animation='none';res.offsetHeight;res.style.animation
 document.getElementById('eqCta').addEventListener('click',function(){if(!cur)return;var c=document.querySelector('.chk input[data-k="'+cur+'"]');if(c)c.checked=true;});
 })();
 
-(function(){var t=document.querySelector('.tools');if(!t)return;var cards=t.querySelectorAll('.tool');var dots=document.querySelector('.tools-dots');
-cards.forEach(function(){dots.appendChild(document.createElement('i'))});var ds=dots.querySelectorAll('i');
-function cur(){var w=cards[0].offsetWidth+14;return Math.round(t.scrollLeft/w)}
-function mark(){var c=Math.min(cur(),ds.length-1);if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4)c=ds.length-1;ds.forEach(function(d,i){d.classList.toggle('on',i===c)})}
-t.addEventListener('scroll',function(){window.requestAnimationFrame(mark)});mark();
+
+
+document.querySelectorAll('.carousel').forEach(function(t){var cards=t.children;if(!cards.length)return;var dots=t.nextElementSibling;var ds=[];
+if(dots&&dots.classList.contains('car-dots')){for(var n=0;n<cards.length;n++){dots.appendChild(document.createElement('i'))}ds=dots.querySelectorAll('i')}
+function step(){return cards[0].offsetWidth+parseFloat(getComputedStyle(t).columnGap||getComputedStyle(t).gap||14)}
+function mark(){if(!ds.length)return;var c=Math.round(t.scrollLeft/step());if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4)c=ds.length-1;ds.forEach(function(d,i){d.classList.toggle('on',i===c)})}
+t.addEventListener('scroll',function(){requestAnimationFrame(mark)});mark();
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-var paused=false,timer;function pause(){paused=true;clearTimeout(timer);timer=setTimeout(function(){paused=false},6000)}
+var paused=false,tm;function pause(){paused=true;clearTimeout(tm);tm=setTimeout(function(){paused=false},6000)}
 ['pointerdown','touchstart','wheel','mouseenter'].forEach(function(e){t.addEventListener(e,pause,{passive:true})});
-setInterval(function(){if(paused||document.hidden)return;var r=t.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight)return;
-var w=cards[0].offsetWidth+14;if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:w,behavior:'smooth'})}},2800);
-})();
+setInterval(function(){if(paused||document.hidden)return;var r=t.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:step(),behavior:'smooth'})}},3200);});
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
