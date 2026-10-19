@@ -160,6 +160,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
   .hs-dots{right:10px;top:10px;bottom:auto}
 }
 @media(prefers-reduced-motion:reduce){.hero-slides .hs.on img{animation:none}}
+
+/* tighter mobile hero */
+@media(max-width:980px){
+  .hero-grid{row-gap:0!important;column-gap:0!important}
+  .hero{padding:26px 0 40px!important}
+  .hero .badge{font-size:11.5px;padding:5px 12px;margin-bottom:14px;letter-spacing:1.2px}
+  .hero h1{margin-bottom:14px}
+  .hero-slides{margin:2px 0 18px!important}
+}
 /* stats strip */
 .proof{padding:34px 0}
 .proof-grid{grid-template-columns:repeat(4,1fr);gap:0}
@@ -429,7 +438,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <span class="badge"><i></i>DOLE-OSHC Accredited Testing Organization</span>
+      <span class="badge"><i></i>DOLE-OSHC Accredited</span>
       <h1><span>Your equipment, <em>certified.</em></span> <span>Your operations, <em>uninterrupted.</em></span></h1>
       <p>Expiring permit? DOLE inspection coming up? Project on hold for certificates? Our DOLE-OSHC authorized inspectors come to your site, test your equipment, and get you certified, fast.</p>
       <div class="hero-ctas">
