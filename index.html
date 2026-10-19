@@ -149,6 +149,35 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
   .stat:nth-child(n+3){border-top:1px solid rgba(226,192,106,.35)}
 }
 @media(max-width:600px){.proof .stat strong{font-size:34px}}
+
+/* guide */
+.guide{background:var(--white)}
+.eq-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.eq-btn{font:inherit;font-size:15px;font-weight:600;padding:10px 16px;border-radius:99px;border:1.5px solid var(--blue);background:#fff;color:var(--blue);cursor:pointer;transition:all .15s}
+.eq-btn:hover{background:var(--paper)}
+.eq-btn.on{background:var(--blue);color:#fff}
+.eq-result{margin-top:24px;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:var(--radius);padding:24px;background:var(--paper);max-width:820px;animation:fadeUp .3s ease}
+.eq-result h3{font-size:24px;color:var(--blue-dark);margin-bottom:10px}
+.eq-result dl div{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.eq-result dt{font-weight:600;color:var(--steel)}
+.eq-result .btn{margin-top:18px}
+.eq-note{font-size:13px;color:var(--steel);margin-top:12px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* form checkboxes */
+.eqset{border:0}
+.eqset legend{font-size:14px;font-weight:600;margin-bottom:8px}
+.chks{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+.chk{display:flex!important;align-items:flex-start;gap:8px;font-weight:500!important;font-size:14.5px!important;cursor:pointer}
+.chk input{width:18px;height:18px;margin-top:2px;flex:0 0 18px;accent-color:var(--blue)}
+/* sticky mobile bar */
+.mbar{display:none}
+@media(max-width:860px){
+  .mbar{display:grid;grid-template-columns:1fr 1fr 1.4fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:3px solid var(--gold);box-shadow:0 -6px 18px rgba(10,29,71,.15);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:700;font-size:15px;color:var(--blue);border:1.5px solid var(--blue);border-radius:8px;padding:11px 6px}
+  .mbar a.mq{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--blue-deep);border-color:var(--gold)}
+  body{padding-bottom:74px}
+}
+@media(max-width:600px){.chks{grid-template-columns:1fr}.eq-result dl div{grid-template-columns:1fr;gap:2px}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -308,6 +337,25 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   </div>
 </section>
 
+<section id="guide" class="guide">
+  <div class="wrap">
+    <span class="eyebrow">Quick guide</span>
+    <h2>Not sure what your equipment needs?</h2>
+    <p class="lead">Tap your equipment to see what we typically do and what you'll receive.</p>
+    <div class="eq-grid"><button type="button" class="eq-btn" data-k="crane">Mobile / crawler crane</button><button type="button" class="eq-btn" data-k="heavy">Excavator, payloader, grader &amp; other heavy equipment</button><button type="button" class="eq-btn" data-k="forklift">Forklift</button><button type="button" class="eq-btn" data-k="ohc">Overhead crane / hoist / chain block</button><button type="button" class="eq-btn" data-k="rigging">Slings, shackles &amp; lifting accessories</button><button type="button" class="eq-btn" data-k="boiler">Boiler</button><button type="button" class="eq-btn" data-k="vessel">Air receiver / pressure vessel</button><button type="button" class="eq-btn" data-k="genset">Generator set</button><button type="button" class="eq-btn" data-k="piping">Power piping</button><button type="button" class="eq-btn" data-k="racking">Pallet racking</button></div>
+    <div class="eq-result" id="eqResult" hidden>
+      <h3 id="eqName"></h3>
+      <dl>
+        <div><dt>What we do</dt><dd id="eqDo"></dd></div>
+        <div><dt>What you receive</dt><dd id="eqGet"></dd></div>
+        <div><dt>Why it matters</dt><dd id="eqWhy"></dd></div>
+      </dl>
+      <a class="btn btn-gold" id="eqCta" href="#contact">Get a quote for this <span class="arr">&rarr;</span></a>
+      <p class="eq-note">General guide only. Requirements depend on your site and equipment, so message us to confirm what applies to you.</p>
+    </div>
+  </div>
+</section>
+
 <section id="process" class="process">
   <div class="wrap">
     <span class="eyebrow">How it works</span>
@@ -404,6 +452,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
         <a class="channel" href="https://m.me/61588464467287" target="_blank" rel="noopener"><span class="ico">m</span><span><small>Messenger</small><b>Chat with us on Facebook</b></span></a>
         <a class="channel" href="tel:+639994229120"><span class="ico">☎</span><span><small>Call</small><b>0999 422 9120</b></span></a>
         <a class="channel" href="mailto:info@bnwintegrisafe.ph"><span class="ico">@</span><span><small>Email</small><b>info@bnwintegrisafe.ph</b></span></a>
+        <a class="channel" href="BNW-IntegriSafe-Company-Profile.pdf" download><span class="ico">&#8595;</span><span><small>Company profile (PDF)</small><b>Download for vendor accreditation</b></span></a>
         <a class="channel" href="https://www.facebook.com/profile.php?id=61588464467287" target="_blank" rel="noopener"><span class="ico">f</span><span><small>Facebook</small><b>BNW IntegriSafe Inc.</b></span></a>
         <a class="channel" href="https://www.google.com/maps/search/?api=1&amp;query=BNW+Integrisafe%2C+Inc.&amp;query_place_id=ChIJl8nc97a3lzMRihh59bBBxgY" target="_blank" rel="noopener"><span class="ico">⌖</span><span><small>Office · Open in Google Maps</small><b>Unit 3F-V109, Symphony Tower 2, Sgt. Esguerra Ave., Brgy. South Triangle, Quezon City</b></span></a>
       </div>
@@ -417,15 +466,8 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
           <label>Mobile / Viber<input name="phone" required></label>
           <label>Site location<input name="site" placeholder="City / Province" required></label>
         </div>
-        <label>Service needed
-          <select name="service">
-            <option>Heavy Equipment Inspection</option><option>Load Testing &amp; Lifting Gear</option>
-            <option>Non-Destructive Testing (UTG / PT / MPI)</option><option>Hydrostatic Testing</option>
-            <option>DOLE PTO / CEI Support</option><option>Storage Racking Inspection</option>
-            <option>Safety Training</option><option>Engineering Consultancy</option><option>Other / Not sure</option>
-          </select>
-        </label>
-        <label>Equipment list<textarea name="details" placeholder="e.g. 2 units forklift 3-ton, 1 unit overhead crane 5-ton" required></textarea></label>
+        <fieldset class="eqset"><legend>Equipment / service (tick all that apply)</legend><div class="chks"><label class="chk"><input type="checkbox" name="eq" value="Mobile / crawler crane" data-k="crane"> Mobile / crawler crane</label><label class="chk"><input type="checkbox" name="eq" value="Excavator, payloader, grader & other heavy equipment" data-k="heavy"> Excavator, payloader, grader &amp; other heavy equipment</label><label class="chk"><input type="checkbox" name="eq" value="Forklift" data-k="forklift"> Forklift</label><label class="chk"><input type="checkbox" name="eq" value="Overhead crane / hoist / chain block" data-k="ohc"> Overhead crane / hoist / chain block</label><label class="chk"><input type="checkbox" name="eq" value="Slings, shackles & lifting accessories" data-k="rigging"> Slings, shackles &amp; lifting accessories</label><label class="chk"><input type="checkbox" name="eq" value="Boiler" data-k="boiler"> Boiler</label><label class="chk"><input type="checkbox" name="eq" value="Air receiver / pressure vessel" data-k="vessel"> Air receiver / pressure vessel</label><label class="chk"><input type="checkbox" name="eq" value="Generator set" data-k="genset"> Generator set</label><label class="chk"><input type="checkbox" name="eq" value="Power piping" data-k="piping"> Power piping</label><label class="chk"><input type="checkbox" name="eq" value="Pallet racking" data-k="racking"> Pallet racking</label><label class="chk"><input type="checkbox" name="eq" value="NDT (UTG / PT / MPI)"> NDT (UTG / PT / MPI)</label><label class="chk"><input type="checkbox" name="eq" value="Safety training"> Safety training</label><label class="chk"><input type="checkbox" name="eq" value="Other / Not sure"> Other / Not sure</label></div></fieldset>
+        <label>Capacity, quantity &amp; other details<textarea name="details" placeholder="e.g. 2 units forklift 3-ton, 1 unit overhead crane 5-ton"></textarea></label>
         <button class="btn btn-gold cta-pulse" type="submit">Send request <span class="arr">&rarr;</span></button>
         <small>This opens your email app with your details filled in — just press send.</small>
       </form>
@@ -448,13 +490,18 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       </div>
       <div>
         <h4>Contact</h4>
-        <a href="tel:+639994229120">0999 422 9120</a><a href="mailto:info@bnwintegrisafe.ph">info@bnwintegrisafe.ph</a><a href="https://www.facebook.com/profile.php?id=61588464467287" target="_blank" rel="noopener">Facebook</a>
+        <a href="BNW-IntegriSafe-Company-Profile.pdf" download>Company Profile (PDF)</a><a href="tel:+639994229120">0999 422 9120</a><a href="mailto:info@bnwintegrisafe.ph">info@bnwintegrisafe.ph</a><a href="https://www.facebook.com/profile.php?id=61588464467287" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
     <div class="copy">© <span id="y">2026</span> BNW IntegriSafe Inc. · Trusted Inspection. Proven Safety.</div>
   </div>
 </footer>
 
+<nav class="mbar" aria-label="Quick contact">
+  <a href="viber://chat?number=%2B639994229120&amp;draft=Hi%20BNW%20IntegriSafe%21%20I%20found%20you%20through%20your%20website%20and%20I%27d%20like%20to%20inquire%20about%20your%20services."><span>&#128172;</span>Viber</a>
+  <a href="tel:+639994229120"><span>&#9742;</span>Call</a>
+  <a href="#contact" class="mq">Get a Quote</a>
+</nav>
 <script>
 
 (function(){var el=document.querySelector('.count');if(!el||!('IntersectionObserver' in window))return;
@@ -463,11 +510,20 @@ var to=+el.dataset.to;el.textContent='0';
 var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();var t0=null;
 function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
 requestAnimationFrame(step);},{threshold:.5});io.observe(el);})();
+
+(function(){var D={"crane": {"n": "Mobile / crawler crane", "d": "Inspection and load testing with calibrated load measurement", "g": "Test report and certificate", "t": "Construction heavy equipment must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "heavy": {"n": "Excavator, payloader, grader & other heavy equipment", "d": "Visual, functional, and safety device inspection", "g": "Test report and certificate", "t": "When used in construction, must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "forklift": {"n": "Forklift", "d": "Inspection and load test at rated capacity", "g": "Load test report and certificate", "t": "Required under DOLE D.O. 13 when used in construction; commonly required by client audits and site safety programs elsewhere."}, "ohc": {"n": "Overhead crane / hoist / chain block", "d": "Inspection and proof load testing", "g": "Load test report and certificate", "t": "Commonly required during DOLE inspections, client audits, and site safety programs."}, "rigging": {"n": "Slings, shackles & lifting accessories", "d": "Inspection and proof load testing", "g": "Test certificate per item", "t": "Commonly required before use on site and by client audits."}, "boiler": {"n": "Boiler", "d": "Inspection, hydrostatic test, and UT thickness gauging", "g": "Test results and documents for your DOLE PTO/CEI application", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1160."}, "vessel": {"n": "Air receiver / pressure vessel", "d": "Hydrostatic test and UT thickness gauging", "g": "Test report and documents for your DOLE PTO/CEI application", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1170."}, "genset": {"n": "Generator set", "d": "Inspection and documentation", "g": "Documents for your DOLE PTO/CEI application", "t": "Typically requires a DOLE Permit to Operate."}, "piping": {"n": "Power piping", "d": "Hydrostatic test and inspection", "g": "Test report and documents for your DOLE PTO/CEI application", "t": "Typically covered by DOLE PTO/CEI together with your steam or boiler system."}, "racking": {"n": "Pallet racking", "d": "Inspection for damage, overloading, and safe installation", "g": "Inspection report with recommendations", "t": "Recommended as part of your warehouse safety program."}};var res=document.getElementById('eqResult');var cur=null;
+document.querySelectorAll('.eq-btn').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.eq-btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+var d=D[b.dataset.k];cur=b.dataset.k;document.getElementById('eqName').textContent=d.n;
+document.getElementById('eqDo').textContent=d.d;document.getElementById('eqGet').textContent=d.g;document.getElementById('eqWhy').textContent=d.t;
+res.hidden=false;res.style.animation='none';res.offsetHeight;res.style.animation='';});});
+document.getElementById('eqCta').addEventListener('click',function(){if(!cur)return;var c=document.querySelector('.chk input[data-k="'+cur+'"]');if(c)c.checked=true;});
+})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
   var f=new FormData(this);
-  var body='Name: '+f.get('name')+'\nCompany: '+f.get('company')+'\nMobile/Viber: '+f.get('phone')+'\nSite location: '+f.get('site')+'\nService: '+f.get('service')+'\n\nEquipment list:\n'+f.get('details');
+  var body='Name: '+f.get('name')+'\nCompany: '+f.get('company')+'\nMobile/Viber: '+f.get('phone')+'\nSite location: '+f.get('site')+'\nEquipment / service: '+(f.getAll('eq').join(', ')||'Not specified')+'\n\nDetails:\n'+(f.get('details')||'-');
   location.href='mailto:quotes@bnwintegrisafe.ph?subject='+encodeURIComponent('Quote request – '+f.get('company'))+'&body='+encodeURIComponent(body);
 });
 </script>
