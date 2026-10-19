@@ -25,6 +25,9 @@
   --radius:10px; --max:1160px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;max-width:100%}
+.hero-grid>*,.contact-grid>*,.acc-grid>*,.cards>*,.pillars>*,.team>*,.steps>*,.tools>*{min-width:0}
+.channel b,.creds li,.facts dd,.bio,h1,h2,h3{overflow-wrap:anywhere}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{font-family:"Barlow",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-size:17px}
 img{max-width:100%;display:block}
@@ -216,13 +219,13 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   <div class="wrap hero-grid">
     <div>
       <span class="badge"><i></i>DOLE-OSHC Accredited Testing Organization</span>
-      <h1>Certified, compliant, and safe to put to work.</h1>
-      <p>Expiring permits, a DOLE inspection, or a project that can't start without certificates? Our DOLE-OSHC authorized inspectors, led by a PME with 15+ years in the field, test your equipment on site and certify what's safe to use.</p>
+      <h1>Your equipment, certified. Your operations, uninterrupted.</h1>
+      <p>Expiring permit? DOLE inspection coming up? Project on hold for certificates? Our DOLE-OSHC authorized inspectors come to your site, test your equipment, and get you certified, fast.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" href="#contact">Get a Quote in 24 Hours</a>
         <a class="btn btn-ghost" href="viber://chat?number=%2B639994229120&amp;draft=Hi%20BNW%20IntegriSafe%21%20I%20found%20you%20through%20your%20website%20and%20I%27d%20like%20to%20inquire%20about%20your%20services.">Viber Us</a>
       </div>
-      <p class="hero-note">Serving construction, manufacturing, power, and logistics sites nationwide.</p>
+      <p class="hero-note">From construction sites and factories to power plants and warehouses, if it needs certifying, we come to you, nationwide.</p>
     </div>
     <figure class="hero-photo">
       <img src="images/forklift-inspection.jpg" alt="BNW IntegriSafe team on site with a crane during inspection">
