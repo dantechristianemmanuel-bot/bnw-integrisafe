@@ -265,6 +265,26 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .guide.seen .eq-btn:nth-child(2){animation-delay:.05s}.guide.seen .eq-btn:nth-child(3){animation-delay:.1s}.guide.seen .eq-btn:nth-child(4){animation-delay:.15s}.guide.seen .eq-btn:nth-child(5){animation-delay:.2s}.guide.seen .eq-btn:nth-child(6){animation-delay:.25s}.guide.seen .eq-btn:nth-child(7){animation-delay:.3s}.guide.seen .eq-btn:nth-child(8){animation-delay:.35s}.guide.seen .eq-btn:nth-child(9){animation-delay:.4s}.guide.seen .eq-btn:nth-child(10){animation-delay:.45s}
 @keyframes pop{0%{transform:scale(.92);opacity:.4}60%{transform:scale(1.04);opacity:1}100%{transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.mbar a.mq,.mbar a.mq::after,.mbar a.mq b,.eq-tap span,.guide.seen .eq-btn{animation:none}}
+
+/* stats why lines */
+.proof .stat em{display:block;font-style:normal;font-size:12.5px;line-height:1.4;color:#aebde0;margin-top:6px;max-width:230px;margin-left:auto;margin-right:auto}
+/* quality showcase */
+.quality{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(10,29,71,.82),rgba(15,42,102,.9)),url(images/forklift-inspection.jpg) center/cover no-repeat}
+.quality .wrap{position:relative;z-index:1}
+.q-lead{color:#d3dcf0;font-size:17px;margin-top:4px}
+.pillar{position:relative;overflow:hidden;background:rgba(20,51,122,.55)!important;backdrop-filter:blur(4px);transition:transform .25s,box-shadow .25s,border-color .25s}
+.pillar:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(0,0,0,.35);border-color:var(--gold)!important}
+.pillar::before{content:"";position:absolute;top:0;left:-70%;width:50%;height:4px;background:linear-gradient(90deg,transparent,#fff7d6,transparent);animation:topshine 4s ease-in-out infinite}
+.pillar:nth-child(2)::before{animation-delay:1s}.pillar:nth-child(3)::before{animation-delay:2s}.pillar:nth-child(4)::before{animation-delay:3s}
+@keyframes topshine{0%{left:-70%}50%,100%{left:120%}}
+.picon{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--blue-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));box-shadow:0 0 0 6px rgba(226,192,106,.15)}
+.pillar h3{padding-right:52px}
+.reveal .pillar{opacity:0;transform:translateY(28px)}
+.reveal.in .pillar{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+.reveal.in .pillar:nth-child(2){transition-delay:.12s}.reveal.in .pillar:nth-child(3){transition-delay:.24s}.reveal.in .pillar:nth-child(4){transition-delay:.36s}
+.reveal.in .picon{animation:iconpop .6s ease .3s both}
+@keyframes iconpop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.pillar::before{animation:none}.reveal .pillar{opacity:1;transform:none}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -336,7 +356,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   .proof-grid{grid-template-columns:repeat(2,1fr)}
   .team{grid-template-columns:1fr}
   .hero-grid,.acc-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
-  .acc-grid img{max-width:380px}
+  .acc-grid img{max-width:380px;width:100%;justify-self:center;margin:0 auto}
 }
 @media(max-width:860px){
   .menu-btn{display:block}
@@ -385,7 +405,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <h1><span>Your equipment, <em>certified.</em></span> <span>Your operations, <em>uninterrupted.</em></span></h1>
       <p>Expiring permit? DOLE inspection coming up? Project on hold for certificates? Our DOLE-OSHC authorized inspectors come to your site, test your equipment, and get you certified, fast.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold cta-pulse" href="#contact">Get a Quote in 24 Hours <span class="arr">&rarr;</span></a>
+        <a class="btn btn-gold cta-pulse" href="#contact">Get a Quote Within 24 Hrs <span class="arr">&rarr;</span></a>
         <a class="btn btn-ghost btn-viber" href="viber://chat?number=%2B639994229120&amp;draft=Hi%20BNW%20IntegriSafe%21%20I%20found%20you%20through%20your%20website%20and%20I%27d%20like%20to%20inquire%20about%20your%20services."><svg class="vb" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2C6.5 2 2 5.9 2 10.7c0 2.7 1.4 5.1 3.7 6.7L5 22l4.3-2.6c.9.2 1.8.3 2.7.3 5.5 0 10-3.9 10-8.7S17.5 2 12 2zm-4 10a1.3 1.3 0 1 1 0-2.6A1.3 1.3 0 0 1 8 12zm4 0a1.3 1.3 0 1 1 0-2.6A1.3 1.3 0 0 1 12 12zm4 0a1.3 1.3 0 1 1 0-2.6A1.3 1.3 0 0 1 16 12z"/></svg> Viber Us</a>
       </div>
       <p class="hero-note">From construction sites and factories to power plants and warehouses, if it needs certifying, we come to you, nationwide.</p>
@@ -401,10 +421,10 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 
 <div class="proof">
   <div class="wrap proof-grid">
-    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17h6"/></svg><strong><span class="count" data-to="25">25</span>+</strong><span>Years of combined field experience</span></div>
-    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>24 hrs</strong><span>Quotation turnaround</span></div>
-    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M2 16h20v2.5H2z"/><path d="M12 8v5M9 9.5v3.5M15 9.5v3.5"/></svg><strong>PME</strong><span>Licensed engineer&#8209;led</span></div>
-    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><strong>2029</strong><span>DOLE-OSHC accredited until</span></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M8 17h6"/></svg><strong><span class="count" data-to="25">25</span>+</strong><span>Years of combined field experience</span><em>Seasoned judgment on every inspection, not first-timers on your equipment.</em></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong>24 hrs</strong><span>Quotation within 24 hours</span><em>Plan your budget and schedule without waiting days for a quote.</em></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M2 16h20v2.5H2z"/><path d="M12 8v5M9 9.5v3.5M15 9.5v3.5"/></svg><strong>PME</strong><span>Licensed engineer&#8209;led</span><em>A licensed engineer leads the work and stands behind our reports.</em></div>
+    <div class="stat"><svg class="sico" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><strong>2029</strong><span>DOLE-OSHC accredited until</span><em>Current, verifiable accreditation for construction heavy equipment.</em></div>
   </div>
 </div>
 
@@ -479,11 +499,12 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   <div class="wrap">
     <span class="eyebrow">Why clients trust our results</span>
     <h2>Reliable inspections, backed by people, standards, and calibrated tools</h2>
-    <div class="pillars">
-      <div class="pillar"><span class="pnum">01</span><h3>DOLE-OSHC Authorized Inspectors</h3><p>Your equipment is inspected by OSHC-authorized inspectors who know exactly what DOLE requires for your permits and certifications.</p></div>
-      <div class="pillar"><span class="pnum">02</span><h3>Standards-Based Inspection</h3><p>Every inspection follows the applicable Philippine OSH Standards and DOLE issuances, manufacturer specifications, and recognized engineering codes.</p></div>
-      <div class="pillar"><span class="pnum">03</span><h3>Calibrated Equipment &amp; Tools</h3><p>We test with calibrated instruments to ensure the accuracy and reliability of every reading in your report.</p></div>
-      <div class="pillar"><span class="pnum">04</span><h3>Trained, Multidisciplinary Team</h3><p>Safety professionals, engineers, technical inspectors, and heavy equipment operators, continuously trained on current standards and practices.</p></div>
+    <p class="q-lead">Four things we never compromise on, on every job, at every site.</p>
+    <div class="pillars reveal">
+      <div class="pillar"><span class="pnum">01</span><span class="picon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.2c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14.5 10h4M14.5 13.5h3"/></svg></span><h3>DOLE-OSHC Authorized Inspectors</h3><p>Your equipment is inspected by OSHC-authorized inspectors who know exactly what DOLE requires for your permits and certifications.</p></div>
+      <div class="pillar"><span class="pnum">02</span><span class="picon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5h6a2 2 0 0 1 2 2V20a1.6 1.6 0 0 0-1.6-1.6H4z"/><path d="M20 4.5h-6a2 2 0 0 0-2 2V20a1.6 1.6 0 0 1 1.6-1.6H20z"/></svg></span><h3>Standards-Based Inspection</h3><p>Every inspection follows the applicable Philippine OSH Standards and DOLE issuances, manufacturer specifications, and recognized engineering codes.</p></div>
+      <div class="pillar"><span class="pnum">03</span><span class="picon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4-5"/><circle cx="12" cy="15" r="1.4"/><path d="M6.5 15h-1M18.5 15h-1M12 8.2v1"/></svg></span><h3>Calibrated Equipment &amp; Tools</h3><p>We test with calibrated instruments to ensure the accuracy and reliability of every reading in your report.</p></div>
+      <div class="pillar"><span class="pnum">04</span><span class="picon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3.5 19c.7-3 2.8-4.6 5.5-4.6S13.8 16 14.5 19M14.5 15.2c.8-.5 1.6-.8 2.5-.8 2 0 3.5 1.3 4 4"/></svg></span><h3>Trained, Multidisciplinary Team</h3><p>Safety professionals, engineers, technical inspectors, and heavy equipment operators, continuously trained on current standards and practices.</p></div>
     </div>
   </div>
 </section>
@@ -627,6 +648,9 @@ if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smo
 
 (function(){var hs=document.querySelectorAll('.hero-slides .hs'),dots=document.querySelectorAll('.hs-dots i');if(hs.length<2)return;var i=0;
 setInterval(function(){if(document.hidden)return;hs[i].classList.remove('on');dots[i].classList.remove('on');i=(i+1)%hs.length;hs[i].classList.add('on');dots[i].classList.add('on');},4500);})();
+
+(function(){var p=document.querySelector('.pillars.reveal');if(!p)return;if(!('IntersectionObserver' in window)){p.classList.add('in');return}
+var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){p.classList.add('in');io.disconnect()}},{threshold:.15});io.observe(p)})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
