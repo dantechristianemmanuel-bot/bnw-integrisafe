@@ -97,6 +97,20 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .facts dt{color:var(--steel)}
 .note{font-size:15px;color:var(--steel);background:var(--paper);padding:14px 16px;border-left:4px solid var(--gold);border-radius:4px}
 
+
+/* quality */
+.quality{background:var(--blue-dark);color:#fff}
+.quality h2{color:#fff;max-width:760px}
+.quality .eyebrow{color:var(--gold-light)}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.pillar{background:#14337a;border:1px solid #2b4785;border-radius:var(--radius);padding:24px 22px;border-top:4px solid var(--gold)}
+.pillar .pnum{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:30px;color:var(--gold-light);display:block;margin-bottom:6px}
+.pillar h3{color:#fff;margin-bottom:8px}
+.pillar p{color:#d3dcf0;font-size:15.5px}
+.exp{display:inline-block;margin-top:8px;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--blue-deep);font-weight:700;font-size:13px;padding:3px 10px;border-radius:99px}
+.bio{color:var(--ink-2)!important;font-size:15px;margin-top:10px}
+@media(max-width:980px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.pillars{grid-template-columns:1fr}}
 /* toolkit */
 .toolkit{background:var(--paper)}
 .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
@@ -220,7 +234,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <div><strong>DOLE-OSHC Accredited</strong><span>Valid until August 2029</span></div>
     <div><strong>PME-Led</strong><span>Licensed Professional Mechanical Engineer</span></div>
     <div><strong>NDT Level 2</strong><span>UT · PT · MT practitioners</span></div>
-    <div><strong>Nationwide</strong><span>We mobilize to your site</span></div>
+    <div><strong>25+ Years</strong><span>Combined field experience of our founders</span></div>
   </div>
 </div>
 
@@ -272,10 +286,24 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   </div>
 </section>
 
+<section id="quality" class="quality">
+  <div class="wrap">
+    <span class="eyebrow">Why clients trust our results</span>
+    <h2>Reliable inspections, backed by people, standards, and calibrated tools</h2>
+    <div class="pillars">
+      <div class="pillar"><span class="pnum">01</span><h3>DOLE-OSHC Authorized Inspectors</h3><p>Your equipment is inspected by OSHC-authorized inspectors who know exactly what DOLE requires for your permits and certifications.</p></div>
+      <div class="pillar"><span class="pnum">02</span><h3>Standards-Based Inspection</h3><p>Every inspection follows the applicable Philippine OSH Standards and DOLE issuances, manufacturer specifications, and recognized engineering codes.</p></div>
+      <div class="pillar"><span class="pnum">03</span><h3>Calibrated Equipment &amp; Tools</h3><p>We test with calibrated instruments to ensure the accuracy and reliability of every reading in your report.</p></div>
+      <div class="pillar"><span class="pnum">04</span><h3>Trained, Multidisciplinary Team</h3><p>Safety professionals, engineers, technical inspectors, and heavy equipment operators, continuously trained on current standards and practices.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="toolkit">
   <div class="wrap">
     <span class="eyebrow">Our toolkit</span>
-    <h2>Testing instruments we bring to your site</h2>
+    <h2>Calibrated instruments, brought to your site</h2>
+    <p class="lead">We use calibrated testing equipment and tools to ensure the accuracy and reliability of every result we report.</p>
     <div class="tools">
       <div class="tool"><img src="images/equipment/digital-crane-scale.jpg" alt="Digital crane scale" loading="lazy"><div><h3>Digital Crane Scale</h3><p>Verifies applied test loads during crane and hoist load testing.</p></div></div>
       <div class="tool"><img src="images/equipment/hydraulic-toe-jack.jpg" alt="Hydrostatic test pump" loading="lazy"><div><h3>Hydrostatic Test Pump</h3><p>Pressurizes vessels, piping, and hoses for hydrostatic tests.</p></div></div>
@@ -290,11 +318,11 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 <section id="team">
   <div class="wrap">
     <span class="eyebrow">Leadership</span>
-    <h2>Led by its founders</h2>
-    <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder whose own credentials are on the line.</p>
+    <h2>Led by its founders. 25+ years in the field.</h2>
+    <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder with years of hands-on inspection experience and credentials on the line.</p>
     <div class="team">
-      <div class="person"><img class="avatar" src="images/janjan.png" alt="Engr. Precioso G. Reyes Jr., PME" loading="lazy"><div><h3>Engr. Precioso G. Reyes Jr., PME</h3><p>Founder · President &amp; CEO</p><ul class="creds"><li>Licensed Professional Mechanical Engineer</li><li>DOLE-Accredited Safety Consultant (No. 1030-102124-OSHC-0607)</li><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li></ul></div></div>
-      <div class="person"><img class="avatar" src="images/mark.png" alt="Mark B. Clave" loading="lazy"><div><h3>Mark B. Clave</h3><p>Co-Founder · VP for Operations</p><ul class="creds"><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li><li>TESDA NC II Heavy Equipment Operator</li></ul></div></div>
+      <div class="person"><img class="avatar" src="images/janjan.png" alt="Engr. Precioso G. Reyes Jr., PME" loading="lazy"><div><h3>Engr. Precioso G. Reyes Jr., PME</h3><p>Founder · President &amp; CEO</p><span class="exp">15+ years experience</span><p class="bio">Over 15 years in safety inspection, testing, and certification. Leads BNW's engineering direction and works directly with clients on their compliance needs.</p><ul class="creds"><li>Licensed Professional Mechanical Engineer</li><li>DOLE-Accredited Safety Consultant (No. 1030-102124-OSHC-0607)</li><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li></ul></div></div>
+      <div class="person"><img class="avatar" src="images/mark.png" alt="Mark B. Clave" loading="lazy"><div><h3>Mark B. Clave</h3><p>Co-Founder · VP for Operations</p><span class="exp">10+ years experience</span><p class="bio">Over 10 years of field experience across heavy equipment, lifting, and NDT. Leads BNW's site operations and inspection teams.</p><ul class="creds"><li>OSHC Authorized Inspector</li><li>NDT Level 2 — UT, PT, MT</li><li>TESDA NC II Heavy Equipment Operator</li></ul></div></div>
     </div>
   </div>
 </section>
