@@ -344,6 +344,19 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .shot:hover img{transform:scale(1.05)}
 .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;color:#fff;font-size:14px;font-weight:600;background:linear-gradient(0deg,rgba(10,29,71,.9),rgba(10,29,71,0))}
 @media(max-width:600px){.shot{flex-basis:82vw}}
+
+/* services seal note */
+.seal-note{display:inline-flex;align-items:center;gap:10px;margin-top:14px;background:#fff8e6;border:1px solid var(--gold);color:var(--blue-dark);font-weight:600;font-size:15px;padding:10px 14px;border-radius:10px}
+.seal-note span{display:grid;place-items:center;width:24px;height:24px;flex:0 0 24px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--blue-deep);font-size:14px}
+/* founder back slideshow */
+.bslides{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:14px 14px 0 0;background:#0a1d47;flex:0 0 auto}
+.bslides .bs{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .8s}
+.bslides .bs.on{opacity:1}
+.bslides .bs img{position:static!important;width:100%;height:100%!important;object-fit:cover;aspect-ratio:auto;max-height:none;border-radius:0}
+.bslides figcaption{position:absolute;left:10px;bottom:10px;background:rgba(10,29,71,.85);color:#fff;font-size:12.5px;padding:4px 9px;border-radius:6px}
+.bs-dots{position:absolute;top:10px;right:10px;display:flex;gap:5px;z-index:2}
+.bs-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.6);transition:all .3s}
+.bs-dots i.on{width:18px;border-radius:4px;background:var(--gold-light)}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -476,7 +489,11 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <div class="hs"><img src="images/hydro-air.jpg" alt="BNW hydrostatic test with a hand test pump" loading="lazy"><figcaption>Hydrostatic testing on site</figcaption></div>
       <div class="hs"><img src="images/accreditation-award.jpg" alt="BNW founders receiving the DOLE-OSHC certificate of accreditation" loading="lazy"><figcaption>Receiving our DOLE-OSHC accreditation</figcaption></div>
       <div class="hs"><img src="images/training-class.jpg" alt="BNW safety training session for workers" loading="lazy"><figcaption>Safety training for workers</figcaption></div>
-      <div class="hs-dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+      <div class="hs"><img src="images/excavator-insp.jpg" alt="Heavy equipment inspection on site" loading="lazy"><figcaption>Heavy equipment inspection on site</figcaption></div>
+      <div class="hs"><img src="images/sling-insp.jpg" alt="Lifting gear inspection before load test" loading="lazy"><figcaption>Lifting gear inspection before load test</figcaption></div>
+      <div class="hs"><img src="images/dozer-insp.jpg" alt="Bulldozer inspection on a construction site" loading="lazy"><figcaption>Bulldozer inspection on a construction site</figcaption></div>
+      <div class="hs"><img src="images/panel-insp.jpg" alt="Electrical inspection for a client CEI" loading="lazy"><figcaption>Electrical inspection for a client CEI</figcaption></div>
+      <div class="hs-dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </figure>
   </div>
 </section>
@@ -494,16 +511,17 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   <div class="wrap">
     <span class="eyebrow">Services</span>
     <h2>What we inspect, test, and certify</h2>
-    <p class="lead">One provider for your equipment compliance — from construction heavy equipment to boilers and warehouse racking.</p>
+    <p class="lead">One provider for your equipment compliance — from heavy equipment, lifting equipment and accessories, boilers and pressure vessels, to warehouse racking systems and manufacturing machinery.</p>
+    <div class="seal-note"><span>&#10003;</span> All reports and recommendations are signed and sealed by a licensed Professional Mechanical Engineer.</div>
     <div class="cards carousel">
-      <article class="card"><div class="art"><img src="images/excavator-insp.jpg" alt="BNW inspector checking an excavator on site" loading="lazy" width="720" height="420"></div><h3>Heavy Equipment Inspection</h3><p>Cranes, forklifts, excavators, payloaders, graders, and other construction heavy equipment.</p><div class="get"><b>You get:</b> test report and certificate</div></article>
-      <article class="card"><div class="art"><img src="images/sling-insp.jpg" alt="BNW inspector checking lifting slings before load testing" loading="lazy" width="720" height="420"></div><h3>Load Testing &amp; Lifting Gear</h3><p>Overhead cranes, hoists, chain blocks, and lifting accessories such as slings, shackles, and hooks.</p><div class="get"><b>You get:</b> load test report and certificate</div></article>
-      <article class="card"><div class="art"><img src="images/utg-air.jpg" alt="BNW inspector taking UT thickness readings on an air receiver" loading="lazy" width="720" height="420"></div><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> NDT report with readings and findings</div></article>
-      <article class="card"><div class="art"><img src="images/hydrotest.jpg" alt="BNW hydrostatic test with a hand test pump at a boiler plant" loading="lazy" width="720" height="420"></div><h3>Hydrostatic Testing</h3><p>Pressure testing of vessels, piping, hoses, and fire lines to verify integrity and leak-tightness.</p><div class="get"><b>You get:</b> hydrostatic test report</div></article>
-      <article class="card"><div class="art"><img src="images/panel-insp.jpg" alt="BNW inspector checking an electrical panelboard for a client CEI" loading="lazy" width="720" height="420"></div><h3>DOLE PTO / CEI Support</h3><p>Inspection, testing, and as-built plans for boilers, pressure vessels, air receivers, gensets, power piping, and electrical systems.</p><div class="get"><b>You get:</b> test results, as-built plans, and documents for your DOLE application</div></article>
-      <article class="card"><div class="art"><img src="images/rack.jpg" alt="Warehouse pallet racking" loading="lazy" width="720" height="420"></div><h3>Storage Racking Inspection</h3><p>Checks on warehouse pallet racking for damage, overloading, and safe installation.</p><div class="get"><b>You get:</b> inspection report with recommendations</div></article>
-      <article class="card"><div class="art"><img src="images/training-class.jpg" alt="BNW safety training session for workers" loading="lazy" width="720" height="420"></div><h3>Safety Training</h3><p>Practical courses for workers and supervisors, onsite or online — including confined space and hydrostatic testing.</p><div class="get"><b>You get:</b> certificate of completion</div></article>
-      <article class="card"><div class="art"><img src="images/consult.jpg" alt="Inspectors reviewing a checklist on site" loading="lazy" width="720" height="420"></div><h3>Engineering Consultancy</h3><p>Guidance on equipment safety, compliance gaps, and documentation from a licensed PME.</p><div class="get"><b>You get:</b> written findings and recommendations</div></article>
+      <article class="card"><div class="art"><img src="images/excavator-insp.jpg" alt="BNW inspector checking an excavator on site" loading="lazy" width="720" height="420"></div><h3>Heavy Equipment Inspection</h3><p>Cranes, forklifts, excavators, payloaders, graders, and other construction heavy equipment.</p><div class="get"><b>You get:</b> signed test report, certificate, and a PASSED sticker attached to the unit</div></article>
+      <article class="card"><div class="art"><img src="images/sling-insp.jpg" alt="BNW inspector checking lifting slings before load testing" loading="lazy" width="720" height="420"></div><h3>Load Testing &amp; Lifting Gear</h3><p>Overhead cranes, hoists, chain blocks, and lifting accessories such as slings, shackles, and hooks.</p><div class="get"><b>You get:</b> signed load test report, certificate, and inspection sticker or tag</div></article>
+      <article class="card"><div class="art"><img src="images/utg-air.jpg" alt="BNW inspector taking UT thickness readings on an air receiver" loading="lazy" width="720" height="420"></div><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> signed NDT report and certificate of NDT</div></article>
+      <article class="card"><div class="art"><img src="images/hydrotest.jpg" alt="BNW hydrostatic test with a hand test pump at a boiler plant" loading="lazy" width="720" height="420"></div><h3>Hydrostatic Testing</h3><p>Pressure testing of vessels, piping, hoses, and fire lines to verify integrity and leak-tightness.</p><div class="get"><b>You get:</b> signed hydrostatic test report and certificate</div></article>
+      <article class="card"><div class="art"><img src="images/panel-insp.jpg" alt="BNW inspector checking an electrical panelboard for a client CEI" loading="lazy" width="720" height="420"></div><h3>DOLE PTO / CEI Support</h3><p>Inspection, testing, and as-built plans for boilers, pressure vessels, air receivers, gensets, power piping, elevators, hoists, electrical systems, and other mechanical equipment.</p><div class="get"><b>You get:</b> test results, as-built plans and drawings, and documents for your DOLE application</div></article>
+      <article class="card"><div class="art"><img src="images/rack.jpg" alt="Warehouse pallet racking" loading="lazy" width="720" height="420"></div><h3>Storage Racking Inspection</h3><p>Checks on warehouse pallet racking for damage, overloading, and safe installation.</p><div class="get"><b>You get:</b> signed inspection report with recommendations and a storage racking certificate</div></article>
+      <article class="card"><div class="art"><img src="images/training-class.jpg" alt="BNW safety training session for workers" loading="lazy" width="720" height="420"></div><h3>Safety Training</h3><p>Customized courses for workers and supervisors, onsite or online — from equipment inspection to OSH topics tailored to your site.</p><div class="get"><b>You get:</b> certificate of completion, training manuals and materials, plus free consultancy during the training</div></article>
+      <article class="card"><div class="art"><img src="images/consult.jpg" alt="Inspectors reviewing a checklist on site" loading="lazy" width="720" height="420"></div><h3>Engineering Consultancy</h3><p>Guidance on equipment safety, compliance gaps, and documentation from a licensed PME.</p><div class="get"><b>You get:</b> written findings and recommendations, signed and sealed by a PME</div></article>
     </div>
     <div class="car-dots" aria-hidden="true"></div>
   </div>
@@ -643,7 +661,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
             <div class="chips"><span class="chip gold">PME · PRC License No. 0007053</span><span class="chip">DOLE-Accredited Safety Consultant · 1030-102124-OSHC-0607</span><span class="chip">OSHC Authorized Inspector</span><span class="chip">NDT Level 2 · UT · PT · MT</span></div>
             <span class="fc-hint">&#8635; Tap to see him in the field</span>
           </div>
-          <div class="fc-back"><img src="images/field-janjan.jpg?v=2" alt="Engr. Reyes speaking at an industry seminar" loading="lazy"><div class="fc-cap"><b>In the field</b>Speaking at an industry seminar<p>From seminars to the job site, Engr. Reyes makes sure every team understands the hazards before work begins.</p><span class="fc-hint">&#8635; Tap to flip back</span></div></div>
+          <div class="fc-back"><div class="bslides"><figure class="bs on"><img src="images/field-janjan.jpg" alt="Speaking at an industry seminar" loading="lazy"><figcaption>Speaking at an industry seminar</figcaption></figure><figure class="bs"><img src="images/janjan-podium.jpg" alt="Delivering a technical talk" loading="lazy"><figcaption>Delivering a technical talk</figcaption></figure><figure class="bs"><img src="images/janjan-whiteboard.jpg" alt="Leading a safety training session" loading="lazy"><figcaption>Leading a safety training session</figcaption></figure><figure class="bs"><img src="images/founders-award.jpg" alt="Receiving our DOLE-OSHC accreditation" loading="lazy"><figcaption>Receiving our DOLE-OSHC accreditation</figcaption></figure><div class="bs-dots"><i class="on"></i><i></i><i></i><i></i></div></div><div class="fc-cap"><b>In the field</b><p>From seminars to job sites, Engr. Reyes makes sure every team understands the hazards before work begins.</p><span class="fc-hint">&#8635; Tap to flip back</span></div></div>
         </div>
       </div>
       <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Mark Clave in the field">
@@ -657,7 +675,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
             <div class="chips"><span class="chip gold">OSHC Authorized Inspector</span><span class="chip">NDT Level 2 · UT · PT · MT</span><span class="chip">TESDA NC II Heavy Equipment Operator</span></div>
             <span class="fc-hint">&#8635; Tap to see him in the field</span>
           </div>
-          <div class="fc-back"><img src="images/field-mark.jpg?v=2" alt="Mark Clave inspecting a bulldozer on a construction site" loading="lazy"><div class="fc-cap"><b>In the field</b>Inspecting a bulldozer on a construction site<p>Mark checks every critical component before the equipment goes back to work.</p><span class="fc-hint">&#8635; Tap to flip back</span></div></div>
+          <div class="fc-back"><div class="bslides"><figure class="bs on"><img src="images/field-mark.jpg" alt="Inspecting a bulldozer on a construction site" loading="lazy"><figcaption>Inspecting a bulldozer on a construction site</figcaption></figure><figure class="bs"><img src="images/mark-excavator.jpg" alt="Excavator inspection on site" loading="lazy"><figcaption>Excavator inspection on site</figcaption></figure><figure class="bs"><img src="images/mark-truck.jpg" alt="Dump truck inspection" loading="lazy"><figcaption>Dump truck inspection</figcaption></figure><figure class="bs"><img src="images/mark-sling.jpg" alt="Checking lifting slings before a load test" loading="lazy"><figcaption>Checking lifting slings before a load test</figcaption></figure><figure class="bs"><img src="images/mark-utg-air.jpg" alt="UT thickness gauging on an air receiver" loading="lazy"><figcaption>UT thickness gauging on an air receiver</figcaption></figure><figure class="bs"><img src="images/mark-utg.jpg" alt="UT thickness gauging on a pressure vessel" loading="lazy"><figcaption>UT thickness gauging on a pressure vessel</figcaption></figure><figure class="bs"><img src="images/founders-award.jpg" alt="Receiving our DOLE-OSHC accreditation" loading="lazy"><figcaption>Receiving our DOLE-OSHC accreditation</figcaption></figure><div class="bs-dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="fc-cap"><b>In the field</b><p>Mark checks every critical component before the equipment goes back to work.</p><span class="fc-hint">&#8635; Tap to flip back</span></div></div>
         </div>
       </div>
     </div>
@@ -777,6 +795,9 @@ setInterval(function(){if(document.hidden)return;hs[i].classList.remove('on');do
 var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){p.classList.add('in');io.disconnect()}},{threshold:.15});io.observe(p)})();
 
 document.querySelectorAll('.fcard').forEach(function(c){function f(){c.classList.toggle('flipped')}c.addEventListener('click',f);c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}})});
+
+document.querySelectorAll('.bslides').forEach(function(b){var ss=b.querySelectorAll('.bs'),ds=b.querySelectorAll('.bs-dots i'),i=0;if(ss.length<2)return;
+setInterval(function(){var card=b.closest('.fcard');if(!card||!card.classList.contains('flipped')||document.hidden)return;ss[i].classList.remove('on');ds[i].classList.remove('on');i=(i+1)%ss.length;ss[i].classList.add('on');ds[i].classList.add('on');},3000);});
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
