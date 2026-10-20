@@ -357,6 +357,23 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .bs-dots{position:absolute;top:10px;right:10px;display:flex;gap:5px;z-index:2}
 .bs-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.6);transition:all .3s}
 .bs-dots i.on{width:18px;border-radius:4px;background:var(--gold-light)}
+
+/* I'M SAFE */
+.imsafe{background:var(--paper)}
+.im-head{display:flex;gap:22px;align-items:center}
+.im-heart{flex:0 0 96px;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:#fff;border:3px solid var(--gold);box-shadow:0 0 0 8px rgba(226,192,106,.18);animation:beat 2.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.08)}30%{transform:scale(1)}45%{transform:scale(1.05)}}
+.im-title{font-size:clamp(44px,7vw,72px)!important;letter-spacing:2px;line-height:1;color:var(--blue-dark);margin:2px 0 8px}
+.imsafe .lead em{font-style:normal;color:var(--gold);font-weight:600}
+.vals{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:32px}
+.val{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.val:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(15,42,102,.12)}
+.val b{display:block;font-family:"Barlow Condensed",Arial,sans-serif;font-size:54px;line-height:1;background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.val h3{font-size:19px;color:var(--blue-dark);margin:4px 0 6px}
+.val p{font-size:14px;color:var(--steel);line-height:1.45}
+@media(max-width:980px){.vals{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.vals{grid-template-columns:1fr 1fr;gap:10px}.im-head{flex-direction:column;text-align:center}.val{padding:14px 12px}.val b{font-size:46px}}
+@media(prefers-reduced-motion:reduce){.im-heart{animation:none}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -461,6 +478,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <li><a href="#process">How It Works</a></li>
       <li><a href="#accreditation">Accreditation</a></li>
       <li><a href="#work">Our Work</a></li>
+      <li><a href="#imsafe">I&rsquo;M SAFE</a></li>
       <li><a href="#team">Leadership</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -512,11 +530,11 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <span class="eyebrow">Services</span>
     <h2>What we inspect, test, and certify</h2>
     <p class="lead">One provider for your equipment compliance — from heavy equipment, lifting equipment and accessories, boilers and pressure vessels, to warehouse racking systems and manufacturing machinery.</p>
-    <div class="seal-note"><span>&#10003;</span> All reports and recommendations are signed and sealed by a licensed Professional Mechanical Engineer.</div>
+    <div class="seal-note"><span>&#10003;</span> All certifications are signed and sealed by a licensed Professional Mechanical Engineer.</div>
     <div class="cards carousel">
       <article class="card"><div class="art"><img src="images/excavator-insp.jpg" alt="BNW inspector checking an excavator on site" loading="lazy" width="720" height="420"></div><h3>Heavy Equipment Inspection</h3><p>Cranes, forklifts, excavators, payloaders, graders, and other construction heavy equipment.</p><div class="get"><b>You get:</b> signed test report, certificate, and a PASSED sticker attached to the unit</div></article>
       <article class="card"><div class="art"><img src="images/sling-insp.jpg" alt="BNW inspector checking lifting slings before load testing" loading="lazy" width="720" height="420"></div><h3>Load Testing &amp; Lifting Gear</h3><p>Overhead cranes, hoists, chain blocks, and lifting accessories such as slings, shackles, and hooks.</p><div class="get"><b>You get:</b> signed load test report, certificate, and inspection sticker or tag</div></article>
-      <article class="card"><div class="art"><img src="images/utg-air.jpg" alt="BNW inspector taking UT thickness readings on an air receiver" loading="lazy" width="720" height="420"></div><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> signed NDT report and certificate of NDT</div></article>
+      <article class="card"><div class="art"><img src="images/utg-air.jpg" alt="BNW inspector taking UT thickness readings on an air receiver" loading="lazy" width="720" height="420"></div><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> signed NDT report, certificate of NDT, and engineering evaluation for acceptance, remaining life, and factor of safety (as applicable)</div></article>
       <article class="card"><div class="art"><img src="images/hydrotest.jpg" alt="BNW hydrostatic test with a hand test pump at a boiler plant" loading="lazy" width="720" height="420"></div><h3>Hydrostatic Testing</h3><p>Pressure testing of vessels, piping, hoses, and fire lines to verify integrity and leak-tightness.</p><div class="get"><b>You get:</b> signed hydrostatic test report and certificate</div></article>
       <article class="card"><div class="art"><img src="images/panel-insp.jpg" alt="BNW inspector checking an electrical panelboard for a client CEI" loading="lazy" width="720" height="420"></div><h3>DOLE PTO / CEI Support</h3><p>Inspection, testing, and as-built plans for boilers, pressure vessels, air receivers, gensets, power piping, elevators, hoists, electrical systems, and other mechanical equipment.</p><div class="get"><b>You get:</b> test results, as-built plans and drawings, and documents for your DOLE application</div></article>
       <article class="card"><div class="art"><img src="images/rack.jpg" alt="Warehouse pallet racking" loading="lazy" width="720" height="420"></div><h3>Storage Racking Inspection</h3><p>Checks on warehouse pallet racking for damage, overloading, and safe installation.</p><div class="get"><b>You get:</b> signed inspection report with recommendations and a storage racking certificate</div></article>
@@ -573,6 +591,20 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
         <div><dt>Valid until</dt><dd>August 2, 2029</dd></div>
       </dl>
     </div>
+  </div>
+</section>
+
+<section id="imsafe" class="imsafe">
+  <div class="wrap">
+    <div class="im-head">
+      <div class="im-heart"><svg viewBox="0 0 64 64" width="54" height="54" aria-hidden="true"><path d="M32 54S8 40 8 23a12 12 0 0 1 24-5 12 12 0 0 1 24 5c0 17-24 31-24 31z" fill="url(#hg)"/><path d="M18 30c4-3 9-3 12 0l6 6c1.6 1.6 1.6 4 0 5.6-1.6 1.6-4 1.6-5.6 0" fill="none" stroke="#0a1d47" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 40l6 6c2 2 5 2 7 0l8-8" fill="none" stroke="#0a1d47" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2c06a"/><stop offset="1" stop-color="#c9a13b"/></linearGradient></defs></svg></div>
+      <div>
+        <span class="eyebrow">Our core values</span>
+        <h2 class="im-title">I&rsquo;M SAFE</h2>
+        <p class="lead">Six values that guide every job, and what we want every client to say, hand on heart, whenever they see the BNW sign: <em>&ldquo;I&rsquo;m safe.&rdquo;</em></p>
+      </div>
+    </div>
+    <div class="vals"><div class="val"><b>I</b><h3>Integrity</h3><p>We report what we find, honestly. No shortcuts, no favors.</p></div><div class="val"><b>M</b><h3>Mastery</h3><p>Deep technical skill behind every inspection, test, and certificate.</p></div><div class="val"><b>S</b><h3>Safety</h3><p>People come first. Every decision starts with keeping workers safe.</p></div><div class="val"><b>A</b><h3>Accountability</h3><p>We stand behind our work, signed and sealed.</p></div><div class="val"><b>F</b><h3>Faith</h3><p>We serve with faith, humility, and genuine care for others.</p></div><div class="val"><b>E</b><h3>Excellence</h3><p>We aim higher than compliance on every job.</p></div></div>
   </div>
 </section>
 
@@ -653,7 +685,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Engr. Reyes in the field">
         <div class="fc-in">
           <div class="fc-front">
-            <img class="fc-photo" src="images/janjan.png?v=2" alt="Engr. Precioso G. Reyes Jr., PME" loading="lazy">
+            <img class="fc-photo" src="images/janjan-portrait.png" alt="Engr. Precioso G. Reyes Jr., PME" loading="lazy">
             <h3>Engr. Precioso G. Reyes Jr., PME</h3>
             <p class="fc-role">Founder · President &amp; CEO</p>
             <div class="fc-exp"><b><span class="count" data-to="15">15</span>+</b><span>years in safety inspection, testing &amp; certification</span></div>
@@ -748,7 +780,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
         <a href="BNW-IntegriSafe-Company-Profile.pdf?v=2" download>Company Profile (PDF)</a><a href="tel:+639994229120">0999 422 9120</a><a href="mailto:info@bnwintegrisafe.ph">info@bnwintegrisafe.ph</a><a href="https://www.facebook.com/profile.php?id=61588464467287" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
-    <div class="copy">© <span id="y">2026</span> BNW IntegriSafe Inc. · Trusted Inspection. Proven Safety.</div>
+    <div class="copy">© <span id="y">2026</span> BNW IntegriSafe Inc. · When Integrity Leads, Safety Follows.</div>
   </div>
 </footer>
 
