@@ -530,6 +530,7 @@ a.stat:hover .go{border-bottom-style:solid}
 /* what we found */
 .cases{background:var(--paper)}
 .case-grid{display:flex;gap:18px;margin-top:28px;align-items:flex-start}
+@media(min-width:1000px){.case-grid.carousel{align-items:stretch!important}.case-grid .case{height:100%}}
 .case{flex:0 0 86%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:var(--radius);padding:22px 22px 24px;box-shadow:0 10px 26px rgba(15,42,102,.08);display:flex;flex-direction:column}
 .case-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
 .case-ic{display:grid;place-items:center;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#173b8c,#0a1d47);color:var(--gold-light)}
@@ -572,7 +573,7 @@ a.stat:hover .go{border-bottom-style:solid}
 .fos-bar{position:relative;height:12px;border-radius:999px;background:#e3e8f2;margin-top:8px;overflow:visible}
 .fos-bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:linear-gradient(90deg,#e67e22,#c0392b);transition:width 1.6s cubic-bezier(.2,.8,.2,1) .3s}
 .fos-bar em{position:absolute;right:0;top:-5px;bottom:-5px;width:3px;border-radius:2px;background:var(--blue-dark)}
-.fos-bar em:after{content:"5";position:absolute;top:-16px;right:-3px;font-size:11px;font-weight:800;font-style:normal;color:var(--blue-dark)}
+.fos-bar em:after{content:"";display:none;position:absolute;top:-16px;right:-3px;font-size:11px;font-weight:800;font-style:normal;color:var(--blue-dark)}
 .cases.in .fos-bar i{width:50%}
 .ev-tag{display:flex;align-items:center;justify-content:center;gap:12px;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:20px}
 .tag-old,.tag-new{display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:8px;background:#fff;border:1px solid #e1e7f3}
