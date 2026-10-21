@@ -508,6 +508,22 @@ a.stat:hover .go{border-bottom-style:solid}
 .im-badge{width:200px!important}
 .foot .foot-patch,footer .foot-patch{display:block;width:120px!important;height:auto!important;max-width:none!important;margin:16px 0 6px!important;filter:none!important}
 .car-cards .car-arr{top:96px}.car-tools .car-arr{top:88px}
+
+/* lively services */
+.cards .card .art{overflow:hidden}
+.cards .card .art img{transition:transform 1.2s ease}
+@keyframes kb{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+.cards .card .art img{animation:kb 9s ease-in-out infinite}
+.cards .card:nth-child(2n) .art img{animation-delay:-3s}.cards .card:nth-child(3n) .art img{animation-delay:-6s}
+.card.lit{transform:translateY(-6px);box-shadow:0 18px 36px rgba(15,42,102,.22),0 0 0 2px var(--gold);border-top-color:var(--gold)!important}
+.card.lit .more span{transform:translateX(5px)}
+.card{transition:transform .5s ease,box-shadow .5s ease,border-color .5s ease,opacity .6s ease}
+@media(min-width:1000px){
+ .cards.reveal-cards .card{opacity:0;transform:translateY(30px)}
+ .cards.reveal-cards.in .card{opacity:1;transform:none}
+ .cards.reveal-cards.in .card.lit{transform:translateY(-6px)}
+}
+@media(prefers-reduced-motion:reduce){.cards .card .art img{animation:none}.cards.reveal-cards .card{opacity:1!important;transform:none!important}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -665,7 +681,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <h2>What we inspect, test, and certify</h2>
     <p class="lead">One provider for your equipment compliance — from heavy equipment, lifting equipment and accessories, boilers and pressure vessels, to warehouse racking systems and manufacturing machinery.</p>
     <div class="seal-note"><span>&#10003;</span> All certifications are signed and sealed by a licensed Professional Mechanical Engineer (PME) and a DOLE Authorized Inspector.</div>
-    <div class="cards carousel">
+    <div class="cards carousel reveal-cards">
       <article class="card clicky" data-svc="heavy" tabindex="0"><div class="art"><img src="images/excavator-insp.jpg" alt="BNW inspector checking an excavator on site" loading="lazy" width="720" height="420"></div><h3>Heavy Equipment Inspection</h3><p>Cranes, forklifts, excavators, payloaders, graders, and other construction heavy equipment.</p><div class="get"><b>You get:</b> signed test report, certificate, and a PASSED sticker attached to the unit</div><button type="button" class="more" data-svc="heavy">See details &amp; process <span>&rarr;</span></button></article>
       <article class="card clicky" data-svc="lift" tabindex="0"><div class="art"><img src="images/sling-insp.jpg" alt="BNW inspector checking lifting slings before load testing" loading="lazy" width="720" height="420"></div><h3>Load Testing &amp; Lifting Gear</h3><p>Overhead cranes, hoists, chain blocks, and lifting accessories such as slings, shackles, and hooks.</p><div class="get"><b>You get:</b> signed load test report, certificate, and inspection sticker or tag</div><button type="button" class="more" data-svc="lift">See details &amp; process <span>&rarr;</span></button></article>
       <article class="card clicky" data-svc="ndt" tabindex="0"><div class="art"><img src="images/utg-air.jpg" alt="BNW inspector taking UT thickness readings on an air receiver" loading="lazy" width="720" height="420"></div><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> signed NDT report, certificate of NDT, and engineering evaluation for acceptance, remaining life, and factor of safety (as applicable)</div><button type="button" class="more" data-svc="ndt">See details &amp; process <span>&rarr;</span></button></article>
@@ -829,7 +845,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Mark Clave in the field">
         <div class="fc-in">
           <div class="fc-front">
-            <img class="fc-photo" src="images/mark-portrait.jpg" alt="Mark B. Clave" loading="lazy">
+            <img class="fc-photo" src="images/mark.png" alt="Mark B. Clave" loading="lazy">
             <h3>Mark B. Clave</h3>
             <p class="fc-role">Co-Founder · VP for Operations</p>
             <div class="fc-exp"><b><span class="count" data-to="10">10</span>+</b><span>years across heavy equipment, lifting &amp; NDT</span></div>
@@ -988,6 +1004,12 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 (function(){var h=document.querySelector('.hero h1');if(!h)return;var mq=matchMedia('(min-width:901px)');
 function fit(){if(!mq.matches){h.style.removeProperty('--h1fs');return}var w=h.clientWidth,sp=h.querySelectorAll('span'),fs=64;h.style.setProperty('--h1fs',fs+'px');var m=0;sp.forEach(function(x){x.style.display='inline-block';m=Math.max(m,x.getBoundingClientRect().width);x.style.display=''});if(m>w){fs=Math.floor(fs*w/m*0.98)}h.style.setProperty('--h1fs',Math.max(38,fs)+'px');}
 fit();addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+
+(function(){var g=document.querySelector('.cards.reveal-cards');if(!g)return;var cs=g.querySelectorAll('.card');var mq=matchMedia('(min-width:1000px)');
+function start(){cs.forEach(function(c,n){c.style.transitionDelay=(mq.matches?n*90:0)+'ms'});g.classList.add('in');setTimeout(function(){cs.forEach(function(c){c.style.transitionDelay=''})},1400);
+var i=0,hov=false;g.addEventListener('mouseenter',function(){hov=true;cs.forEach(function(c){c.classList.remove('lit')})});g.addEventListener('mouseleave',function(){hov=false});
+setInterval(function(){if(!mq.matches||hov||document.hidden)return;var rc=g.getBoundingClientRect();if(rc.bottom<0||rc.top>innerHeight)return;cs.forEach(function(c){c.classList.remove('lit')});cs[i].classList.add('lit');i=(i+1)%cs.length},1800);}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){start();io.disconnect()}},{threshold:.15});io.observe(g)}else start();})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
