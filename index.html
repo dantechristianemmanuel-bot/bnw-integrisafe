@@ -507,7 +507,7 @@ a.stat:hover .go{border-bottom-style:solid}
 /* I'M SAFE patch */
 .im-badge{width:200px!important}
 .foot .foot-patch,footer .foot-patch{display:block;width:120px!important;height:auto!important;max-width:none!important;margin:16px 0 6px!important;filter:none!important}
-.car-cards .car-arr{top:96px}.car-tools .car-arr{top:88px}
+.car-cards .car-arr{top:96px}.car-case-grid .car-arr{top:58px}.car-tools .car-arr{top:88px}
 
 /* lively services */
 .cards .card .art{overflow:hidden}
@@ -526,6 +526,24 @@ a.stat:hover .go{border-bottom-style:solid}
 @media(prefers-reduced-motion:reduce){.cards .card .art img{animation:none}.cards.reveal-cards .card{opacity:1!important;transform:none!important}}
 .copy .tag{white-space:nowrap}
 @media(max-width:600px){.copy{text-align:center}.copy .sep{display:none}.copy .cp,.copy .tag{display:block}.copy .tag{margin-top:4px;color:var(--gold-light);font-weight:600;letter-spacing:.2px}}
+
+/* what we found */
+.cases{background:var(--paper)}
+.case-grid{display:flex;gap:18px;margin-top:28px}
+.case{flex:0 0 86%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:var(--radius);padding:22px 22px 24px;box-shadow:0 10px 26px rgba(15,42,102,.08);display:flex;flex-direction:column}
+.case-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.case-ic{display:grid;place-items:center;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#173b8c,#0a1d47);color:var(--gold-light)}
+.case-tag{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:17px;letter-spacing:.3px;color:var(--blue-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:5px 12px;border-radius:999px;white-space:nowrap}
+.case h3{font-size:25px;line-height:1.15;color:var(--blue-dark);margin:0 0 6px}
+.case-meta{font-size:14px;font-weight:600;color:var(--gold);margin:0 0 14px}
+.case dl{margin:0}
+.case dl div{padding:10px 0;border-top:1px dashed var(--line)}
+.case dt{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.case dd{margin:3px 0 0;font-size:15.5px;line-height:1.55;color:var(--steel)}
+.case dl div:last-child dd{color:var(--blue-dark);font-weight:600}
+.case-cta{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
+.case-cta p{margin:0;font-weight:700;color:var(--blue-dark);font-size:17px}
+@media(min-width:1000px){.case-grid.carousel{display:grid!important;grid-template-columns:repeat(3,1fr);overflow:visible}.case{flex:none}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -797,6 +815,16 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   </div>
 </section>
 
+<section id="cases" class="cases">
+  <div class="wrap">
+    <span class="eyebrow">What we found</span>
+    <h2>Real findings. Real risks, caught in time.</h2>
+    <p class="lead">Every inspection has a story. Here are a few from recent jobs, shared without client names.</p>
+    <div class="case-grid carousel"><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 40h30V28H6z"/><path d="M36 34h10l6 6v0H36z"/><path d="M36 40h18"/><circle cx="14" cy="44" r="4"/><circle cx="46" cy="44" r="4"/><path d="M18 28 44 10"/><path d="M44 10v10"/><path d="M8 40v12M4 52h8M50 40v12M46 52h8"/></svg></span><span class="case-tag">Brand new</span></div><h3>Brand new doesn’t mean safe.</h3><p class="case-meta">Boom truck · Construction site, Laguna</p><dl><div><dt>Found</dt><dd>A newly delivered unit, fresh from the manufacturer, showed a hydraulic oil leak at the outrigger cylinder during load testing.</dd></div><div><dt>Action</dt><dd>We recommended taking it out of service until repaired.</dd></div><div><dt>Result</dt><dd>Repaired within a week. Passed the re-test and cleared for safe operation.</dd></div></dl></article><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="8" width="36" height="44" rx="14"/><path d="M24 52v6M40 52v6M20 58h24"/><circle cx="32" cy="22" r="4"/><path d="M32 18v-6"/><path d="M22 34h20M22 40h12"/></svg></span><span class="case-tag">FoS 2.5 vs 5</span></div><h3>What you can’t see can still fail.</h3><p class="case-meta">Air receiver tank · Manufacturing plant, Rizal</p><dl><div><dt>Found</dt><dd>In service for about 30 years and never inspected. UT thickness gauging showed the shell plate had thinned far below its original thickness. Our computation put its factor of safety at about 2.5, half the required 5.</dd></div><div><dt>Action</dt><dd>We recommended derating the tank. Since operations could not run at a lower pressure, the client chose to replace it.</dd></div><div><dt>Result</dt><dd>An unsafe vessel was retired before it could fail. The client told us they never suspected it, because the thinning could not be seen from the outside.</dd></div></dl></article><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8c-8 0-12 6-12 14s5 14 12 14h24c7 0 12-6 12-14S52 8 44 8z" /><path d="M20 36v12M44 36v12"/><path d="M14 48h36v6H14z"/><path d="M26 22h12"/></svg></span><span class="case-tag">10t tag · 3t sling</span></div><h3>The tag said 10 tons. The sling could only take 3.</h3><p class="case-meta">Lifting sling · Crane rental company</p><dl><div><dt>Found</dt><dd>A sling labeled 10 tons was actually a 3-ton sling. Its yellow color and narrower width matched a 3-ton sling under the standard color code, where 10-ton slings are orange and much wider. The client had labeled it themselves, assuming it matched their equipment.</dd></div><div><dt>Action</dt><dd>We held a short learning session with their team on how to verify sling capacity using the manufacturer’s tag, color, and size.</dd></div><div><dt>Result</dt><dd>The sling, still in good condition, was correctly identified as 3 tons before it was ever used on a heavy lift. The client can now spot mislabeled slings on their own.</dd></div></dl></article></div>
+    <div class="car-dots"></div>
+    <div class="case-cta"><p>Not sure what your equipment is hiding?</p><a class="btn btn-gold" href="#quote">Get it inspected <span class="arr">&rarr;</span></a></div>
+  </div>
+</section>
 <section id="tools" class="toolkit">
   <div class="wrap">
     <span class="eyebrow">Our toolkit</span>
