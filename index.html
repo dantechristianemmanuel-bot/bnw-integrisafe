@@ -447,6 +447,197 @@ a.stat:hover .go{border-bottom-style:solid}
  .steps.live .step.in:after{transform:scaleY(1)}
 }
 @media(prefers-reduced-motion:reduce){.steps.live .sic,.steps.live .step h3,.steps.live .step p,.steps.live .when{opacity:1!important;transform:none!important}.steps.live .step:after{transform:none!important}}
+
+/* desktop: headline on 2 balanced lines */
+@media(min-width:901px){
+ .hero-grid{grid-template-columns:1.12fr .88fr!important}
+ .hero h1{font-size:var(--h1fs,52px)!important}
+ .hero h1 span{white-space:nowrap;text-wrap:nowrap}
+}
+
+/* carousel arrows */
+.car-wrap{position:relative}
+.car-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--blue-dark);font-size:30px;line-height:1;display:grid;place-items:center;padding:0 0 4px;cursor:pointer;box-shadow:0 6px 18px rgba(15,42,102,.25);transition:transform .2s,background .2s}
+.car-arr:hover{background:var(--gold-light)}
+.car-wrap .car-arr.prev{left:-8px}.car-wrap .car-arr.next{right:-8px}
+.car-wrap.noov .car-arr{display:none}
+.hero-slides .car-arr.prev{left:12px}.hero-slides .car-arr.next{right:12px}
+.hero-slides .car-arr{width:38px;height:38px;font-size:26px;opacity:.85}
+@media(max-width:600px){.car-wrap .car-arr{width:36px;height:36px;font-size:26px}.car-wrap .car-arr.prev{left:-4px}.car-wrap .car-arr.next{right:-4px}}
+/* desktop layouts */
+@media(min-width:1000px){
+ .cards.carousel{display:grid!important;grid-template-columns:repeat(4,1fr);overflow:visible;gap:18px}
+ .cards.carousel .card{flex:none}
+ .tool{flex-basis:calc((100% - 50px)/4)!important}
+ .shot{flex-basis:calc((100% - 34px)/3)!important}
+ .eq-result{max-width:none}
+ #team .team{margin-left:auto!important;margin-right:auto!important}
+}
+.pillar{display:flex;flex-direction:column}
+.pillar .pmore{margin-top:auto;align-self:flex-start;padding-top:12px}
+.channel>div,.channel>span{min-width:0}
+.channel{padding-right:52px!important}
+/* accreditation */
+.acc-grid{align-items:start!important}
+.acc-media img{width:100%;max-width:440px}
+.acc-award{max-width:none!important;margin-top:22px!important}
+.acc-award img{aspect-ratio:12/7;object-fit:cover}
+.acc-award figcaption{text-align:left!important}
+/* founders */
+.cred-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:30px auto 0;max-width:980px;background:linear-gradient(135deg,#0f2a66,#0a1d47);border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(15,42,102,.18)}
+.cred-bar div{padding:18px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.cred-bar div:last-child{border-right:0}
+.cred-bar b{display:block;font-family:"Barlow Condensed",Arial,sans-serif;font-size:30px;line-height:1;color:var(--gold-light)}
+.cred-bar span{display:block;margin-top:6px;font-size:13px;line-height:1.35;color:#d3dcf0}
+@media(max-width:700px){.cred-bar{grid-template-columns:repeat(2,1fr)}.cred-bar div{border-bottom:1px solid rgba(255,255,255,.12)}.cred-bar div:last-child{grid-column:1/-1}}
+.fc-front{background:linear-gradient(160deg,#173b8c 0%,#0f2a66 55%,#0a1d47 100%)!important;border:1px solid #2b4785!important;border-top:5px solid var(--gold)!important;color:#fff;box-shadow:0 18px 40px rgba(10,29,71,.30)!important;justify-content:center}
+.fc-front h3{color:#fff!important}
+.fc-front .fc-role,.fc-front>p{color:var(--gold-light)!important}
+.fc-front blockquote{color:#e6ecf8!important}
+.fc-front .fc-exp,.fc-front .exp{background:rgba(255,255,255,.08)!important;color:#d3dcf0!important}
+.fc-front .chip,.fc-front .creds span,.fc-front .badges span{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25)}
+.fc-front .fc-hint{color:var(--gold-light)!important}
+.bslides{aspect-ratio:4/3.4!important}
+.fc-front .fc-role{color:var(--gold-light)!important}
+.fc-front .fc-exp{background:rgba(255,255,255,.08)!important}
+.fc-front .fc-exp span{color:#d3dcf0!important}
+.fc-front .fc-exp b{color:var(--gold-light)!important}
+.fc-front .chip{background:rgba(255,255,255,.08)!important;color:#fff!important;border:1px solid rgba(255,255,255,.28)!important}
+.fc-front .chip.gold{background:linear-gradient(135deg,var(--gold-light),var(--gold))!important;color:var(--blue-deep)!important;border-color:transparent!important}
+/* I'M SAFE patch */
+.im-badge{width:210px!important;height:auto!important}
+.foot .foot-patch,footer .foot-patch{display:block;width:120px!important;height:auto!important;max-width:none!important;margin:16px 0 6px!important;filter:none!important}
+.car-cards .car-arr{top:96px}.car-case-grid .car-arr{top:58px}.car-tools .car-arr{top:88px}
+
+/* lively services */
+.cards .card .art{overflow:hidden}
+.cards .card .art img{transition:transform 1.2s ease}
+@keyframes kb{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+.cards .card .art img{animation:kb 9s ease-in-out infinite}
+.cards .card:nth-child(2n) .art img{animation-delay:-3s}.cards .card:nth-child(3n) .art img{animation-delay:-6s}
+.card.lit{transform:translateY(-6px);box-shadow:0 18px 36px rgba(15,42,102,.22),0 0 0 2px var(--gold);border-top-color:var(--gold)!important}
+.card.lit .more span{transform:translateX(5px)}
+.card{transition:transform .5s ease,box-shadow .5s ease,border-color .5s ease,opacity .6s ease}
+@media(min-width:1000px){
+ .cards.reveal-cards .card{opacity:0;transform:translateY(30px)}
+ .cards.reveal-cards.in .card{opacity:1;transform:none}
+ .cards.reveal-cards.in .card.lit{transform:translateY(-6px)}
+}
+@media(prefers-reduced-motion:reduce){.cards .card .art img{animation:none}.cards.reveal-cards .card{opacity:1!important;transform:none!important}}
+.copy .tag{white-space:nowrap}
+@media(max-width:600px){.copy{text-align:center}.copy .sep{display:none}.copy .cp,.copy .tag{display:block}.copy .tag{margin-top:4px;color:var(--gold-light);font-weight:600;letter-spacing:.2px}}
+
+/* what we found */
+.cases{background:var(--paper)}
+.case-grid.carousel{display:flex!important;gap:18px;margin-top:28px;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:14px 4px 22px;scrollbar-width:none}
+.case-grid.carousel::-webkit-scrollbar{display:none}
+@media(min-width:700px){.case-grid .case{flex:0 0 calc((100% - 18px)/2)}}
+@media(min-width:1000px){.case-grid .case{flex:0 0 calc((100% - 36px)/3)}}
+.car-case-grid .car-arr{top:50%!important}
+@media(min-width:1000px){.car-case-grid .car-arr.prev{left:-24px}.car-case-grid .car-arr.next{right:-24px}}
+
+.case{flex:0 0 86%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:var(--radius);padding:22px 22px 24px;box-shadow:0 10px 26px rgba(15,42,102,.08);display:flex;flex-direction:column}
+.case-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.case-ic{display:grid;place-items:center;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#173b8c,#0a1d47);color:var(--gold-light)}
+.case-tag{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:17px;letter-spacing:.3px;color:var(--blue-deep);background:linear-gradient(135deg,var(--gold-light),var(--gold));padding:5px 12px;border-radius:999px;white-space:nowrap}
+.case h3{font-size:25px;line-height:1.15;color:var(--blue-dark);margin:0 0 6px}
+.case-meta{font-size:14px;font-weight:600;color:var(--gold);margin:0 0 14px}
+.case dl{margin:0}
+.case dl div{padding:10px 0;border-top:1px dashed var(--line)}
+.case dt{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.case dd{margin:3px 0 0;font-size:15.5px;line-height:1.55;color:var(--steel)}
+.case dl div:last-child dd{color:var(--blue-dark);font-weight:600}
+.case-cta{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
+.case-cta p{margin:0;font-weight:700;color:var(--blue-dark);font-size:17px}
+
+
+/* What we found: lively */
+.cases.dark{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 85% -10%,rgba(226,192,106,.16),transparent 60%),linear-gradient(160deg,#0f2a66 0%,#0a1d47 100%)}
+.cases.dark:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+.cases.dark .wrap{position:relative}
+.cases.dark h2{color:#fff}.cases.dark .lead{color:#c9d4ec}.cases.dark .eyebrow{color:var(--gold-light)}
+.cases.dark .case-cta p{color:#fff}
+.cases.dark .car-dots i{background:rgba(255,255,255,.35)}
+.case{border:0;box-shadow:0 18px 40px rgba(0,0,0,.28);transition:transform .45s ease,box-shadow .45s ease,opacity .7s ease}
+.case:hover,.case.lit{transform:translateY(-8px);box-shadow:0 26px 50px rgba(0,0,0,.38),0 0 0 2px var(--gold)}
+.case-ic svg{animation:icfloat 3.6s ease-in-out infinite}
+@keyframes icfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.case-tag{position:relative;overflow:hidden}
+.case-tag:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:shine 3.5s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+/* evidence strips */
+.ev{margin:0 0 14px;border-radius:12px;background:#f3f6fc;border:1px solid #e1e7f3;padding:12px 14px;font-size:14px;color:var(--blue-dark)}
+.ev-leak{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ev-lbl{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--blue-dark);color:#fff;padding:4px 8px;border-radius:6px}
+.ev-drop{color:#c27a12;display:inline-grid;animation:drip 1.8s ease-in infinite}
+@keyframes drip{0%{transform:translateY(-4px);opacity:0}30%{opacity:1}100%{transform:translateY(8px);opacity:0}}
+.ev-txt{font-weight:700}
+.fos-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:600}
+.fos-row b{font-family:"Barlow Condensed",Arial,sans-serif;font-size:24px;color:#c0392b}
+.fos-row small{font-size:13px;color:var(--steel);font-family:Barlow,Arial,sans-serif}
+.fos-bar{position:relative;height:12px;border-radius:999px;background:#e3e8f2;margin-top:8px;overflow:visible}
+.fos-bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:linear-gradient(90deg,#e67e22,#c0392b);transition:width 1.6s cubic-bezier(.2,.8,.2,1) .3s}
+.fos-bar em{position:absolute;right:0;top:-5px;bottom:-5px;width:3px;border-radius:2px;background:var(--blue-dark)}
+.fos-bar em:after{content:"";display:none;position:absolute;top:-16px;right:-3px;font-size:11px;font-weight:800;font-style:normal;color:var(--blue-dark)}
+.cases.in .fos-bar i{width:50%}
+.ev-tag{display:flex;align-items:center;justify-content:center;gap:12px;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:20px}
+.tag-old,.tag-new{display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:8px;background:#fff;border:1px solid #e1e7f3}
+.tag-old{position:relative;color:#8a93a6}
+.tag-old:after{content:"";position:absolute;left:6px;right:6px;top:50%;height:3px;background:#c0392b;transform:scaleX(0);transform-origin:left;transition:transform .6s ease .5s}
+.cases.in .tag-old:after{transform:scaleX(1)}
+.tag-new{color:var(--blue-dark);opacity:0;transform:scale(.6);transition:opacity .5s ease 1.1s,transform .5s cubic-bezier(.3,1.6,.5,1) 1.1s}
+.cases.in .tag-new{opacity:1;transform:none}
+.tag-arr{color:var(--gold)}
+.sw{width:14px;height:14px;border-radius:4px;display:inline-block}.sw-o{background:#f28c28}.sw-y{background:#f4c20d}
+/* found-action-result timeline */
+.case dl{position:relative;padding-left:20px}
+.case dl:before{content:"";position:absolute;left:5px;top:16px;bottom:16px;width:2px;background:linear-gradient(var(--gold),rgba(201,161,59,.15))}
+.case dl div{position:relative;border-top:0!important;padding:8px 0}
+.case dl div:before{content:"";position:absolute;left:-20px;top:13px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--gold);transition:background .4s}
+.cases.in .case dl div:before{background:var(--gold)}
+.cases.in .case dl div:nth-child(1):before{transition-delay:.4s}.cases.in .case dl div:nth-child(2):before{transition-delay:.9s}.cases.in .case dl div:nth-child(3):before{transition-delay:1.4s}
+.case dl div:last-child dt{color:#1e8449}
+/* entrance */
+.cases .case{opacity:0;transform:translateY(34px)}
+.cases.in .case{opacity:1;transform:none}
+.cases.in .case:nth-child(2){transition-delay:.12s}.cases.in .case:nth-child(3){transition-delay:.24s}
+.cases.in .case.lit,.cases.in .case:hover{transform:translateY(-8px);transition-delay:0s}
+@media(prefers-reduced-motion:reduce){.cases .case{opacity:1!important;transform:none!important}.case-ic svg,.case-tag:after,.ev-drop{animation:none}.fos-bar i{width:50%}.tag-new{opacity:1;transform:none}}
+
+.ev-reeve{display:flex;align-items:center;justify-content:center;gap:18px}.ev-reeve .tag-arr{font-size:26px;font-weight:700;color:#c0392b}
+.rv{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:13px}
+.rv b{font-family:"Barlow Condensed",Arial,sans-serif;font-size:17px;color:var(--blue-dark)}
+.rv.bad b{color:#c0392b}
+.rv-lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.rv-lines{display:flex;gap:5px;height:34px;align-items:stretch}
+.rv-lines i{width:3px;border-radius:2px;background:var(--blue-dark);transform:scaleY(0);transform-origin:top;transition:transform .6s ease}
+.rv.bad .rv-lines i{background:#c0392b}
+.cases.in .rv-lines i{transform:scaleY(1)}
+.cases.in .rv-lines i:nth-child(2){transition-delay:.15s}.cases.in .rv-lines i:nth-child(3){transition-delay:.3s}.cases.in .rv-lines i:nth-child(4){transition-delay:.45s}
+.cases.in .rv.bad .rv-lines i{transition-delay:.8s}.cases.in .rv.bad .rv-lines i:nth-child(2){transition-delay:.95s}
+.ev-rope{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rope{display:inline-flex;gap:3px;align-items:center}
+.rope i{display:block;width:5px;height:22px;border-radius:2px;background:#8a93a6;transform:rotate(18deg)}
+.rope i:nth-child(2),.rope i:nth-child(4){background:#c0392b;animation:fray 1.6s ease-in-out infinite}
+.rope i:nth-child(4){animation-delay:.5s}
+@keyframes fray{0%,100%{transform:rotate(18deg) translateY(0)}50%{transform:rotate(38deg) translateY(-3px)}}
+.ev-rope .ev-txt{color:#c0392b}
+
+@media(prefers-reduced-motion:reduce){.rv-lines i{transform:none!important}.rope i{animation:none}}
+
+.case{padding:0 0 24px!important;overflow:hidden}
+.case>h3,.case>.case-meta,.case>.ev,.case>dl{margin-left:22px;margin-right:22px}
+.case>h3{margin-top:18px!important}
+.case-photo{position:relative;aspect-ratio:16/9;background:#0a1d47;overflow:hidden}
+.case-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
+.case:hover .case-photo img{transform:scale(1.06)}
+.case-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,29,71,0) 55%,rgba(10,29,71,.55))}
+.case-photo .case-tag{position:absolute;top:12px;right:12px;z-index:2;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.case-rep{position:absolute;left:12px;bottom:10px;z-index:2;font-size:11.5px;font-weight:600;color:#fff;background:rgba(10,29,71,.7);padding:3px 8px;border-radius:6px;letter-spacing:.02em}
+.case-rep.own{background:var(--gold);color:var(--blue-deep)}
+.rv-a,.rv-b{position:absolute;top:12px;z-index:2;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:15px;padding:3px 9px;border-radius:6px;background:#fff;color:var(--blue-dark)}
+.rv-a{left:10px}.rv-b{left:calc(50% + 8px);background:#c0392b;color:#fff}
+.case-photo:has(.rv-a) .case-tag{top:auto;bottom:10px}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -603,8 +794,8 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <span class="eyebrow">Services</span>
     <h2>What we inspect, test, and certify</h2>
     <p class="lead">One provider for your equipment compliance — from heavy equipment, lifting equipment and accessories, boilers and pressure vessels, to warehouse racking systems and manufacturing machinery.</p>
-    <div class="seal-note"><span>&#10003;</span> All certifications are signed and sealed by a licensed Professional Mechanical Engineer (PME).</div>
-    <div class="cards carousel">
+    <div class="seal-note"><span>&#10003;</span> All certifications are signed and sealed by a licensed Professional Mechanical Engineer (PME) and a DOLE Authorized Inspector.</div>
+    <div class="cards carousel reveal-cards">
       <article class="card clicky" data-svc="heavy" tabindex="0"><div class="art"><img src="images/excavator-insp.jpg" alt="BNW inspector checking an excavator on site" loading="lazy" width="720" height="420"></div><h3>Heavy Equipment Inspection</h3><p>Cranes, forklifts, excavators, payloaders, graders, and other construction heavy equipment.</p><div class="get"><b>You get:</b> signed test report, certificate, and a PASSED sticker attached to the unit</div><button type="button" class="more" data-svc="heavy">See details &amp; process <span>&rarr;</span></button></article>
       <article class="card clicky" data-svc="lift" tabindex="0"><div class="art"><img src="images/sling-insp.jpg" alt="BNW inspector checking lifting slings before load testing" loading="lazy" width="720" height="420"></div><h3>Load Testing &amp; Lifting Gear</h3><p>Overhead cranes, hoists, chain blocks, and lifting accessories such as slings, shackles, and hooks.</p><div class="get"><b>You get:</b> signed load test report, certificate, and inspection sticker or tag</div><button type="button" class="more" data-svc="lift">See details &amp; process <span>&rarr;</span></button></article>
       <article class="card clicky" data-svc="ndt" tabindex="0"><div class="art"><img src="images/utg-air.jpg" alt="BNW inspector taking UT thickness readings on an air receiver" loading="lazy" width="720" height="420"></div><h3>Non-Destructive Testing</h3><p>Ultrasonic thickness gauging (UTG), penetrant testing (PT), and magnetic particle inspection (MPI) by Level 2 practitioners.</p><div class="get"><b>You get:</b> signed NDT report, certificate of NDT, and engineering evaluation for acceptance, remaining life, and factor of safety (as applicable)</div><button type="button" class="more" data-svc="ndt">See details &amp; process <span>&rarr;</span></button></article>
@@ -648,8 +839,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 
 <section id="accreditation">
   <div class="wrap acc-grid">
-    <div class="acc-media"><img src="images/dole-accreditation-2029.jpg" alt="DOLE-OSHC Certificate of Accreditation of BNW IntegriSafe Inc. as Testing Organization for Construction Heavy Equipment" loading="lazy">
-      <figure class="acc-award"><img src="images/accreditation-award-43.jpg" alt="BNW founders receiving the DOLE-OSHC certificate of accreditation" loading="lazy"><figcaption>Engr. Reyes and Mark Clave receiving our certificate at DOLE-OSHC</figcaption></figure></div>
+    <div class="acc-media"><img src="images/dole-accreditation-2029.jpg" alt="DOLE-OSHC Certificate of Accreditation of BNW IntegriSafe Inc. as Testing Organization for Construction Heavy Equipment" loading="lazy"></div>
     <div>
       <span class="eyebrow">Accreditation</span>
       <h2>Accredited by DOLE&nbsp;– Occupational Safety and Health Center</h2>
@@ -658,6 +848,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
         <div><dt>Certificate No.</dt><dd>1410-26080226-0056</dd></div>
         <div><dt>Valid until</dt><dd>August 2, 2029</dd></div>
       </dl>
+      <figure class="acc-award"><img src="images/accreditation-award.jpg" alt="BNW founders receiving the DOLE-OSHC certificate of accreditation" loading="lazy"><figcaption>Engr. Reyes and Mark Clave receiving our certificate at DOLE-OSHC</figcaption></figure>
     </div>
   </div>
 </section>
@@ -665,7 +856,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 <section id="imsafe" class="imsafe">
   <div class="wrap">
     <div class="im-head">
-      <img class="im-badge" src="images/imsafe-badge.svg" alt="I&rsquo;M SAFE badge" width="180" height="212">
+      <img class="im-badge" src="images/imsafe-patch.png?v=4" alt="I&rsquo;M SAFE by BNW IntegriSafe" width="520" height="516">
       <div>
         <span class="eyebrow">Our core values &amp; promise</span>
         <h2 class="sr-only">I&rsquo;M SAFE</h2>
@@ -718,6 +909,16 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   </div>
 </section>
 
+<section id="cases" class="cases dark">
+  <div class="wrap">
+    <span class="eyebrow">What we found</span>
+    <h2>Real findings. Real risks, caught in time.</h2>
+    <p class="lead">Every inspection has a story. Here are a few from recent jobs, shared without client names.</p>
+    <div class="case-grid carousel"><article class="case"><div class="case-photo"><img src="images/case-boomtruck.jpg" alt="Boom truck with outriggers deployed" loading="lazy"><span class="case-tag">Brand new</span><span class="case-rep">Representative photo</span></div><h3>Brand new doesn’t mean safe.</h3><p class="case-meta">Boom truck · Construction site, Laguna</p><div class="ev ev-leak"><span class="ev-lbl">Brand-new unit</span><span class="ev-drop"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3s7 8 7 12a7 7 0 0 1-14 0c0-4 7-12 7-12z" fill="currentColor"/></svg></span><span class="ev-txt">Leak at outrigger cylinder</span></div><dl><div><dt>Found</dt><dd>A newly delivered unit, fresh from the manufacturer, showed a hydraulic oil leak at the outrigger cylinder during load testing.</dd></div><div><dt>Action</dt><dd>We recommended taking it out of service until repaired.</dd></div><div><dt>Result</dt><dd>Repaired within a week. Passed the re-test and cleared for safe operation.</dd></div></dl></article><article class="case"><div class="case-photo"><img src="images/utg-air.jpg" alt="BNW inspector performing UT thickness gauging on an air receiver" loading="lazy"><span class="case-tag">FoS 2.5 vs 5</span><span class="case-rep own">BNW on site</span></div><h3>What you can’t see can still fail.</h3><p class="case-meta">Air receiver tank · Manufacturing plant, Rizal</p><div class="ev ev-fos"><div class="fos-row"><span>Factor of safety</span><b><span class="fos-n" data-to="2.5">0.0</span> <small>/ 5 required</small></b></div><div class="fos-bar"><i></i><em></em></div></div><dl><div><dt>Found</dt><dd>In service for about 30 years and never inspected. UT thickness gauging showed the shell plate had thinned far below its original thickness. Our computation put its factor of safety at about 2.5, half the required 5.</dd></div><div><dt>Action</dt><dd>We recommended derating the tank. Since operations could not run at a lower pressure, the client chose to replace it.</dd></div><div><dt>Result</dt><dd>An unsafe vessel was retired before it could fail. The client told us they never suspected it, because the thinning could not be seen from the outside.</dd></div></dl></article><article class="case"><div class="case-photo"><img src="images/case-slings.jpg" alt="Synthetic lifting slings in different colors" loading="lazy"><span class="case-tag">10t tag · 3t sling</span><span class="case-rep">Representative photo</span></div><h3>The tag said 10 tons. The sling could only take 3.</h3><p class="case-meta">Lifting sling · Crane rental company</p><div class="ev ev-tag"><span class="tag-old"><span class="sw sw-o"></span>10 TONS</span><span class="tag-arr">&rarr;</span><span class="tag-new"><span class="sw sw-y"></span>3 TONS</span></div><dl><div><dt>Found</dt><dd>A sling labeled 10 tons was actually a 3-ton sling. Its yellow color and narrower width matched a 3-ton sling under the standard color code, where 10-ton slings are orange and much wider. The client had labeled it themselves, assuming it matched their equipment.</dd></div><div><dt>Action</dt><dd>We held a short learning session with their team on how to verify sling capacity using the manufacturer’s tag, color, and size.</dd></div><div><dt>Result</dt><dd>The sling, still in good condition, was correctly identified as 3 tons before it was ever used on a heavy lift. The client can now spot mislabeled slings on their own.</dd></div></dl></article><article class="case"><div class="case-photo"><img src="images/case-reeving.jpg" alt="Hook block on a 4-part line compared with a 2-part line" loading="lazy"><span class="rv-a">4-part line</span><span class="rv-b">2-part line</span><span class="case-tag">Half capacity</span><span class="case-rep">Representative photo</span></div><h3>Rated 5 tons. Rigged for half.</h3><p class="case-meta">Overhead crane · Safety training, Rizal</p><div class="ev ev-reeve"><div class="rv"><span class="rv-lbl">Manual</span><span class="rv-lines four"><i></i><i></i><i></i><i></i></span><b>4-part line</b></div><span class="tag-arr">&ne;</span><div class="rv bad"><span class="rv-lbl">Actual</span><span class="rv-lines two"><i></i><i></i></span><b>2-part line</b></div></div><dl><div><dt>Found</dt><dd>During our overhead crane safe operation training, we found operators had no formal training and skipped pre-use inspection. The hoist was reeved with a 2-part line, while the manual called for a 4-part line, cutting the wire rope’s capacity to about half of the crane’s 5-ton rating.</dd></div><div><dt>Action</dt><dd>We trained the team on safe operation and daily pre-use inspection, and walked them through the reeving issue on their own crane.</dd></div><div><dt>Result</dt><dd>Caught before a near-capacity lift. The client thanked us, saying they now understand why proper training matters.</dd></div></dl></article><article class="case"><div class="case-photo"><img src="images/case-wirerope.jpg" alt="Close-up of steel wire rope strands" loading="lazy"><span class="case-tag">Never inspected</span><span class="case-rep">Representative photo</span></div><h3>Broken wires no one could see.</h3><p class="case-meta">Elevator · Client site, Bataan</p><div class="ev ev-rope"><span class="ev-lbl">Since installation</span><span class="rope"><i></i><i></i><i></i><i></i><i></i></span><span class="ev-txt">0 inspections</span></div><dl><div><dt>Found</dt><dd>An elevator never inspected since installation. Its hoist wire ropes had many broken wires, with damage already at a severe stage.</dd></div><div><dt>Action</dt><dd>We recommended stopping operation and replacing the wire ropes.</dd></div><div><dt>Result</dt><dd>Ropes replaced within two weeks. Passed re-inspection. The client said they had no idea how damaged the ropes were until the inspection.</dd></div></dl></article></div>
+    <div class="car-dots"></div>
+    <div class="case-cta"><p>Not sure what your equipment is hiding?</p><a class="btn btn-gold" href="#quote">Get it inspected <span class="arr">&rarr;</span></a></div>
+  </div>
+</section>
 <section id="tools" class="toolkit">
   <div class="wrap">
     <span class="eyebrow">Our toolkit</span>
@@ -749,6 +950,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <span class="eyebrow">Leadership</span>
     <h2>Led by its founders. 25+ years in the field.</h2>
     <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder with years of hands-on inspection experience and credentials on the line.</p>
+    <div class="cred-bar"><div><b>25+</b><span>Years combined<br>field experience</span></div><div><b>PME</b><span>Licensed Professional<br>Mechanical Engineer</span></div><div><b>OSHC</b><span>Authorized<br>Inspectors</span></div><div><b>NDT L2</b><span>UT · PT · MT<br>certified</span></div><div><b>DOLE</b><span>Accredited<br>Safety Consultant</span></div></div>
     <div class="team">
       <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Engr. Reyes in the field">
         <div class="fc-in">
@@ -838,7 +1040,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
     <div class="foot">
       <div>
         <img src="images/logo-wide.png" alt="BNW IntegriSafe Inc.">
-        <div class="mv"><p><b>Mission</b>To inspect every machine as if our own family will work beside it.</p><p><b>Vision</b>To make &ldquo;I&rsquo;m safe&rdquo; the first thing every Filipino worker feels on site.</p></div>
+        <img class="foot-patch" src="images/imsafe-patch-dark.png?v=4" alt="I&rsquo;M SAFE" width="300" height="298" loading="lazy"><div class="mv"><p><b>Mission</b>To inspect every piece of equipment as if our own family will work beside it.</p><p><b>Vision</b>To make &ldquo;I&rsquo;m safe&rdquo; the first thing every Filipino worker feels on site.</p></div>
       </div>
       <div>
         <h4>Company</h4>
@@ -849,7 +1051,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
         <a href="BNW-IntegriSafe-Company-Profile.pdf?v=2" download>Company Profile (PDF)</a><a href="tel:+639994229120">0999 422 9120</a><a href="mailto:info@bnwintegrisafe.ph">info@bnwintegrisafe.ph</a><a href="https://www.facebook.com/profile.php?id=61588464467287" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
-    <div class="copy">© <span id="y">2026</span> BNW IntegriSafe Inc. · When Integrity Leads, Safety Follows.</div>
+    <div class="copy"><span class="cp">© <span id="y">2026</span> BNW IntegriSafe Inc.</span><span class="sep"> · </span><span class="tag">When Integrity Leads, Safety Follows.</span></div>
   </div>
 </footer>
 
@@ -865,7 +1067,7 @@ document.querySelectorAll('.count').forEach(function(el){var to=+el.dataset.to;e
 var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();var t0=null;
 function st(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);},{threshold:.5});io.observe(el);});})();
 
-(function(){var D={"crane": {"n": "Mobile / crawler crane", "d": "Inspection and load testing with calibrated load measurement", "g": "Signed test report, certificate, and a PASSED sticker on the unit", "t": "Construction heavy equipment must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "heavy": {"n": "Excavator, payloader, grader & other heavy equipment", "d": "Visual, structural, functional, and safety device inspection", "g": "Signed test report, certificate, and a PASSED sticker on the unit", "t": "When used in construction, must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "forklift": {"n": "Forklift", "d": "Inspection and load test based on rated capacity", "g": "Signed load test report, certificate, and a sticker or tag", "t": "Required under DOLE D.O. 13 when used in construction; commonly required by client audits and site safety programs elsewhere."}, "ohc": {"n": "Overhead crane / hoist / chain block", "d": "Inspection and proof load testing", "g": "Signed load test report, certificate, and a sticker or tag", "t": "Commonly required during DOLE inspections, client audits, and site safety programs."}, "rigging": {"n": "Slings, shackles & lifting accessories", "d": "Inspection and proof load testing per item", "g": "Signed test certificate and a tag per item", "t": "Commonly required before use on site and by client audits."}, "boiler": {"n": "Boiler", "d": "Inspection, hydrostatic test, UT thickness gauging, and as-built plans", "g": "Signed test results, certificate, as-built plans and drawings, and documents for your DOLE PTO", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1160."}, "vessel": {"n": "Air receiver / pressure vessel", "d": "Hydrostatic test, UT thickness gauging, and as-built plans", "g": "Signed test report, certificate, engineering evaluation (remaining life, factor of safety), and documents for your DOLE PTO", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1170."}, "genset": {"n": "Generator set", "d": "Inspection and as-built plans", "g": "As-built plans and drawings, and documents for your DOLE PTO", "t": "Typically requires a DOLE Permit to Operate."}, "piping": {"n": "Power piping", "d": "Hydrostatic test, inspection, and as-built plans", "g": "Signed test report, certificate, as-built plans, and documents for your DOLE PTO", "t": "Typically covered by DOLE PTO together with your steam or boiler system."}, "elevator": {"n": "Elevator", "d": "Inspection and as-built plans", "g": "As-built plans and drawings, and documents for your DOLE PTO", "t": "Typically requires a DOLE Permit to Operate."}, "electrical": {"n": "Electrical system (CEI)", "d": "Electrical inspection and as-built plans", "g": "As-built plans and drawings, and documents for your Certificate of Electrical Inspection", "t": "A CEI is typically required for new or modified electrical installations."}, "racking": {"n": "Pallet racking", "d": "Inspection for damage, overloading, and safe installation", "g": "Signed inspection report with recommendations and a storage racking certificate", "t": "Recommended as part of your warehouse safety program."}};var res=document.getElementById('eqResult');var cur=null;
+(function(){var D={"crane": {"n": "Mobile / crawler crane", "d": "Inspection and load testing with calibrated load measurement", "g": "Signed test report, certificate, and a PASSED sticker on the unit", "t": "Construction heavy equipment must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "heavy": {"n": "Excavator, payloader, grader & other heavy equipment", "d": "Visual, structural, functional, and safety device inspection", "g": "Signed test report, certificate, and a PASSED sticker on the unit", "t": "When used in construction, must be tested and certified by a DOLE-accredited testing organization (DOLE D.O. 13, Sec. 10)."}, "forklift": {"n": "Forklift", "d": "Inspection and load test based on rated capacity", "g": "Signed load test report, certificate, and a sticker or tag", "t": "Required under DOLE D.O. 13 when used in construction; commonly required by client audits and site safety programs elsewhere."}, "ohc": {"n": "Overhead crane / hoist / chain block", "d": "Inspection and load testing", "g": "Signed load test report, certificate, and a sticker or tag", "t": "Commonly required during DOLE inspections, client audits, and site safety programs."}, "rigging": {"n": "Slings, shackles & lifting accessories", "d": "Inspection, plus load testing if required", "g": "Signed test certificate and a tag per item", "t": "Commonly required before use on site and by client audits."}, "boiler": {"n": "Boiler", "d": "Inspection, hydrostatic test, UT thickness gauging, and as-built plans", "g": "Signed test results, certificate, as-built plans and drawings, and documents for your DOLE PTO", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1160."}, "vessel": {"n": "Air receiver / pressure vessel", "d": "Hydrostatic test, UT thickness gauging, and as-built plans", "g": "Signed test report, certificate, engineering evaluation (remaining life, factor of safety), and documents for your DOLE PTO", "t": "Requires a DOLE Permit to Operate under the OSH Standards, Rule 1170."}, "genset": {"n": "Generator set", "d": "Inspection and as-built plans", "g": "As-built plans and drawings, and documents for your DOLE PTO", "t": "Typically requires a DOLE Permit to Operate."}, "piping": {"n": "Power piping", "d": "Hydrostatic test, inspection, and as-built plans", "g": "Signed test report, certificate, as-built plans, and documents for your DOLE PTO", "t": "Typically covered by DOLE PTO together with your steam or boiler system."}, "elevator": {"n": "Elevator", "d": "Inspection and as-built plans", "g": "As-built plans and drawings, and documents for your DOLE PTO", "t": "Typically requires a DOLE Permit to Operate."}, "electrical": {"n": "Electrical system (CEI)", "d": "Electrical inspection and as-built plans", "g": "As-built plans and drawings, and documents for your Certificate of Electrical Inspection", "t": "A CEI is typically required for new or modified electrical installations."}, "racking": {"n": "Pallet racking", "d": "Inspection for damage, overloading, and safe installation", "g": "Signed inspection report with recommendations and a storage racking certificate", "t": "Recommended as part of your warehouse safety program."}};var res=document.getElementById('eqResult');var cur=null;
 document.querySelectorAll('.eq-btn').forEach(function(b){b.addEventListener('click',function(){
 document.querySelectorAll('.eq-btn').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
 var d=D[b.dataset.k];cur=b.dataset.k;document.getElementById('eqName').textContent=d.n;
@@ -876,21 +1078,25 @@ document.getElementById('eqCta').addEventListener('click',function(){if(!cur)ret
 
 
 
-document.querySelectorAll('.carousel').forEach(function(t){var cards=t.children;if(!cards.length)return;var dots=t.nextElementSibling;var ds=[];
+var paused=false,tm;function pause(){paused=true;clearTimeout(tm);tm=setTimeout(function(){paused=false},6000)}
+document.querySelectorAll('.carousel').forEach(function(t){var paused=false,tm;function pause(){paused=true;clearTimeout(tm);tm=setTimeout(function(){paused=false},8000)}var cards=t.children;if(!cards.length)return;var dots=t.nextElementSibling;var ds=[];var wr=document.createElement('div');wr.className='car-wrap car-'+t.classList[0];t.parentNode.insertBefore(wr,t);wr.appendChild(t);var pv=document.createElement('button'),nx=document.createElement('button');pv.type=nx.type='button';pv.className='car-arr prev';nx.className='car-arr next';pv.setAttribute('aria-label','Previous');nx.setAttribute('aria-label','Next');pv.innerHTML='&#8249;';nx.innerHTML='&#8250;';wr.appendChild(pv);wr.appendChild(nx);function upd(){var ov=t.scrollWidth>t.clientWidth+4;wr.classList.toggle('noov',!ov);if(dots&&dots.classList.contains('car-dots'))dots.style.display=ov?'':'none';}addEventListener('resize',upd);setTimeout(upd,300);upd();pv.addEventListener('click',function(){pause();if(t.scrollLeft<=4){t.scrollTo({left:t.scrollWidth,behavior:'smooth'})}else{t.scrollBy({left:-step(),behavior:'smooth'})}});nx.addEventListener('click',function(){pause();if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:step(),behavior:'smooth'})}});
 if(dots&&dots.classList.contains('car-dots')){for(var n=0;n<cards.length;n++){dots.appendChild(document.createElement('i'))}ds=dots.querySelectorAll('i')}
 function step(){return cards[0].offsetWidth+parseFloat(getComputedStyle(t).columnGap||getComputedStyle(t).gap||14)}
 function mark(){if(!ds.length)return;var c=Math.round(t.scrollLeft/step());if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4)c=ds.length-1;ds.forEach(function(d,i){d.classList.toggle('on',i===c)})}
 t.addEventListener('scroll',function(){requestAnimationFrame(mark)});mark();
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-var paused=false,tm;function pause(){paused=true;clearTimeout(tm);tm=setTimeout(function(){paused=false},6000)}
+
 ['pointerdown','touchstart','wheel','mouseenter'].forEach(function(e){t.addEventListener(e,pause,{passive:true})});
-setInterval(function(){if(paused||document.hidden)return;var r=t.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
-if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:step(),behavior:'smooth'})}},3200);});
+setInterval(function(){if(paused||document.hidden||wr.classList.contains('noov'))return;var r=t.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+if(t.scrollLeft+t.clientWidth>=t.scrollWidth-4){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:step(),behavior:'smooth'})}},2600);});
 
 (function(){var g=document.getElementById('guide');if(!g||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){g.classList.add('seen');io.disconnect()}},{threshold:.3});io.observe(g)})();
 
-(function(){var hs=document.querySelectorAll('.hero-slides .hs'),dots=document.querySelectorAll('.hs-dots i');if(hs.length<2)return;var i=0;
-setInterval(function(){if(document.hidden)return;hs[i].classList.remove('on');dots[i].classList.remove('on');i=(i+1)%hs.length;hs[i].classList.add('on');dots[i].classList.add('on');},4500);})();
+(function(){var hs=document.querySelectorAll('.hero-slides .hs'),dots=document.querySelectorAll('.hs-dots i');if(hs.length<2)return;var i=0,hold=0,box=document.querySelector('.hero-slides');
+function go(n){hs[i].classList.remove('on');dots[i].classList.remove('on');i=(n+hs.length)%hs.length;hs[i].classList.add('on');dots[i].classList.add('on');}
+['prev','next'].forEach(function(k){var b=document.createElement('button');b.type='button';b.className='car-arr '+k;b.setAttribute('aria-label',k==='prev'?'Previous photo':'Next photo');b.innerHTML=k==='prev'?'&#8249;':'&#8250;';b.addEventListener('click',function(e){e.stopPropagation();hold=Date.now();go(i+(k==='prev'?-1:1))});box.appendChild(b)});
+dots.forEach(function(d,n){d.style.cursor='pointer';d.addEventListener('click',function(){hold=Date.now();go(n)})});
+setInterval(function(){if(document.hidden||Date.now()-hold<8000)return;go(i+1)},3500);})();
 
 (function(){var p=document.querySelector('.pillars.reveal');if(!p)return;if(!('IntersectionObserver' in window)){p.classList.add('in');return}
 var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){p.classList.add('in');io.disconnect()}},{threshold:.15});io.observe(p)})();
@@ -900,7 +1106,7 @@ document.querySelectorAll('.fcard').forEach(function(c){function f(){c.classList
 document.querySelectorAll('.bslides').forEach(function(b){var ss=b.querySelectorAll('.bs'),ds=b.querySelectorAll('.bs-dots i'),i=0;if(ss.length<2)return;
 setInterval(function(){var card=b.closest('.fcard');if(!card||!card.classList.contains('flipped')||document.hidden)return;ss[i].classList.remove('on');ds[i].classList.remove('on');i=(i+1)%ss.length;ss[i].classList.add('on');ds[i].classList.add('on');},3000);});
 
-(function(){var SV={"heavy": {"t": "Heavy Equipment Inspection", "img": "images/excavator-insp.jpg", "k": ["heavy", "crane"], "intro": "We inspect and test construction and industrial heavy equipment at your site, so it is safe to operate and ready for DOLE certification.", "cover": ["Mobile, crawler, and rough terrain cranes", "Tower cranes", "Boom trucks and self-loaders", "Telescopic and knuckle boom cranes", "Excavators and backhoe loaders", "Payloaders and skid steers", "Bulldozers", "Motor graders", "Road rollers and compactors", "Asphalt pavers", "Dump trucks and prime movers", "Transit mixers and concrete pump trucks", "Batching plants", "Pile drivers and drilling rigs", "Forklifts, reach stackers, and telehandlers", "Manlifts, scissor lifts, and gondolas", "Construction and passenger hoists", "Welding machines and air compressors", "And other construction and industrial equipment"], "steps": [["Document review", "Registration, previous certificates, and maintenance records."], ["Visual and structural check", "Frame, boom, welds, pins, hydraulics, tires or tracks."], ["Functional test", "Controls, brakes, steering, travel, and swing."], ["Safety devices", "Alarms, horn, lights, limit switches, and load indicators."], ["Load test, where applicable", "Based on rated capacity and the applicable standard."], ["Report and certificate", "Findings, recommendations, and the PASSED sticker."]], "use": ["Load cell / dynamometer", "Laser distance meter", "Vernier caliper", "Measuring tape", "Thermal and inspection tools"], "get": "Signed test report, certificate, and a PASSED sticker attached to the unit.", "ref": "DOLE D.O. 13, s. 1998 (Sec. 10), OSH Standards, and manufacturer specifications."}, "lift": {"t": "Load Testing &amp; Lifting Gear", "img": "images/sling-insp.jpg", "k": ["ohc", "rigging", "forklift"], "intro": "We proof-load test lifting equipment and inspect every accessory, so you know exactly what each item can safely lift.", "cover": ["Overhead and gantry cranes", "Monorails and electric hoists", "Chain blocks and lever hoists", "Wire rope, web, round, and chain slings", "Shackles and hooks", "Eyebolts and swivels", "Master links and turnbuckles", "Lifting clamps and beams", "Spreader beams and lifting frames", "Forklifts and other lifting equipment"], "steps": [["Pre-test inspection", "Wear, deformation, cracks, and markings checked first."], ["Set the test load", "Based on rated capacity (SWL/WLL) and the applicable standard."], ["Rig and apply load", "Test weights or water bags, applied gradually and measured with our calibrated load cell."], ["Hold and observe", "Brake holding, slippage, and deflection monitored."], ["Post-test inspection", "Checked again for any permanent deformation."], ["Tag and certify", "Sticker or tag on each item, with the report and certificate."]], "use": ["Our own calibrated load cell / dynamometer", "Test weights and water bags, through our partner provider", "Rated shackles and slings for rigging", "Laser distance meter", "Sheave gauge and vernier caliper"], "get": "Signed load test report, certificate, and a sticker or tag on each item.", "ref": "OSH Standards, manufacturer ratings, and recognized lifting equipment standards."}, "ndt": {"t": "Non-Destructive Testing", "img": "images/utg-air.jpg", "k": ["ndt", "vessel", "boiler"], "intro": "We find what you can't see, without damaging your equipment. Every result is evaluated by an engineer, not just recorded.", "cover": ["UT thickness gauging (UTG)", "Penetrant testing (PT)", "Magnetic particle inspection (MPI)", "Boilers and pressure vessels", "Air receivers and tanks", "Piping", "Welds", "Crane hooks, booms, and lifting lugs"], "steps": [["Surface preparation", "Test points cleaned and marked."], ["Instrument calibration", "Checked against a reference standard before testing."], ["Testing", "Readings taken by NDT Level 2 personnel."], ["Evaluation", "Compared with the minimum required thickness or acceptance criteria."], ["Engineering evaluation", "Acceptance, remaining life, and factor of safety, as applicable."], ["Report and certificate", "Signed NDT report and certificate of NDT."]], "use": ["Ultrasonic thickness gauge", "Calibration step block", "Penetrant kit", "MPI yoke and consumables"], "get": "Signed NDT report, certificate of NDT, and an engineering evaluation for acceptance, remaining life, and factor of safety (as applicable).", "ref": "Performed by NDT Level 2 personnel (UT, PT, MT) to recognized NDT practices."}, "hydro": {"t": "Hydrostatic Testing", "img": "images/hydro-air.jpg", "k": ["vessel", "boiler", "piping"], "intro": "We pressure-test your vessels and piping with water to prove they hold safely before they go back into service.", "cover": ["Boilers", "Air receivers", "Pressure vessels and tanks", "Power piping", "Hoses", "Fire lines"], "steps": [["Data review", "Design and working pressure confirmed."], ["Prepare and fill", "System isolated, filled with water, and air vented."], ["Pressurize", "Raised gradually to the test pressure set by the applicable code."], ["Hold and inspect", "Checked for leaks, sweating, and deformation."], ["Depressurize and drain", "Released safely and drained."], ["Report and certificate", "Signed test report and certificate."]], "use": ["Hydrotest pump", "Calibrated pressure gauges", "Isolation fittings and blinds"], "get": "Signed hydrostatic test report and certificate.", "ref": "OSH Standards (Rules 1160 and 1170) and the applicable design code."}, "pto": {"t": "DOLE PTO / CEI Support", "img": "images/panel-insp.jpg", "k": ["boiler", "vessel", "genset", "piping", "elevator", "electrical"], "intro": "We inspect, test, and prepare the as-built plans and documents you need for your DOLE Permit to Operate or Certificate of Electrical Inspection. We can also file with DOLE for you, as agreed.", "cover": ["Boilers", "Pressure vessels and air receivers", "Generator sets", "Power piping", "Elevators", "Hoists", "Electrical systems", "Other mechanical equipment"], "steps": [["Site survey", "Nameplate data, layout, and existing documents gathered."], ["Inspection and testing", "Hydrotest, UTG, and other tests as required."], ["As-built plans", "Plans, drawings, and computations prepared."], ["Sign and seal", "Signed and sealed by a licensed PME."], ["Document package", "Complete set ready for your application."], ["Submission, your choice", "We file with DOLE for you, or hand over the complete package for your team to file."]], "use": ["Measuring tools", "Testing instruments as required", "CAD for plans and drawings"], "get": "Test results, as-built plans and drawings, and documents for your DOLE application.", "ref": "OSH Standards and the Philippine Mechanical Engineering Act (RA 8495)."}, "rack": {"t": "Storage Racking Inspection", "img": "images/services/rack.jpg", "k": ["racking"], "intro": "We check your warehouse racking for damage, overloading, and unsafe installation before a small dent becomes a collapse.", "cover": ["Selective pallet racks", "Drive-in racks", "Cantilever racks", "Shelving and mezzanines"], "steps": [["Walk-through", "Every bay and row checked."], ["Damage check", "Uprights, beams, bracing, and baseplates."], ["Components", "Beam locks, safety pins, anchors, and column guards."], ["Load check", "Actual loads compared with rated capacity and signage."], ["Report and certificate", "Recommendations and a storage racking certificate."]], "use": ["Laser distance meter", "Plumb and level tools", "Measuring tape", "Vernier caliper"], "get": "Signed inspection report with recommendations and a storage racking certificate.", "ref": "Manufacturer ratings and recognized racking safety practices."}, "training": {"t": "Safety Training", "img": "images/training-class.jpg", "k": ["training"], "intro": "Customized courses built around your equipment and your site, taught by people who inspect for a living.", "cover": ["Equipment inspection and pre-use checks", "Lifting and rigging safety", "Pressure equipment safety", "Hazard identification and risk assessment", "OSH topics for your site"], "steps": [["Needs check", "We learn your site, equipment, and audience."], ["Custom course", "Content built for your workers or supervisors."], ["Delivery", "Onsite or online, with real examples from the field."], ["Assessment", "Short evaluation to confirm learning."], ["Certificate", "Certificate of completion for each participant."]], "use": ["Training manuals and materials", "Actual inspection tools for demos"], "get": "Certificate of completion, training manuals and materials, plus free consultancy during the training.", "ref": "Certificates signed by a DOLE-accredited Safety Consultant."}, "consult": {"t": "Engineering Consultancy", "img": "images/meeting.jpg", "k": ["consult"], "intro": "Technical advice from a licensed PME when you need a clear answer on equipment safety or compliance.", "cover": ["Compliance gap assessment", "Equipment safety evaluation", "Remaining life assessment", "Repair and derating recommendations", "Technical documents for sign and seal"], "steps": [["Consultation", "We understand your concern and goals."], ["Site visit and data review", "Equipment, records, and conditions checked."], ["Analysis", "Engineering evaluation against standards."], ["Recommendations", "Clear, practical actions in writing."]], "use": ["Inspection and testing data", "Engineering computations"], "get": "Written findings and recommendations, signed and sealed by a PME.", "ref": "OSH Standards, DOLE issuances, and recognized engineering codes."}},Q=[{"t": "Trained &amp; Qualified Inspectors", "intro": "Every BNW job is led by people with verifiable credentials.", "list": ["Professional Mechanical Engineer, PRC License No. 0007053", "DOLE-Accredited Safety Consultant, No. 1030-102124-OSHC-0607", "OSHC Authorized Inspectors (both founders)", "NDT Level 2 in UT, PT, and MT (both founders)", "TESDA NC II Heavy Equipment Operator", "25+ years of combined field experience"], "cta": ["See our founders", "#team"]}, {"t": "Standards-Based Inspection", "intro": "We don't inspect by feel. Every finding is measured against a written standard.", "list": ["Occupational Safety and Health Standards (OSHS)", "DOLE D.O. 13, s. 1998 (construction heavy equipment)", "OSHS Rule 1160 (boilers) and Rule 1170 (unfired pressure vessels)", "Philippine Mechanical Engineering Act (RA 8495)", "Manufacturer specifications and load ratings", "Recognized engineering codes for lifting and pressure equipment"], "cta": ["View our accreditation", "#accreditation"]}, {"t": "Calibrated Equipment &amp; Tools", "intro": "A reading is only as good as the instrument. Ours are calibrated so your report holds up.", "list": ["Ultrasonic thickness gauge, checked on a reference block before every job", "Calibrated load cell / dynamometer for load tests", "Calibrated pressure gauges for hydrotests", "Laser distance meter, vernier caliper, and sheave gauge", "Calibration certificates available upon request"], "cta": ["See our toolkit", "#tools"]}, {"t": "Multidisciplinary Team", "intro": "Each job gets the right mix of skills, not just whoever is available.", "list": ["Licensed mechanical engineer for evaluation and sign and seal", "OSHC authorized inspectors for DOLE requirements", "NDT Level 2 practitioners for UT, PT, and MT", "Heavy equipment operators who know the machines", "Safety professionals for training and compliance"], "cta": ["See our work on site", "#work"]}],sh=document.getElementById('sheet'),bd=document.getElementById('shBody'),last=null;
+(function(){var SV={"heavy": {"t": "Heavy Equipment Inspection", "img": "images/excavator-insp.jpg", "k": ["heavy", "crane"], "intro": "We inspect and test construction and industrial heavy equipment at your site, so it is safe to operate and ready for DOLE certification.", "cover": ["Mobile, crawler, and rough terrain cranes", "Tower cranes", "Boom trucks and self-loaders", "Telescopic and knuckle boom cranes", "Excavators and backhoe loaders", "Payloaders and skid steers", "Bulldozers", "Motor graders", "Road rollers and compactors", "Asphalt pavers", "Dump trucks and prime movers", "Transit mixers and concrete pump trucks", "Batching plants", "Pile drivers and drilling rigs", "Forklifts, reach stackers, and telehandlers", "Manlifts, scissor lifts, and gondolas", "Construction and passenger hoists", "Welding machines and air compressors", "And other construction and industrial equipment"], "steps": [["Document review", "Registration, previous certificates, and maintenance records."], ["Visual and structural check", "Frame, boom, welds, pins, hydraulics, tires or tracks."], ["Functional test", "Controls, brakes, steering, travel, and swing."], ["Safety devices", "Alarms, horn, lights, limit switches, and load indicators."], ["Load test, where applicable", "Based on rated capacity and the applicable standard."], ["Report and certificate", "Findings, recommendations, and the PASSED sticker."]], "use": ["Load cell / dynamometer", "Laser distance meter", "Vernier caliper", "Measuring tape", "Thermal and inspection tools", "Other measuring devices, as applicable"], "get": "Signed test report, certificate, and a PASSED sticker attached to the unit.", "ref": "DOLE D.O. 13, s. 1998 (Sec. 10), OSH Standards, and manufacturer specifications."}, "lift": {"t": "Load Testing &amp; Lifting Gear", "img": "images/sling-insp.jpg", "k": ["ohc", "rigging", "forklift"], "intro": "We load test lifting equipment and inspect every accessory, so you know exactly what each item can safely lift. Lifting accessories are load tested if required.", "cover": ["Overhead and gantry cranes", "Monorails and electric hoists", "Chain blocks and lever hoists", "Wire rope, web, round, and chain slings", "Shackles and hooks", "Eyebolts and swivels", "Master links and turnbuckles", "Lifting clamps and beams", "Spreader beams and lifting frames", "Forklifts and other lifting equipment"], "steps": [["Pre-test inspection", "Wear, deformation, cracks, and markings checked first."], ["Set the test load", "Based on rated capacity (SWL/WLL) and the applicable standard."], ["Rig and apply load", "Test weights or water bags, applied gradually and measured with our calibrated load cell."], ["Hold and observe", "Brake holding, slippage, and deflection monitored."], ["Post-test inspection", "Checked again for any permanent deformation."], ["Tag and certify", "Sticker or tag on each item, with the report and certificate."]], "use": ["Our own calibrated load cell / dynamometer", "Test weights and water bags, through our partner provider", "Rated shackles and slings for rigging", "Laser distance meter", "Sheave gauge and vernier caliper", "Other measuring devices, as applicable"], "get": "Signed load test report, certificate, and a sticker or tag on each item.", "ref": "OSH Standards, manufacturer ratings, and recognized lifting equipment standards."}, "ndt": {"t": "Non-Destructive Testing", "img": "images/utg-air.jpg", "k": ["ndt", "vessel", "boiler"], "intro": "We find what you can't see, without damaging your equipment. Every result is evaluated by an engineer, not just recorded.", "cover": ["UT thickness gauging (UTG)", "Penetrant testing (PT)", "Magnetic particle inspection (MPI)", "Boilers and pressure vessels", "Air receivers and tanks", "Piping", "Welds", "Crane hooks, booms, and lifting lugs"], "steps": [["Surface preparation", "Test points cleaned and marked."], ["Instrument calibration", "Checked against a reference standard before testing."], ["Testing", "Readings taken by NDT Level 2 personnel."], ["Evaluation", "Compared with the minimum required thickness or acceptance criteria."], ["Engineering evaluation", "Acceptance, remaining life, and factor of safety, as applicable."], ["Report and certificate", "Signed NDT report and certificate of NDT."]], "use": ["Ultrasonic thickness gauge", "Calibration step block", "Penetrant kit", "MPI yoke and consumables", "Other measuring devices, as applicable"], "get": "Signed NDT report, certificate of NDT, and an engineering evaluation for acceptance, remaining life, and factor of safety (as applicable).", "ref": "Performed by NDT Level 2 personnel (UT, PT, MT) to recognized NDT practices."}, "hydro": {"t": "Hydrostatic Testing", "img": "images/hydro-air.jpg", "k": ["vessel", "boiler", "piping"], "intro": "We pressure-test your vessels and piping with water to prove they hold safely before they go back into service.", "cover": ["Boilers", "Air receivers", "Pressure vessels and tanks", "Power piping", "Hoses", "Fire lines"], "steps": [["Data review", "Design and working pressure confirmed."], ["Prepare and fill", "System isolated, filled with water, and air vented."], ["Pressurize", "Raised gradually to the test pressure set by the applicable code."], ["Hold and inspect", "Checked for leaks, sweating, and deformation."], ["Depressurize and drain", "Released safely and drained."], ["Report and certificate", "Signed test report and certificate."]], "use": ["Hydrotest pump", "Calibrated pressure gauges", "Isolation fittings and blinds", "Other measuring devices, as applicable"], "get": "Signed hydrostatic test report and certificate.", "ref": "OSH Standards (Rules 1160 and 1170) and the applicable design code."}, "pto": {"t": "DOLE PTO / CEI Support", "img": "images/panel-insp.jpg", "k": ["boiler", "vessel", "genset", "piping", "elevator", "electrical"], "intro": "We inspect, test, and prepare the as-built plans and documents you need for your DOLE Permit to Operate or Certificate of Electrical Inspection. We can also file with DOLE for you, as agreed.", "cover": ["Boilers", "Pressure vessels and air receivers", "Generator sets", "Power piping", "Elevators", "Hoists", "Electrical systems", "Other mechanical equipment"], "steps": [["Site survey", "Nameplate data, layout, and existing documents gathered."], ["Inspection and testing", "Hydrotest, UTG, and other tests as required."], ["As-built plans", "Plans, drawings, and computations prepared."], ["Sign and seal", "Signed and sealed by a licensed PME."], ["Document package", "Complete set ready for your application."], ["Submission, your choice", "We file with DOLE for you, or hand over the complete package for your team to file."]], "use": ["Measuring tools", "Testing instruments as required", "CAD for plans and drawings", "Other measuring devices, as applicable"], "get": "Test results, as-built plans and drawings, and documents for your DOLE application.", "ref": "OSH Standards and the Philippine Mechanical Engineering Act (RA 8495)."}, "rack": {"t": "Storage Racking Inspection", "img": "images/services/rack.jpg", "k": ["racking"], "intro": "We check your warehouse racking for damage, overloading, and unsafe installation before a small dent becomes a collapse.", "cover": ["Selective pallet racks", "Drive-in racks", "Cantilever racks", "Shelving and mezzanines"], "steps": [["Walk-through", "Every bay and row checked."], ["Damage check", "Uprights, beams, bracing, and baseplates."], ["Components", "Beam locks, safety pins, anchors, and column guards."], ["Load check", "Actual loads compared with rated capacity and signage."], ["Report and certificate", "Recommendations and a storage racking certificate."]], "use": ["Laser distance meter", "Plumb and level tools", "Measuring tape", "Vernier caliper", "Other measuring devices, as applicable"], "get": "Signed inspection report with recommendations and a storage racking certificate.", "ref": "Manufacturer ratings and recognized racking safety practices."}, "training": {"t": "Safety Training", "img": "images/training-class.jpg", "k": ["training"], "intro": "Customized courses built around your equipment and your site, taught by people who inspect for a living.", "cover": ["Equipment inspection and pre-use checks", "Lifting and rigging safety", "Pressure equipment safety", "Hazard identification and risk assessment", "OSH topics for your site"], "steps": [["Needs check", "We learn your site, equipment, and audience."], ["Custom course", "Content built for your workers or supervisors."], ["Delivery", "Onsite or online, with real examples from the field."], ["Assessment", "Short evaluation to confirm learning."], ["Certificate", "Certificate of completion for each participant."]], "use": ["Training manuals and materials", "Actual inspection tools for demos", "Other measuring devices, as applicable"], "get": "Certificate of completion, training manuals and materials, plus free consultancy during the training.", "ref": "Certificates signed by a DOLE-accredited Safety Consultant."}, "consult": {"t": "Engineering Consultancy", "img": "images/consult.jpg", "k": ["consult"], "intro": "Technical advice from a licensed PME when you need a clear answer on equipment safety or compliance.", "cover": ["Compliance gap assessment", "Equipment safety evaluation", "Remaining life assessment", "Repair and derating recommendations", "Technical documents for sign and seal"], "steps": [["Consultation", "We understand your concern and goals."], ["Site visit and data review", "Equipment, records, and conditions checked."], ["Analysis", "Engineering evaluation against standards."], ["Recommendations", "Clear, practical actions in writing."]], "use": ["Inspection and testing data", "Engineering computations", "Other measuring devices, as applicable"], "get": "Written findings and recommendations, signed and sealed by a PME.", "ref": "OSH Standards, DOLE issuances, and recognized engineering codes."}},Q=[{"t": "Trained &amp; Qualified Inspectors", "intro": "Every BNW job is handled by people with verifiable credentials. This is what our team brings to your site.", "list": ["Professional Mechanical Engineer, PRC License No. 0007053", "DOLE-Accredited Safety Consultant, No. 1030-102124-OSHC-0607", "Licensed Inspection Engineers", "OSHC Authorized Inspectors", "NDT Level 2 practitioners in UT, PT, and MT", "TESDA NC II Heavy Equipment Operators", "25+ years of combined field experience"], "cta": ["See our founders", "#team"]}, {"t": "Standards-Based Inspection", "intro": "We don't inspect by feel. Every finding is measured against a written standard.", "list": ["Occupational Safety and Health Standards (OSHS)", "DOLE D.O. 13, s. 1998 (construction heavy equipment)", "OSHS Rule 1160 (boilers) and Rule 1170 (unfired pressure vessels)", "ASME standards, such as the B30 series for cranes and rigging and the BPVC for boilers and pressure vessels", "Philippine Mechanical Engineering Act (RA 8495)", "Manufacturer specifications and load ratings"], "cta": ["View our accreditation", "#accreditation"]}, {"t": "Calibrated Equipment &amp; Tools", "intro": "A reading is only as good as the instrument. Ours are calibrated so your report holds up.", "list": ["Ultrasonic thickness gauge, checked on a reference block before every job", "Calibrated load cell / dynamometer for load tests", "Calibrated pressure gauges for hydrotests", "Laser distance meter, vernier caliper, and sheave gauge", "Other calibrated measuring devices, as applicable", "Calibration certificates available upon request"], "cta": ["See our toolkit", "#tools"]}, {"t": "Multidisciplinary Team", "intro": "Each job gets the right mix of skills, not just whoever is available.", "list": ["Licensed mechanical engineer for evaluation and sign and seal", "Licensed inspection engineers", "OSHC authorized inspectors for DOLE requirements", "NDT Level 2 practitioners for UT, PT, and MT", "Heavy equipment operators who know the machines", "Safety professionals for training and compliance"], "cta": ["See our work on site", "#work"]}],sh=document.getElementById('sheet'),bd=document.getElementById('shBody'),last=null;
 function esc(x){return x}
 function open(h){bd.innerHTML=h;sh.classList.add('open');sh.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';sh.querySelector('.sheet-box').scrollTop=0;sh.querySelector('.sheet-x').focus();}
 function close(){sh.classList.remove('open');sh.setAttribute('aria-hidden','true');document.body.style.overflow='';if(last)last.focus();}
@@ -910,7 +1116,7 @@ function svc(k){var d=SV[k];if(!d)return;var h='<div class="sh-hero"><img src="'
 h+='<h4>What we cover</h4><div class="sh-chips">'+d.cover.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>';
 h+='<h4>How we do it</h4><ol class="sh-steps">'+d.steps.map(function(x){return '<li><b>'+x[0]+'</b><span>'+x[1]+'</span></li>'}).join('')+'</ol>';
 h+='<h4>What we use</h4><div class="sh-chips">'+d.use.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>';
-h+='<div class="sh-get"><b>You get</b>'+d.get+'</div><p class="sh-seal">&#10003; All certifications are signed and sealed by a licensed PME.</p><p class="sh-ref">Reference: '+d.ref+'</p>';
+h+='<div class="sh-get"><b>You get</b>'+d.get+'</div><p class="sh-seal">&#10003; All certifications are signed and sealed by a licensed PME and a DOLE Authorized Inspector.</p><p class="sh-ref">Reference: '+d.ref+'</p>';
 h+='<div class="sh-cta"><a class="btn btn-gold" href="#quote" data-k="'+d.k.join(',')+'">Get a quote for this <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="#guide">Check my equipment</a></div></div>';open(h);}
 function q(i){var d=Q[i];var h='<div class="sh-q"><h3 id="shTitle">'+d.t+'</h3><p class="intro" style="margin:8px 0 14px;color:var(--steel);font-size:16.5px">'+d.intro+'</p><ul class="sh-list">'+d.list.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><div class="sh-cta"><a class="btn btn-gold" href="'+d.cta[1]+'">'+d.cta[0]+' <span class="arr">&rarr;</span></a></div></div>';open(h);}
 document.querySelectorAll('.card[data-svc]').forEach(function(c){function go(e){last=c;svc(c.getAttribute('data-svc'));}var sx=0,sy=0;c.addEventListener('pointerdown',function(e){sx=e.clientX;sy=e.clientY});c.addEventListener('click',function(e){if(Math.abs(e.clientX-sx)>10||Math.abs(e.clientY-sy)>10)return;go(e)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(e)}});});
@@ -918,6 +1124,22 @@ document.querySelectorAll('.pillar[data-q]').forEach(function(p){function go(){l
 var st=document.querySelectorAll('.steps.live .step');if(st.length){var played=false;function play(){if(played)return;played=true;st.forEach(function(x,n){setTimeout(function(){x.classList.add('in')},n*450)});var a=0;setTimeout(function(){setInterval(function(){st.forEach(function(x){x.classList.remove('act')});st[a].classList.add('act');a=(a+1)%st.length},1800)},st.length*450);}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){play();io.disconnect()}})},{threshold:.25});io.observe(st[0].parentNode)}else play();}
 })();
+
+(function(){var h=document.querySelector('.hero h1');if(!h)return;var mq=matchMedia('(min-width:901px)');
+function fit(){if(!mq.matches){h.style.removeProperty('--h1fs');return}var w=h.clientWidth,sp=h.querySelectorAll('span'),fs=64;h.style.setProperty('--h1fs',fs+'px');var m=0;sp.forEach(function(x){x.style.display='inline-block';m=Math.max(m,x.getBoundingClientRect().width);x.style.display=''});if(m>w){fs=Math.floor(fs*w/m*0.98)}h.style.setProperty('--h1fs',Math.max(38,fs)+'px');}
+fit();addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
+
+(function(){var g=document.querySelector('.cards.reveal-cards');if(!g)return;var cs=g.querySelectorAll('.card');var mq=matchMedia('(min-width:1000px)');
+function start(){cs.forEach(function(c,n){c.style.transitionDelay=(mq.matches?n*90:0)+'ms'});g.classList.add('in');setTimeout(function(){cs.forEach(function(c){c.style.transitionDelay=''})},1400);
+var i=0,hov=false;g.addEventListener('mouseenter',function(){hov=true;cs.forEach(function(c){c.classList.remove('lit')})});g.addEventListener('mouseleave',function(){hov=false});
+setInterval(function(){if(!mq.matches||hov||document.hidden)return;var rc=g.getBoundingClientRect();if(rc.bottom<0||rc.top>innerHeight)return;cs.forEach(function(c){c.classList.remove('lit')});cs[i].classList.add('lit');i=(i+1)%cs.length},1800);}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){start();io.disconnect()}},{threshold:.15});io.observe(g)}else start();})();
+
+(function(){var sec=document.getElementById('cases');if(!sec)return;var cs=sec.querySelectorAll('.case');
+function go(){sec.classList.add('in');var n=sec.querySelector('.fos-n');if(n){var to=parseFloat(n.dataset.to),t0=null;function st(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1600);n.textContent=(to*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(st)}setTimeout(function(){requestAnimationFrame(st)},300)}
+var i=0,hov=false;sec.addEventListener('mouseenter',function(){hov=true;cs.forEach(function(c){c.classList.remove('lit')})});sec.addEventListener('mouseleave',function(){hov=false});
+}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();io.disconnect()}},{threshold:.2});io.observe(sec)}else go();})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
