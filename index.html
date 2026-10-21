@@ -529,7 +529,7 @@ a.stat:hover .go{border-bottom-style:solid}
 
 /* what we found */
 .cases{background:var(--paper)}
-.case-grid{display:flex;gap:18px;margin-top:28px}
+.case-grid{display:flex;gap:18px;margin-top:28px;align-items:flex-start}
 .case{flex:0 0 86%;scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:var(--radius);padding:22px 22px 24px;box-shadow:0 10px 26px rgba(15,42,102,.08);display:flex;flex-direction:column}
 .case-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
 .case-ic{display:grid;place-items:center;width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#173b8c,#0a1d47);color:var(--gold-light)}
@@ -544,6 +544,59 @@ a.stat:hover .go{border-bottom-style:solid}
 .case-cta{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
 .case-cta p{margin:0;font-weight:700;color:var(--blue-dark);font-size:17px}
 @media(min-width:1000px){.case-grid.carousel{display:grid!important;grid-template-columns:repeat(3,1fr);overflow:visible}.case{flex:none}}
+
+/* What we found: lively */
+.cases.dark{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 85% -10%,rgba(226,192,106,.16),transparent 60%),linear-gradient(160deg,#0f2a66 0%,#0a1d47 100%)}
+.cases.dark:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+.cases.dark .wrap{position:relative}
+.cases.dark h2{color:#fff}.cases.dark .lead{color:#c9d4ec}.cases.dark .eyebrow{color:var(--gold-light)}
+.cases.dark .case-cta p{color:#fff}
+.cases.dark .car-dots i{background:rgba(255,255,255,.35)}
+.case{border:0;box-shadow:0 18px 40px rgba(0,0,0,.28);transition:transform .45s ease,box-shadow .45s ease,opacity .7s ease}
+.case:hover,.case.lit{transform:translateY(-8px);box-shadow:0 26px 50px rgba(0,0,0,.38),0 0 0 2px var(--gold)}
+.case-ic svg{animation:icfloat 3.6s ease-in-out infinite}
+@keyframes icfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.case-tag{position:relative;overflow:hidden}
+.case-tag:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:shine 3.5s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+/* evidence strips */
+.ev{margin:0 0 14px;border-radius:12px;background:#f3f6fc;border:1px solid #e1e7f3;padding:12px 14px;font-size:14px;color:var(--blue-dark)}
+.ev-leak{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ev-lbl{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--blue-dark);color:#fff;padding:4px 8px;border-radius:6px}
+.ev-drop{color:#c27a12;display:inline-grid;animation:drip 1.8s ease-in infinite}
+@keyframes drip{0%{transform:translateY(-4px);opacity:0}30%{opacity:1}100%{transform:translateY(8px);opacity:0}}
+.ev-txt{font-weight:700}
+.fos-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:600}
+.fos-row b{font-family:"Barlow Condensed",Arial,sans-serif;font-size:24px;color:#c0392b}
+.fos-row small{font-size:13px;color:var(--steel);font-family:Barlow,Arial,sans-serif}
+.fos-bar{position:relative;height:12px;border-radius:999px;background:#e3e8f2;margin-top:8px;overflow:visible}
+.fos-bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:linear-gradient(90deg,#e67e22,#c0392b);transition:width 1.6s cubic-bezier(.2,.8,.2,1) .3s}
+.fos-bar em{position:absolute;right:0;top:-5px;bottom:-5px;width:3px;border-radius:2px;background:var(--blue-dark)}
+.fos-bar em:after{content:"5";position:absolute;top:-16px;right:-3px;font-size:11px;font-weight:800;font-style:normal;color:var(--blue-dark)}
+.cases.in .fos-bar i{width:50%}
+.ev-tag{display:flex;align-items:center;justify-content:center;gap:12px;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:20px}
+.tag-old,.tag-new{display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:8px;background:#fff;border:1px solid #e1e7f3}
+.tag-old{position:relative;color:#8a93a6}
+.tag-old:after{content:"";position:absolute;left:6px;right:6px;top:50%;height:3px;background:#c0392b;transform:scaleX(0);transform-origin:left;transition:transform .6s ease .5s}
+.cases.in .tag-old:after{transform:scaleX(1)}
+.tag-new{color:var(--blue-dark);opacity:0;transform:scale(.6);transition:opacity .5s ease 1.1s,transform .5s cubic-bezier(.3,1.6,.5,1) 1.1s}
+.cases.in .tag-new{opacity:1;transform:none}
+.tag-arr{color:var(--gold)}
+.sw{width:14px;height:14px;border-radius:4px;display:inline-block}.sw-o{background:#f28c28}.sw-y{background:#f4c20d}
+/* found-action-result timeline */
+.case dl{position:relative;padding-left:20px}
+.case dl:before{content:"";position:absolute;left:5px;top:16px;bottom:16px;width:2px;background:linear-gradient(var(--gold),rgba(201,161,59,.15))}
+.case dl div{position:relative;border-top:0!important;padding:8px 0}
+.case dl div:before{content:"";position:absolute;left:-20px;top:13px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--gold);transition:background .4s}
+.cases.in .case dl div:before{background:var(--gold)}
+.cases.in .case dl div:nth-child(1):before{transition-delay:.4s}.cases.in .case dl div:nth-child(2):before{transition-delay:.9s}.cases.in .case dl div:nth-child(3):before{transition-delay:1.4s}
+.case dl div:last-child dt{color:#1e8449}
+/* entrance */
+.cases .case{opacity:0;transform:translateY(34px)}
+.cases.in .case{opacity:1;transform:none}
+.cases.in .case:nth-child(2){transition-delay:.12s}.cases.in .case:nth-child(3){transition-delay:.24s}
+.cases.in .case.lit,.cases.in .case:hover{transform:translateY(-8px);transition-delay:0s}
+@media(prefers-reduced-motion:reduce){.cases .case{opacity:1!important;transform:none!important}.case-ic svg,.case-tag:after,.ev-drop{animation:none}.fos-bar i{width:50%}.tag-new{opacity:1;transform:none}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -815,12 +868,12 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
   </div>
 </section>
 
-<section id="cases" class="cases">
+<section id="cases" class="cases dark">
   <div class="wrap">
     <span class="eyebrow">What we found</span>
     <h2>Real findings. Real risks, caught in time.</h2>
     <p class="lead">Every inspection has a story. Here are a few from recent jobs, shared without client names.</p>
-    <div class="case-grid carousel"><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 40h30V28H6z"/><path d="M36 34h10l6 6v0H36z"/><path d="M36 40h18"/><circle cx="14" cy="44" r="4"/><circle cx="46" cy="44" r="4"/><path d="M18 28 44 10"/><path d="M44 10v10"/><path d="M8 40v12M4 52h8M50 40v12M46 52h8"/></svg></span><span class="case-tag">Brand new</span></div><h3>Brand new doesn’t mean safe.</h3><p class="case-meta">Boom truck · Construction site, Laguna</p><dl><div><dt>Found</dt><dd>A newly delivered unit, fresh from the manufacturer, showed a hydraulic oil leak at the outrigger cylinder during load testing.</dd></div><div><dt>Action</dt><dd>We recommended taking it out of service until repaired.</dd></div><div><dt>Result</dt><dd>Repaired within a week. Passed the re-test and cleared for safe operation.</dd></div></dl></article><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="8" width="36" height="44" rx="14"/><path d="M24 52v6M40 52v6M20 58h24"/><circle cx="32" cy="22" r="4"/><path d="M32 18v-6"/><path d="M22 34h20M22 40h12"/></svg></span><span class="case-tag">FoS 2.5 vs 5</span></div><h3>What you can’t see can still fail.</h3><p class="case-meta">Air receiver tank · Manufacturing plant, Rizal</p><dl><div><dt>Found</dt><dd>In service for about 30 years and never inspected. UT thickness gauging showed the shell plate had thinned far below its original thickness. Our computation put its factor of safety at about 2.5, half the required 5.</dd></div><div><dt>Action</dt><dd>We recommended derating the tank. Since operations could not run at a lower pressure, the client chose to replace it.</dd></div><div><dt>Result</dt><dd>An unsafe vessel was retired before it could fail. The client told us they never suspected it, because the thinning could not be seen from the outside.</dd></div></dl></article><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8c-8 0-12 6-12 14s5 14 12 14h24c7 0 12-6 12-14S52 8 44 8z" /><path d="M20 36v12M44 36v12"/><path d="M14 48h36v6H14z"/><path d="M26 22h12"/></svg></span><span class="case-tag">10t tag · 3t sling</span></div><h3>The tag said 10 tons. The sling could only take 3.</h3><p class="case-meta">Lifting sling · Crane rental company</p><dl><div><dt>Found</dt><dd>A sling labeled 10 tons was actually a 3-ton sling. Its yellow color and narrower width matched a 3-ton sling under the standard color code, where 10-ton slings are orange and much wider. The client had labeled it themselves, assuming it matched their equipment.</dd></div><div><dt>Action</dt><dd>We held a short learning session with their team on how to verify sling capacity using the manufacturer’s tag, color, and size.</dd></div><div><dt>Result</dt><dd>The sling, still in good condition, was correctly identified as 3 tons before it was ever used on a heavy lift. The client can now spot mislabeled slings on their own.</dd></div></dl></article></div>
+    <div class="case-grid carousel"><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 40h30V28H6z"/><path d="M36 34h10l6 6v0H36z"/><path d="M36 40h18"/><circle cx="14" cy="44" r="4"/><circle cx="46" cy="44" r="4"/><path d="M18 28 44 10"/><path d="M44 10v10"/><path d="M8 40v12M4 52h8M50 40v12M46 52h8"/></svg></span><span class="case-tag">Brand new</span></div><h3>Brand new doesn’t mean safe.</h3><p class="case-meta">Boom truck · Construction site, Laguna</p><div class="ev ev-leak"><span class="ev-lbl">Brand-new unit</span><span class="ev-drop"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3s7 8 7 12a7 7 0 0 1-14 0c0-4 7-12 7-12z" fill="currentColor"/></svg></span><span class="ev-txt">Leak at outrigger cylinder</span></div><dl><div><dt>Found</dt><dd>A newly delivered unit, fresh from the manufacturer, showed a hydraulic oil leak at the outrigger cylinder during load testing.</dd></div><div><dt>Action</dt><dd>We recommended taking it out of service until repaired.</dd></div><div><dt>Result</dt><dd>Repaired within a week. Passed the re-test and cleared for safe operation.</dd></div></dl></article><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="8" width="36" height="44" rx="14"/><path d="M24 52v6M40 52v6M20 58h24"/><circle cx="32" cy="22" r="4"/><path d="M32 18v-6"/><path d="M22 34h20M22 40h12"/></svg></span><span class="case-tag">FoS 2.5 vs 5</span></div><h3>What you can’t see can still fail.</h3><p class="case-meta">Air receiver tank · Manufacturing plant, Rizal</p><div class="ev ev-fos"><div class="fos-row"><span>Factor of safety</span><b><span class="fos-n" data-to="2.5">0.0</span> <small>/ 5 required</small></b></div><div class="fos-bar"><i></i><em></em></div></div><dl><div><dt>Found</dt><dd>In service for about 30 years and never inspected. UT thickness gauging showed the shell plate had thinned far below its original thickness. Our computation put its factor of safety at about 2.5, half the required 5.</dd></div><div><dt>Action</dt><dd>We recommended derating the tank. Since operations could not run at a lower pressure, the client chose to replace it.</dd></div><div><dt>Result</dt><dd>An unsafe vessel was retired before it could fail. The client told us they never suspected it, because the thinning could not be seen from the outside.</dd></div></dl></article><article class="case"><div class="case-top"><span class="case-ic"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8c-8 0-12 6-12 14s5 14 12 14h24c7 0 12-6 12-14S52 8 44 8z" /><path d="M20 36v12M44 36v12"/><path d="M14 48h36v6H14z"/><path d="M26 22h12"/></svg></span><span class="case-tag">10t tag · 3t sling</span></div><h3>The tag said 10 tons. The sling could only take 3.</h3><p class="case-meta">Lifting sling · Crane rental company</p><div class="ev ev-tag"><span class="tag-old"><span class="sw sw-o"></span>10 TONS</span><span class="tag-arr">&rarr;</span><span class="tag-new"><span class="sw sw-y"></span>3 TONS</span></div><dl><div><dt>Found</dt><dd>A sling labeled 10 tons was actually a 3-ton sling. Its yellow color and narrower width matched a 3-ton sling under the standard color code, where 10-ton slings are orange and much wider. The client had labeled it themselves, assuming it matched their equipment.</dd></div><div><dt>Action</dt><dd>We held a short learning session with their team on how to verify sling capacity using the manufacturer’s tag, color, and size.</dd></div><div><dt>Result</dt><dd>The sling, still in good condition, was correctly identified as 3 tons before it was ever used on a heavy lift. The client can now spot mislabeled slings on their own.</dd></div></dl></article></div>
     <div class="car-dots"></div>
     <div class="case-cta"><p>Not sure what your equipment is hiding?</p><a class="btn btn-gold" href="#quote">Get it inspected <span class="arr">&rarr;</span></a></div>
   </div>
@@ -1040,6 +1093,12 @@ function start(){cs.forEach(function(c,n){c.style.transitionDelay=(mq.matches?n*
 var i=0,hov=false;g.addEventListener('mouseenter',function(){hov=true;cs.forEach(function(c){c.classList.remove('lit')})});g.addEventListener('mouseleave',function(){hov=false});
 setInterval(function(){if(!mq.matches||hov||document.hidden)return;var rc=g.getBoundingClientRect();if(rc.bottom<0||rc.top>innerHeight)return;cs.forEach(function(c){c.classList.remove('lit')});cs[i].classList.add('lit');i=(i+1)%cs.length},1800);}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){start();io.disconnect()}},{threshold:.15});io.observe(g)}else start();})();
+
+(function(){var sec=document.getElementById('cases');if(!sec)return;var cs=sec.querySelectorAll('.case');
+function go(){sec.classList.add('in');var n=sec.querySelector('.fos-n');if(n){var to=parseFloat(n.dataset.to),t0=null;function st(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1600);n.textContent=(to*(1-Math.pow(1-p,3))).toFixed(1);if(p<1)requestAnimationFrame(st)}setTimeout(function(){requestAnimationFrame(st)},300)}
+var i=0,hov=false;sec.addEventListener('mouseenter',function(){hov=true;cs.forEach(function(c){c.classList.remove('lit')})});sec.addEventListener('mouseleave',function(){hov=false});
+if(matchMedia('(min-width:1000px)').matches)setTimeout(function(){setInterval(function(){if(hov||document.hidden)return;cs.forEach(function(c){c.classList.remove('lit')});cs[i].classList.add('lit');i=(i+1)%cs.length},2600)},2200);}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();io.disconnect()}},{threshold:.2});io.observe(sec)}else go();})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
