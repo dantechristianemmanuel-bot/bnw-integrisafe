@@ -676,6 +676,15 @@ a.stat:hover .go{border-bottom-style:solid}
 .fc-front .fc-quote:before{content:"\201C";position:absolute;top:-18px;left:10px;font-size:64px;line-height:1;color:var(--gold);font-family:Georgia,serif}
 .fc-story{margin:0 0 14px;font-size:15.5px;line-height:1.65;color:var(--steel);text-align:left}
 .fc-story b{color:var(--blue-dark)}
+
+/* legal credentials */
+.legal{margin:22px 0 4px;padding:18px 18px 20px;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;background:#fff}
+.legal-h{margin:0 0 10px;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.legal-pills{display:flex;flex-wrap:wrap;gap:8px}
+.legal-pills span{font-size:14px;font-weight:700;color:var(--blue-dark);background:#eef2fa;padding:6px 12px;border-radius:999px}
+.legal-cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:14px}
+.legal-note{font-size:13.5px;color:var(--steel)}
+@media(max-width:600px){.legal-cta .btn{width:100%;justify-content:center}}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -886,6 +895,11 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
         <div><dt>Certificate No.</dt><dd>1410-26080226-0056</dd></div>
         <div><dt>Valid until</dt><dd>August 2, 2029</dd></div>
       </dl>
+      <div class="legal">
+        <p class="legal-h">Registered and compliant</p>
+        <div class="legal-pills"><span>&#10003; SEC-registered corporation</span><span>&#10003; BIR-registered</span><span>&#10003; Business permit, Quezon City</span><span>&#10003; DOLE-OSHC accredited</span></div>
+        <div class="legal-cta"><a class="btn btn-gold" href="mailto:info@bnwintegrisafe.ph?subject=Request%20for%20vendor%20accreditation%20documents&amp;body=Hi%20BNW%20IntegriSafe%2C%0A%0AWe%20would%20like%20to%20request%20your%20company%20documents%20for%20vendor%20accreditation.%0A%0ACompany%20name%3A%0AContact%20person%3A%0APosition%3A%0AMobile%3A%0ADocuments%20needed%20%28e.g.%2C%20SEC%2C%20BIR%202303%2C%20Mayor%27s%20Permit%2C%20DOLE-OSHC%20Accreditation%29%3A%0A%0AThank%20you.">Request our accreditation documents <span class="arr">&rarr;</span></a><span class="legal-note">Vendor accreditation documents are available upon request.</span></div>
+      </div>
       <figure class="acc-award"><img src="images/accreditation-award.jpg" alt="BNW founders receiving the DOLE-OSHC certificate of accreditation" loading="lazy"><figcaption>Engr. Reyes and Mark Clave receiving our certificate at DOLE-OSHC</figcaption></figure>
     </div>
   </div>
@@ -898,7 +912,7 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
       <div>
         <span class="eyebrow">Our core values &amp; promise</span>
         <h2 class="sr-only">I&rsquo;M SAFE</h2>
-        <p class="lead">Six values behind every inspection. One promise: when you see the BNW seal on your equipment, you can put your hand on your heart and say, <em>&ldquo;I&rsquo;m safe.&rdquo;</em></p>
+        <p class="lead">Six values behind every inspection. One promise: every worker who sees the BNW seal can start the job knowing, <em>&ldquo;I&rsquo;m safe.&rdquo;</em></p>
       </div>
     </div>
     <div class="vals"><div class="val"><b>I</b><h3>Integrity</h3><p>We report what we find, honestly. No shortcuts, no favors.</p></div><div class="val"><b>M</b><h3>Mastery</h3><p>Deep technical skill behind every inspection, test, and certificate.</p></div><div class="val"><b>S</b><h3>Safety</h3><p>People come first. Every decision starts with keeping workers safe.</p></div><div class="val"><b>A</b><h3>Accountability</h3><p>We stand behind our work, signed and sealed.</p></div><div class="val"><b>F</b><h3>Faith</h3><p>We serve with faith, humility, and genuine care for others.</p></div><div class="val"><b>E</b><h3>Excellence</h3><p>We aim higher than compliance on every job.</p></div></div>
@@ -1179,6 +1193,10 @@ var i=0,hov=false;sec.addEventListener('mouseenter',function(){hov=true;cs.forEa
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();io.disconnect()}},{threshold:.2});io.observe(sec)}else go();})();
 
 document.querySelectorAll('.case-toggle').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();var c=b.closest('.case');var o=c.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});});
+
+(function(){var g=document.querySelector('.case-grid');if(!g)return;var cs=[].slice.call(g.querySelectorAll('.case'));
+function eq(){cs.forEach(function(c){c.style.minHeight=''});var m=0;cs.forEach(function(c){if(!c.classList.contains('open'))m=Math.max(m,c.getBoundingClientRect().height)});cs.forEach(function(c){c.style.minHeight=m+'px'});}
+addEventListener('resize',eq);addEventListener('load',eq);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(eq);setTimeout(eq,400);})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('quote').addEventListener('submit',function(e){
   e.preventDefault();
