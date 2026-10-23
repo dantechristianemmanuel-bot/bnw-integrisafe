@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Certificate Verification | BNW IntegriSafe, Inc.</title>
+<link rel="icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2a66;--deep:#0a1d47;--blue:#173b8c;--gold:#c9a13b;--gold-l:#e2c06a;--steel:#5d6573;--line:#e1e7f3;--paper:#f4f6fa}
+*{box-sizing:border-box}
+body{margin:0;font-family:Barlow,Arial,sans-serif;background:var(--paper);color:var(--navy)}
+header{background:linear-gradient(135deg,var(--navy),var(--deep));padding:18px 20px;border-bottom:4px solid var(--gold)}
+header .in{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+header img{height:42px;filter:brightness(0) invert(1)}
+header span{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:14px;color:var(--gold-l)}
+main{max-width:760px;margin:0 auto;padding:22px 16px 40px}
+h1{font-family:"Barlow Condensed",Arial,sans-serif;font-size:30px;margin:6px 0 4px}
+.sub{color:var(--steel);margin:0 0 18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 34px rgba(15,42,102,.10);overflow:hidden}
+.status{display:flex;align-items:center;gap:14px;padding:18px 20px;color:#fff}
+.status .ic{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:28px;font-weight:700;flex:0 0 52px}
+.status b{display:block;font-family:"Barlow Condensed",Arial,sans-serif;font-size:28px;letter-spacing:.04em}
+.status small{font-size:14.5px;opacity:.92}
+.s-valid{background:linear-gradient(135deg,#1e8449,#145a32)}
+.s-expired{background:linear-gradient(135deg,#d68910,#a0610a)}
+.s-revoked,.s-notfound{background:linear-gradient(135deg,#c0392b,#922b21)}
+.s-wait{background:linear-gradient(135deg,var(--blue),var(--navy))}
+.body{padding:18px 20px 22px}
+.photo{width:100%;max-height:340px;object-fit:cover;border-radius:12px;display:block;margin-bottom:16px;background:var(--paper)}
+table{width:100%;border-collapse:collapse}
+td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:15.5px}
+td:first-child{color:var(--steel);width:42%;padding-right:10px}
+td:last-child{font-weight:700}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;font-size:15px}
+.btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:var(--deep)}
+.btn-line{border:2px solid var(--navy);color:var(--navy)}
+.note{margin-top:16px;font-size:13.5px;color:var(--steel);line-height:1.55}
+form{display:flex;gap:8px;margin-top:6px}
+input{flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:16px;text-transform:uppercase}
+button{padding:12px 18px;border:0;border-radius:10px;background:var(--navy);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+footer{text-align:center;font-size:13px;color:var(--steel);padding:0 16px 30px}
+footer b{color:var(--navy)}
+.spin{width:22px;height:22px;border:3px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<header><div class="in"><a href="../"><img src="../images/logo-gold.png" alt="BNW IntegriSafe, Inc."></a><span>Certificate Verification</span></div></header>
+<main>
+  <h1>Certificate verification</h1>
+  <p class="sub">Official record of certificates issued by BNW IntegriSafe, Inc.</p>
+  <div class="card" id="card">
+    <div class="status s-wait" id="st"><div class="ic"><div class="spin"></div></div><div><b>Checking&hellip;</b><small>Looking up this certificate.</small></div></div>
+    <div class="body" id="bd"></div>
+  </div>
+  <p class="note">If the details on your printed certificate do not match this record, the certificate may have been altered. Please contact us right away.</p>
+</main>
+<footer><b>BNW IntegriSafe, Inc.</b> &middot; DOLE-OSHC Accredited Testing Organization No. 1410-26080226-0056<br>0999 422 9120 &middot; info@bnwintegrisafe.ph &middot; bnwintegrisafe.ph</footer>
+<script>
+/* Paste the Web App URL from Google Apps Script between the quotes below. */
+var API_URL = "";
+
+var st=document.getElementById('st'), bd=document.getElementById('bd');
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function status(cls,icon,title,text){st.className='status '+cls;st.innerHTML='<div class="ic">'+icon+'</div><div><b>'+title+'</b><small>'+text+'</small></div>'}
+function form(msg){bd.innerHTML=(msg?'<p>'+msg+'</p>':'')+'<form id="f"><input id="q" placeholder="Enter Verification ID" maxlength="20" autocomplete="off"><button>Verify</button></form>';
+  document.getElementById('f').onsubmit=function(e){e.preventDefault();var v=document.getElementById('q').value.trim();if(v)location.search='?id='+encodeURIComponent(v)}}
+function contact(){return '<div class="btns"><a class="btn btn-line" href="viber://chat?number=%2B639994229120">Message us on Viber</a><a class="btn btn-line" href="tel:+639994229120">Call 0999 422 9120</a></div>'}
+var id=(new URLSearchParams(location.search).get('id')||'').trim().toUpperCase();
+if(!id){status('s-wait','?','Enter a Verification ID','Find the ID under the QR code on your certificate.');form('')}
+else if(!API_URL){status('s-wait','!','Verification is being set up','Please try again later, or contact us to confirm this certificate.');bd.innerHTML=contact()}
+else{
+  fetch(API_URL+'?id='+encodeURIComponent(id)).then(function(r){return r.json()}).then(function(d){
+    if(!d||!d.found){status('s-notfound','&#10007;','NOT FOUND','No certificate with ID '+esc(id)+' exists in our records.');bd.innerHTML='<p>This certificate could not be verified. Please contact BNW IntegriSafe to confirm.</p>'+contact();return}
+    if(d.status==='VALID')status('s-valid','&#10003;','VALID CERTIFICATE','Issued by BNW IntegriSafe, Inc. and valid until '+esc(d.validUntil)+'.');
+    else if(d.status==='EXPIRED')status('s-expired','!','EXPIRED','This certificate expired on '+esc(d.validUntil)+'. The equipment is due for re-inspection.');
+    else status('s-revoked','&#10007;','REVOKED','This certificate has been cancelled by BNW IntegriSafe, Inc.');
+    var rows=[['Certificate No.',d.certificateNo],['Verification ID',d.id],['Equipment',d.equipment],['Type',d.type],['Brand',d.brand],['Model No.',d.model],['Serial No.',d.serial],['Eqpt. No.',d.eqptNo],['Capacity',d.capacity],['Inspection Date',d.inspectionDate],['Valid Until',d.validUntil],['Inspected By',d.inspectedBy]];
+    var h=d.photo?'<img class="photo" src="'+esc(d.photo)+'" alt="Inspected equipment" onerror="this.remove()">':'';
+    h+='<table>'+rows.filter(function(r){return r[1]}).map(function(r){return '<tr><td>'+r[0]+'</td><td>'+esc(r[1])+'</td></tr>'}).join('')+'</table>';
+    h+='<div class="btns">'+(d.pdf&&d.status!=='REVOKED'?'<a class="btn btn-gold" href="'+esc(d.pdf)+'" target="_blank" rel="noopener">View certificate (PDF)</a>':'')+'<a class="btn btn-line" href="viber://chat?number=%2B639994229120">Message us on Viber</a></div>';
+    h+='<p class="note">Checked on '+new Date().toLocaleString('en-PH',{dateStyle:'medium',timeStyle:'short'})+'.</p>';
+    bd.innerHTML=h;
+  }).catch(function(){status('s-wait','!','Could not check right now','Please check your connection and try again, or contact us.');bd.innerHTML=contact()});
+}
+</script>
+</body>
+</html>
