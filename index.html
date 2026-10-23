@@ -692,6 +692,18 @@ a.stat:hover .go{border-bottom-style:solid}
 #team .fc-in{height:100%}
 #team .fc-front,#team .fc-back{height:100%;box-sizing:border-box}
 #team .fc-front .chips{margin-top:auto}
+
+/* founders duo photo */
+.team-head{display:grid;grid-template-columns:1fr;gap:22px;align-items:end}
+@media(min-width:900px){.team-head{grid-template-columns:1fr 1.05fr;gap:40px}}
+.duo{position:relative;margin:0;border-radius:22px;overflow:hidden;background:radial-gradient(120% 90% at 50% 100%,#173b8c 0%,#0f2a66 45%,#0a1d47 100%);aspect-ratio:900/760;display:flex;align-items:flex-end;justify-content:center;box-shadow:0 22px 50px rgba(10,29,71,.25)}
+.duo:before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;left:15%;bottom:-25%;background:radial-gradient(circle,rgba(226,192,106,.35),rgba(226,192,106,0) 65%)}
+.duo:after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--gold-light),var(--gold))}
+.duo img{position:relative;width:88%;height:auto;display:block}
+.duo-names{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:16px}
+.duo-names span{display:flex;flex-direction:column;font-size:14px;color:var(--steel);border-left:3px solid var(--gold);padding-left:10px}
+.duo-names b{color:var(--blue-dark);font-size:16px}
+#team .team{margin-top:34px}
 /* quality */
 .quality{background:var(--blue-dark);color:#fff}
 .quality h2{color:#fff;max-width:760px}
@@ -1006,9 +1018,15 @@ footer{background:var(--blue-deep);color:#b4c3e3;padding:44px 0 30px;font-size:1
 
 <section id="team">
   <div class="wrap">
-    <span class="eyebrow">Leadership</span>
-    <h2>Led by its founders. 25+ years in the field.</h2>
-    <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder with years of hands-on inspection experience and credentials on the line.</p>
+    <div class="team-head">
+      <div class="team-txt">
+        <span class="eyebrow">Leadership</span>
+        <h2>Led by its founders. 25+ years in the field.</h2>
+        <p class="lead">BNW is run by the people who do the work. Every job is led and reviewed by a founder with years of hands-on inspection experience and credentials on the line.</p>
+        <div class="duo-names"><span><b>Mark B. Clave</b>Co-Founder &middot; VP for Operations</span><span><b>Engr. Precioso G. Reyes Jr., PME</b>Founder &middot; President &amp; CEO</span></div>
+      </div>
+      <figure class="duo"><img src="images/founders-duo.png" alt="BNW IntegriSafe founders Mark B. Clave and Engr. Precioso G. Reyes Jr." width="900" height="692" loading="lazy"></figure>
+    </div>
     <div class="team">
       <div class="fcard" tabindex="0" role="button" aria-label="Flip to see Engr. Reyes in the field">
         <div class="fc-in">
